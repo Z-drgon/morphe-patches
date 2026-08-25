@@ -1,16 +1,16 @@
-# 👋🧩 Morphe Patches template
+# 📡🧩 Zdrgon's Morphe Patches
 
-Template repository for Morphe Patches.
+Custom Morphe patches including Direct-to-Cell (DTC) Satellite Data Optimization for T-Mobile / SpaceX connectivity.
 
 ## ❓ About
 
-Patches for apps I like.
+This project contains custom patches for Morphe Manager & Morphe Desktop:
 
-<!-- TODO: Update this about section with a brief introduction/summary about this repo and what it offers. -->
+- **Satellite Data Optimization (Universal)**: Automatically injects `<meta-data android:name="android.telephony.PROPERTY_SATELLITE_DATA_OPTIMIZED" android:value="PACKAGE_NAME" />` into `AndroidManifest.xml` for any selected application (WireGuard, Lichess, YouTube ReVanced, browsers, etc.), enabling data usage over T-Mobile / SpaceX Direct-To-Cell satellite connections per Google's Android Satellite Connectivity guidance.
 
 ### How to use these patches
 
-Click here to add these patches to Morphe: https://morphe.software/add-source?github=xyz-user/xyz-patches
+Click here to add these patches to Morphe: https://morphe.software/add-source?github=Zdrgon/morphe-patches
 
 ## 🩹 Patches list
 

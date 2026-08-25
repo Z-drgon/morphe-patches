@@ -1,14 +1,13 @@
-group = "app.template"
+group = "app.zdrgon"
 
 patches {
-    // TODO: Update this section with your project details.
     about {
-        name = "UserXYZ Patches"
-        description = "Patches for apps I like"
-        source = "git@github.com:UserXYZ/morphe-patches.git"
-        author = "Awesome dev"
+        name = "Zdrgon's Morphe Patches"
+        description = "Patches for Direct-to-Cell (DTC) satellite optimization and custom app modifications"
+        source = "git@github.com:Zdrgon/morphe-patches.git"
+        author = "Zdrgon"
         contact = "na"
-        website = "na"
+        website = "https://github.com/Zdrgon/morphe-patches"
         license = "GPLv3"
     }
 }
