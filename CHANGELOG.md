@@ -1,3 +1,9 @@
+## [1.42.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.42.2...v1.42.3) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **webvideocaster:** correct smali method reference in PairIP application checks patch ([bd77e9a](https://github.com/mwbra130/Retro-Bowl-College/commit/bd77e9af8af82e3b5937967efb9d47d3c131e25f))
+
 ## [1.42.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.42.1...v1.42.2) (2026-11-02)
 
 ### 🐛 Bug Fixes
