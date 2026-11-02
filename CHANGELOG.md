@@ -1,3 +1,11 @@
+## [1.33.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.33.2...v1.33.3) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **gradientweather:** capture lifetime field reference via run (apply returned the method, breaking .type) ([fd72be1](https://github.com/mwbra130/Retro-Bowl-College/commit/fd72be1511759f433105ec2731e1002176a2c0fb))
+* **gradientweather:** match fingerprints to real 1.3.4 methods ([23903bb](https://github.com/mwbra130/Retro-Bowl-College/commit/23903bb4b57c666c964800fe1901276494f47a3f))
+* **gradientweather:** pin entitlement sync store to the lifetime tier ([12edb80](https://github.com/mwbra130/Retro-Bowl-College/commit/12edb802194b88a5576f118dd4f4c3bdbc0ba79e))
+
 ## [1.33.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.33.1...v1.33.2) (2026-11-02)
 
 ### 🐛 Bug Fixes
