@@ -1,3 +1,9 @@
+## [1.35.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.35.0...v1.35.1) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **webvideocaster:** rewrite the false assignment instead of inserting before valueOf (goto paths skipped the insert) ([fc2659f](https://github.com/mwbra130/Retro-Bowl-College/commit/fc2659fa0b82868fb98dbdfefc0214d3656cab42))
+
 ## [1.35.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.34.0...v1.35.0) (2026-11-02)
 
 ### ✨ New Features
