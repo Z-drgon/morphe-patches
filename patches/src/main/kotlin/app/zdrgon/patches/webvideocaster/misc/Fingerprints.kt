@@ -82,3 +82,87 @@ object SignatureCheckFingerprint : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
     strings = listOf("Apk signature is invalid.", "Signature check ok"),
 )
+
+// ── PairIP license check (classes2.dex) ─────────────────────────────────
+//
+// LicenseClient is PairIP's Play-licensing client. The ONLY dex entry
+// points into it are the static checkLicense(Context): PairIP's
+// Application.attachBaseContext (right after verifyIntegrity) and
+// LicenseContentProvider.onCreate. A cross-dex scan of all 7 dex files
+// shows no other class in the app even references LicenseClient,
+// LicenseActivity or TrialClient, so every launch path funnels through
+// the methods fingerprinted below.
+//
+// checkLicense posts to the main thread:
+// getInstance(ctx).initializeLicenseCheck(), which switches on the
+// static licenseCheckState (LicenseCheckState enum, seeded
+// CHECK_REQUIRED by <clinit>):
+//   CHECK_REQUIRED        -> bind to Play's ILicensingService
+//                            (com.android.vending), send a
+//                            LicenseCheckV2 request; the local installer
+//                            branch is gated on localCheckEnabled, which
+//                            is never written in the dex (false), so the
+//                            shipped flow is the online check.
+//   FULL_CHECK_OK         -> re-validates the cached JWS payload.
+//   LOCAL_CHECK_OK /
+//   LOCAL_CHECK_REPORTED  -> no-op.
+//   REPEATED_CHECK_REQUIRED -> fresh connection (periodic re-check).
+// The service answer lands in processResponse(code, bundle):
+//   0 LICENSED     -> JWS validated, state becomes FULL_CHECK_OK (or
+//                     REPEATED_CHECK_REQUIRED when repeated-check
+//                     metadata is present) — the genuine success state.
+//   2 NOT_LICENSED -> startPaywallActivity(): LicenseActivity opens
+//                     with activitytype=PAYWALL and the service-supplied
+//                     PAYWALL_INTENT PendingIntent, which opens the
+//                     Play Store listing — for a non-Play install that
+//                     page is the "Get this app from Play" block screen
+//                     seen on-device with v1.35.3.
+//   other          -> LicenseCheckException -> handleError -> error
+//                     dialog via the same LicenseActivity vehicle.
+// handleTrialEnd (reached only via stopTrial <- the caller-less
+// TrialClient facade) is a third, independent re-check trigger: it
+// resets licenseCheckState to CHECK_REQUIRED and binds afresh,
+// bypassing initializeLicenseCheck.
+
+/**
+ * LicenseClient.checkLicense(Landroid/content/Context;)V — the static
+ * entry (0x0009 PUBLIC STATIC, verified in the 6.1.0 dex; both of its
+ * strings are in the method body).
+ */
+object LicenseCheckFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/licensecheck/LicenseClient;",
+    name = "checkLicense",
+    returnType = "V",
+    parameters = listOf("Landroid/content/Context;"),
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    strings = listOf("Cannot check license with null context.", "Skipping license check in isolated process."),
+)
+
+/**
+ * LicenseClient.initializeLicenseCheck()V — the instance method the
+ * static entry posts to the main thread (0x0001 PUBLIC, verified in
+ * the 6.1.0 dex). Its body contains no const-strings, so the match
+ * rests on class + name + signature + exact access flags; the method
+ * is the only one of its name in the class.
+ */
+object InitializeLicenseCheckFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/licensecheck/LicenseClient;",
+    name = "initializeLicenseCheck",
+    returnType = "V",
+    parameters = listOf(),
+    accessFlags = listOf(AccessFlags.PUBLIC),
+)
+
+/**
+ * LicenseClient.handleTrialEnd()V — the trial-end re-check trigger
+ * (0x0004 PROTECTED, verified in the 6.1.0 dex; its log string is in
+ * the method body).
+ */
+object HandleTrialEndFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/licensecheck/LicenseClient;",
+    name = "handleTrialEnd",
+    returnType = "V",
+    parameters = listOf(),
+    accessFlags = listOf(AccessFlags.PROTECTED),
+    strings = listOf("Trial end event triggered; initiating full license check."),
+)
