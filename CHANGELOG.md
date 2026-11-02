@@ -1,3 +1,9 @@
+## [1.33.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.33.0...v1.33.1) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **gamesinone:** fingerprint needs exact access flags (public final) ([bdd2776](https://github.com/mwbra130/Retro-Bowl-College/commit/bdd2776fa425be097e957006814cc0f92795cc93))
+
 ## [1.33.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.32.0...v1.33.0) (2026-11-02)
 
 ### ✨ New Features
