@@ -515,25 +515,34 @@ val unlockPremiumPatch = bytecodePatch(
         }.keys.singleOrNull() ?: throw PatchException(
             "Poweramp: signature-check state field not found or ambiguous in BaseApplication.onCreate.",
         )
-        val firstTamperStoreIndex = onCreate.instructions.withIndex().firstOrNull { (_, instruction) ->
+        // 1031 differs from 1025 here (verified from the 1031 dex on 2026-11-02):
+        // v2 is preloaded with 1, the check compares the first 96 signature bytes,
+        // and the field's final value is (match ? 1 : 0) xor v2, i.e. the field ends
+        // up 0 when the signature is valid and 1 when it is not. There is no
+        // const/4 v2, 0 to flip like 1025 had. Force the valid value (0) right after
+        // the LAST store to the field, reusing that store's own register, so every
+        // branch path through the check leaves the field at 0.
+        val tamperStores = onCreate.instructions.withIndex().filter { (_, instruction) ->
             opcodeName(instruction).equals("SPUT_BOOLEAN", ignoreCase = true) &&
                 ((instruction as? ReferenceInstruction)?.reference as? FieldReference)?.let { field ->
                     "${field.definingClass}->${field.name}:${field.type}" == tamperField
                 } == true
-        }?.index ?: throw PatchException(
-            "Poweramp: signature-check state store not found in BaseApplication.onCreate.",
+        }
+        if (tamperStores.isEmpty()) {
+            throw PatchException(
+                "Poweramp: signature-check state store not found in BaseApplication.onCreate.",
+            )
+        }
+        val lastTamperStore = tamperStores.last()
+        val tamperStoreRegister = (lastTamperStore.value as? OneRegisterInstruction)?.registerA
+            ?: throw PatchException(
+                "Poweramp: signature-check state store shape changed in BaseApplication.onCreate.",
+            )
+        onCreate.addInstructions(
+            lastTamperStore.index + 1,
+            "const/4 v$tamperStoreRegister, 0x0\n" +
+                "sput-boolean v$tamperStoreRegister, $tamperField",
         )
-        val invalidSignatureValueIndex = onCreate.instructions.withIndex()
-            .take(firstTamperStoreIndex)
-            .lastOrNull { (_, instruction) ->
-                opcodeName(instruction).equals("CONST_4", ignoreCase = true) &&
-                    (instruction as? OneRegisterInstruction)?.registerA == 2 &&
-                    (instruction as? NarrowLiteralInstruction)?.narrowLiteral == 0
-            }
-            ?.index ?: throw PatchException(
-            "Poweramp: signature-check invalid value not found in BaseApplication.onCreate.",
-        )
-        onCreate.addInstructions(invalidSignatureValueIndex + 1, "const/4 v2, 0x1")
 
         // The 32-byte buffer passed to native_process is the live license state used by the
         // playback watchdog and settings code. Slot 1 (offset 4) holds the same 0x111 full result
