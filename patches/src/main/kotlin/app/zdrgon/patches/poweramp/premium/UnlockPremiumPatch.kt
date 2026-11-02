@@ -797,16 +797,65 @@ val unlockPremiumPatch = bytecodePatch(
                 method.returnType == "V" &&
                 method.parameterTypes.isEmpty()
         } ?: throw PatchException("Poweramp: FeaturePackPref.update not found.")
-        val purchasedFlagStoreIndex = updateFeaturePackagePreference.instructions.withIndex()
-            .firstOrNull { (_, instruction) ->
-                opcodeName(instruction).equals("IPUT_BOOLEAN", ignoreCase = true) &&
+        // 1031: BuyPrefBase.n is a CharSequence now (the buy-button label); the boolean
+        // hooman hardcoded as "n" in 1025 was renamed by the obfuscator. Identify the
+        // purchased store structurally instead (verified from the 1031 dex on
+        // 2026-11-02): it is the only BuyPrefBase boolean store in update() whose value
+        // is computed from the purchase controller's int state compared against 4
+        // (state == 4 is purchased-complete; BaseBuyFvPref.update computes the same
+        // base field from exactly that test). The scan also yields the controller's
+        // state field name, which 1025 called "f" and 1031 calls "e".
+        val purchaseControllerType = updateFeaturePackagePreference.instructions
+            .mapNotNull { instruction ->
+                (instruction as? ReferenceInstruction)?.reference as? FieldReference
+            }
+            .firstOrNull { field ->
+                field.definingClass == "Lcom/maxmpz/audioplayer/preference/BuyPrefBase;" &&
+                    field.type.startsWith("L")
+            }?.type ?: throw PatchException(
+            "Poweramp: purchase controller field not found in FeaturePackPref.update.",
+        )
+        var purchaseStateFieldName: String? = null
+        val purchasedFlagStore = updateFeaturePackagePreference.instructions.withIndex()
+            .firstOrNull { (storeIndex, instruction) ->
+                val isPurchasedStore = opcodeName(instruction).equals("IPUT_BOOLEAN", ignoreCase = true) &&
                     ((instruction as? ReferenceInstruction)?.reference as? FieldReference)?.let { field ->
                         field.definingClass == "Lcom/maxmpz/audioplayer/preference/BuyPrefBase;" &&
-                            field.name == "n" &&
                             field.type == "Z"
                     } == true
-            }?.index ?: throw PatchException(
+                if (!isPurchasedStore) {
+                    false
+                } else {
+                    val window = updateFeaturePackagePreference.instructions
+                        .subList(maxOf(0, storeIndex - 14), storeIndex)
+                    val stateField = window.mapNotNull { windowInstruction ->
+                        val field = (windowInstruction as? ReferenceInstruction)?.reference as? FieldReference
+                        field?.takeIf {
+                            opcodeName(windowInstruction).startsWith("IGET", ignoreCase = true) &&
+                                it.definingClass == purchaseControllerType &&
+                                it.type == "I"
+                        }
+                    }.lastOrNull()
+                    val comparesStateToFour = window.any { windowInstruction ->
+                        (windowInstruction as? NarrowLiteralInstruction)?.narrowLiteral == 4
+                    }
+                    if (stateField != null && comparesStateToFour) {
+                        purchaseStateFieldName = stateField.name
+                        true
+                    } else {
+                        false
+                    }
+                }
+            } ?: throw PatchException(
             "Poweramp: FeaturePackPref purchased flag store not found.",
+        )
+        val purchasedFlagStoreIndex = purchasedFlagStore.index
+        val purchasedFlagStoreRegister = (purchasedFlagStore.value as? OneRegisterInstruction)?.registerA
+            ?: throw PatchException(
+                "Poweramp: FeaturePackPref purchased flag store shape changed.",
+            )
+        val purchaseStateField = purchaseStateFieldName ?: throw PatchException(
+            "Poweramp: purchase controller state field not found in FeaturePackPref.update.",
         )
         val featurePackagePurchasedField = updateFeaturePackagePreference.instructions.withIndex()
             .take(purchasedFlagStoreIndex)
@@ -875,7 +924,7 @@ val unlockPremiumPatch = bytecodePatch(
                 const/16 v1, $PLAY_PURCHASE_CONTROLLER_KIND
                 if-ne v0, v1, :original_purchase_refresh
                 const/4 v0, $FEATURE_PACKAGE_REFRESH_DONE
-                iput v0, p0, ${purchaseControllerClass.type}->f:I
+                iput v0, p0, ${purchaseControllerClass.type}->${purchaseStateField}:I
                 const/4 v0, $FEATURE_PACKAGE_PURCHASED
                 iput-boolean v0, p0, ${purchaseControllerClass.type}->${featurePackagePurchasedField.name}:Z
                 const-string v1, ""
@@ -887,7 +936,7 @@ val unlockPremiumPatch = bytecodePatch(
         )
         updateFeaturePackagePreference.addInstructions(
             purchasedFlagStoreIndex,
-            "const/4 v3, $FEATURE_PACKAGE_PURCHASED",
+            "const/4 v$purchasedFlagStoreRegister, $FEATURE_PACKAGE_PURCHASED",
         )
 
         // Settings export (issue #94). Export zips the temp SQLite dump then calls a static
