@@ -19,7 +19,6 @@ import app.morphe.patcher.patch.Compatibility
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.rawResourcePatch
-import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
 import app.morphe.patcher.util.smali.ExternalLabel
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.iface.Method
@@ -62,9 +61,12 @@ private fun movW(register: Int, value: Int): ByteArray {
 
 // Native re-sign probes: 0x269/0x257/0x22b are size multipliers; 0x256/0x355 are guards.
 // 1031 probe set, re-derived from build-1031's libpowerampcore.so on 2026-11-02 (the 1025
-// signatures match nothing in the recompiled library). All 21 ldrb sites that read the
+// signatures match nothing in the recompiled library). All 22 ldrb sites that read the
 // cert/buildstamp byte table (global slot 0x98f060, the 1031 counterpart of 1025's
-// 0x888060) are pinned: guards forced to the pass value, size multipliers to 1. The four
+// 0x888060) are pinned: guards forced to the pass value, size multipliers to 1, and the
+// library scanner's root gate (table byte 0x32a must equal 2, an offset 1025 never read;
+// unpinned it reads the random tamper-fill and scan_root returns FAIL, breaking playback
+// of files the engine has to resolve through the native scanner). The four
 // output-size sites read two table bytes 8 bytes apart, so each is a single probe whose
 // replacement rewrites both loads (a split probe's signature would contain the sibling
 // load the previous probe just replaced, and sequential matching would miss it). Every
@@ -243,6 +245,15 @@ private val arm64NativeProbePatches = listOf(
         ),
         offset = 8,
         replacement = movW(register = 8, value = 0),
+    ),
+    NativeProbePatch(
+        label = "scan-gate-32a",
+        signature = ints(
+            0x68, 0x35, 0x00, 0xB0, 0x08, 0x31, 0x40, 0xF9,
+            0x08, 0xA9, 0x4C, 0x39, 0x1F, 0x09, 0x00, 0x71,
+        ),
+        offset = 8,
+        replacement = movW(register = 8, value = 2),
     )
 )
 
