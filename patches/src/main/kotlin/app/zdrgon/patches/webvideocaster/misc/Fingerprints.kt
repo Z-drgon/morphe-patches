@@ -387,3 +387,40 @@ object InitContextInstrumentationFingerprint : Fingerprint(
     accessFlags = listOf(AccessFlags.PRIVATE, AccessFlags.STATIC),
     strings = listOf("mInstrumentation", "android.app.Instrumentation"),
 )
+
+// ── PairIP Application entry (classes2.dex), round 10 ─────────────────
+//
+// Lcom/pairip/application/Application;->attachBaseContext is the ONE
+// caller of SignatureCheck.verifyIntegrity and LicenseClient.checkLicense
+// in the whole app (round-10 census of all 8 dexes: checkLicense has
+// exactly 2 call sites — this method and LicenseContentProvider.onCreate,
+// and LicenseContentProvider is NOT declared in the manifest, so that
+// entry is inert). The stock body (13 code units, 2 registers,
+// no try/catch) is, in order:
+//   invoke-static VMRunner.setContext(ctx)
+//   invoke-static SignatureCheck.verifyIntegrity(ctx)
+//   invoke-static LicenseClient.checkLicense(ctx)
+//   invoke-super  Application.attachBaseContext(ctx)  (== the app)
+//   return-void
+// Rounds 1–3 stubbed the two callees; round 10 additionally rewrites
+// this call site so the calls are never made at all (see
+// BypassPairipApplicationPatch). Losing the setContext call would be
+// safe anyway — VMRunner.invoke re-establishes it when null (its
+// prologue calls InitContextProvider.tryToCreateContextForBindingApp
+// and setContext) — but the rewrite keeps the original setContext
+// instruction and only skips the two checks.
+
+/**
+ * Lcom/pairip/application/Application;->attachBaseContext(Landroid/content/Context;)V
+ * — the PairIP Application override (0x0004 PROTECTED, verified in the
+ * 6.1.0 dex via dexdump; the body contains no const-string
+ * instructions, so the match rests on class + name + signature +
+ * exact access flags; it is the only attachBaseContext in the class).
+ */
+object PairipApplicationAttachFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/application/Application;",
+    name = "attachBaseContext",
+    returnType = "V",
+    parameters = listOf("Landroid/content/Context;"),
+    accessFlags = listOf(AccessFlags.PROTECTED),
+)
