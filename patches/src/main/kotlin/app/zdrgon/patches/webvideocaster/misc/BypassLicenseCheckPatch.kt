@@ -63,6 +63,11 @@ import java.util.logging.Logger
  * stubbed entry points. All three methods are plain dex with real
  * bodies (not VM-virtualized). Required for ANY re-signed WVC build
  * to open, with or without the premium unlock, so it defaults on.
+ *
+ * Release note: the first v1.35.4 CI run compiled this patch green
+ * but semantic-release lost a push race against another commit
+ * landing on main mid-run, so the release is re-cut from this
+ * comment-only revision.
  */
 @Suppress("unused")
 val bypassLicenseCheckPatch = bytecodePatch(
