@@ -30,7 +30,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 ---
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.40.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.40.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;32 patches total
+> **[v1.41.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.41.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;34 patches total
 <details open>
 <summary>Strava&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
@@ -118,6 +118,22 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 | [Block ads](#block-ads) | Blocks fullscreen interstitial ads and removes sponsored posts from feeds. |  |
 | [Disable video autoplay](#disable-video-autoplay) | Videos stay paused until you tap them. Works in all feeds and profiles. |  |
 | [Remove suggested-people card](#remove-suggested-people-card) | Removes the suggested-people card from the feed. |  |
+
+</details>
+
+<details open>
+<summary>RainViewer&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<br>
+
+**Supported versions:**
+
+| 8.4.1 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from an app store. | • Spoofed package installer name |
+| [Enable Premium](#enable-premium) | Unlocks RainViewer Pro. Use with Change installer source. |  |
 
 </details>
 
