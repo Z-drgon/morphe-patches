@@ -290,3 +290,54 @@ object LicenseActivityOnStartFingerprint : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     strings = listOf("activitytype", "Couldn't process license activity correctly."),
 )
+
+// ── PairIP startup program (classes2.dex), round 5 ────────────────────
+//
+// StartupLauncher.launch() is PairIP's VM bootstrap. It is called
+// from the <clinit> of Landroid/app/AppComponentFactory; (a shadow
+// class PairIP plants in classes2.dex) and of the manifest-declared
+// Landroidx/core/app/CoreComponentFactory; — i.e. when the component
+// factory class loads during bindApplication, BEFORE
+// Application.attachBaseContext runs, and therefore before every
+// method stubbed in rounds 1–3 (verifyIntegrity, checkLicense, the
+// whole LicenseClient stack). Its body (24 code units) is a
+// synchronized once-guard around a single call:
+// VMRunner.invoke(startupProgramName, null), where the static field
+// startupProgramName is initialized in <clinit> to
+// "Oz9gdoFZqm3JanLF" — the app's largest PairIP VM asset module
+// (415,036 bytes of encrypted, natively executed bytecode; its
+// contents are not readable from the dex). The VM environment is
+// explicitly tooled to act in that pre-Application window:
+// InitContextProvider reflectively builds an app Context from
+// ActivityThread/AppBindData and installs a basic Instrumentation
+// in a method named tryToInitializeBasicInstrumentationForStartActivity.
+//
+// The round-4 census eliminated every other route to the Play Store
+// block page: all 20 other VMRunner.invoke trampolines in the app
+// are third-party SDK BroadcastReceiver.onReceive bodies, no dex
+// code outside the (fully stubbed) LicenseClient stack references
+// the store or the license state, and LicenseActivity is
+// manifest-disabled. The startup program is the only in-process
+// actor left that runs at every cold start, runs before all patched
+// code, and can start activities. That is suspicion by elimination
+// and capability, not an identified call path — which is why this
+// round ships as its own separate, toggleable patch.
+
+/**
+ * Lcom/pairip/StartupLauncher;->launch()V — the VM bootstrap entry
+ * (0x20009 PUBLIC STATIC SYNCHRONIZED, verified in the 6.1.0 dex —
+ * flags read from the class data, and Morphe compares access flags
+ * by EXACT equality, so SYNCHRONIZED must be listed). The method
+ * body contains no const-string instructions (the program name is a
+ * static field read via sget-object), so the match rests on class +
+ * name + signature + exact flags; launch is the only method of its
+ * name in the class (the class declares only <clinit>, <init> and
+ * launch).
+ */
+object StartupLauncherFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/StartupLauncher;",
+    name = "launch",
+    returnType = "V",
+    parameters = listOf(),
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC, AccessFlags.SYNCHRONIZED),
+)
