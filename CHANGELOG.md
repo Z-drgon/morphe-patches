@@ -1,3 +1,9 @@
+## [1.34.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.33.3...v1.34.0) (2026-11-02)
+
+### ✨ New Features
+
+* **gradientweather:** add Change installer source patch (spoof installer for PairIP check) ([8258d0b](https://github.com/mwbra130/Retro-Bowl-College/commit/8258d0b5d2579f156b71482233c845298a4369b4))
+
 ## [1.33.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.33.2...v1.33.3) (2026-11-02)
 
 ### 🐛 Bug Fixes
