@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.32.0",
+  "version": "1.33.0",
   "patches": [
     {
       "name": "Add settings",
@@ -655,6 +655,32 @@
           "targets": [
             {
               "version": "7.14.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Unlock premium",
+      "description": "Unlocks all games (VIP). The store sees the one-time VIP purchase as owned — no real purchase is made.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.MustBeFun.GamesInOneWatchGames",
+          "name": "Games In One - Watch Games",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#42A5F5",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "0.4.5",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,

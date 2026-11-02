@@ -1,3 +1,18 @@
+## [1.33.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.32.0...v1.33.0) (2026-11-02)
+
+### ✨ New Features
+
+* **gamesinone:** unlock premium (VIP) for Games In One 0.4.5 ([9b477fd](https://github.com/mwbra130/Retro-Bowl-College/commit/9b477fdab259e9e08e26ff35a973631a78bc5100))
+* **gamesinone:** unlock premium (VIP) for Games In One 0.4.5 ([0a80788](https://github.com/mwbra130/Retro-Bowl-College/commit/0a8078896bb6db2ac0747edeed350986c3968e72))
+* **gamesinone:** unlock premium (VIP) for Games In One 0.4.5 ([82d858f](https://github.com/mwbra130/Retro-Bowl-College/commit/82d858ff2eafbd7f28b8ff52a153bd337bdd9bb3))
+* **gamesinone:** unlock premium (VIP) for Games In One 0.4.5 ([9853b9c](https://github.com/mwbra130/Retro-Bowl-College/commit/9853b9ce11522a6056bec91d9e1a278e191c8075))
+* **gamesinone:** unlock premium (VIP) for Games In One 0.4.5 ([405c87c](https://github.com/mwbra130/Retro-Bowl-College/commit/405c87c96b1b0120c509363b47830be1ae9a3dcc))
+* **gamesinone:** unlock premium (VIP) for Games In One 0.4.5 ([c16d810](https://github.com/mwbra130/Retro-Bowl-College/commit/c16d810f62c56b11a1a8d080ced9d654ac46c609))
+* **gamesinone:** unlock premium (VIP) for Games In One 0.4.5 ([06cf0e4](https://github.com/mwbra130/Retro-Bowl-College/commit/06cf0e4c88bec8106bb777246067ed833ef2e852))
+* **gamesinone:** unlock premium (VIP) for Games In One 0.4.5 ([839e493](https://github.com/mwbra130/Retro-Bowl-College/commit/839e4932f0e7b3807d63720465bbd938c8a3d12c))
+* **gamesinone:** unlock premium (VIP) for Games In One 0.4.5 ([55d887c](https://github.com/mwbra130/Retro-Bowl-College/commit/55d887c3ef2398c7d03447e1ecacb38c20ebcd23))
+* **gamesinone:** unlock premium (VIP) for Games In One 0.4.5 ([9fd7bef](https://github.com/mwbra130/Retro-Bowl-College/commit/9fd7bef53ee7a910c88a05236fa87b7ffa73b6a2))
+
 ## [1.32.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.31.7...v1.32.0) (2026-10-29)
 
 ### 🐛 Bug Fixes
