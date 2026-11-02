@@ -1,3 +1,9 @@
+## [1.42.4](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.42.3...v1.42.4) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **rainviewer:** insert the code-81 return at the throw, not the branch-target new-instance ([27e2b27](https://github.com/mwbra130/Retro-Bowl-College/commit/27e2b27d7ec841b8196e0b8b76d1cfd35491ff80))
+
 ## [1.42.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.42.2...v1.42.3) (2026-11-02)
 
 ### 🐛 Bug Fixes
