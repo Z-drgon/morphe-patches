@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.41.1",
+  "version": "1.42.0",
   "patches": [
     {
       "name": "Add settings",
@@ -141,6 +141,32 @@
           "targets": [
             {
               "version": "6.1.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Bypass integrity check",
+      "description": "Stops the Play Integrity (Raindrop) verdict from blocking the app. If the app already shows App Blocked, reinstall it fresh after patching.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.lucky_apps.RainViewer",
+          "name": "RainViewer",
+          "description": null,
+          "apkFileType": null,
+          "appIconColor": "#1E88E5",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "8.4.1",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,

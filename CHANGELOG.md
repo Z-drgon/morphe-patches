@@ -1,3 +1,9 @@
+## [1.42.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.41.1...v1.42.0) (2026-11-02)
+
+### ✨ New Features
+
+* **rainviewer:** add Bypass integrity check patch (Raindrop verdict + code 81) ([eff7eba](https://github.com/mwbra130/Retro-Bowl-College/commit/eff7eba3e4ac7158836389615bfe4b47c4671763))
+
 ## [1.41.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.41.0...v1.41.1) (2026-11-02)
 
 ### 🐛 Bug Fixes
