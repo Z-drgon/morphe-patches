@@ -1,3 +1,10 @@
+## [1.33.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.33.1...v1.33.2) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **gradientweather:** add getReference instruction util ([9719eb8](https://github.com/mwbra130/Retro-Bowl-College/commit/9719eb811b7d54ed62705c2a73f34767157eb5fd))
+* **gradientweather:** import getReference from app.zdrgon.util ([3fa57e3](https://github.com/mwbra130/Retro-Bowl-College/commit/3fa57e3b5f3813c915b7c3677aa2ee959f325bf8))
+
 ## [1.33.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.33.0...v1.33.1) (2026-11-02)
 
 ### 🐛 Bug Fixes

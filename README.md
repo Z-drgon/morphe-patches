@@ -30,7 +30,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 ---
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.33.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.33.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;22 patches total
+> **[v1.33.2](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.33.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;23 patches total
 <details open>
 <summary>Strava&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
@@ -113,6 +113,21 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 | Patch | Description | Options |
 |----------|----------------|-----------|
 | [Complete all levels](#complete-all-levels) | Marks every official level 100% complete with all secret coins. |  |
+
+</details>
+
+<details open>
+<summary>Gradient Weather&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
+
+**Supported versions:**
+
+| 1.1.1 | 1.3.4 |
+| :---: | :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Enable Premium](#enable-premium) | Unlocks Gradient Weather Premium. Use With Spoof Install Source |  |
 
 </details>
 

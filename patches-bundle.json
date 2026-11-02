@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-02T00:38:07",
-  "description": "## [1.33.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.33.0...v1.33.1) (2026-11-02)\n\n### 🐛 Bug Fixes\n\n* **gamesinone:** fingerprint needs exact access flags (public final) ([bdd2776](https://github.com/mwbra130/Retro-Bowl-College/commit/bdd2776fa425be097e957006814cc0f92795cc93))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.33.1/patches-1.33.1.mpp",
+  "created_at": "2026-11-02T15:32:44",
+  "description": "## [1.33.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.33.1...v1.33.2) (2026-11-02)\n\n### 🐛 Bug Fixes\n\n* **gradientweather:** add getReference instruction util ([9719eb8](https://github.com/mwbra130/Retro-Bowl-College/commit/9719eb811b7d54ed62705c2a73f34767157eb5fd))\n* **gradientweather:** import getReference from app.zdrgon.util ([3fa57e3](https://github.com/mwbra130/Retro-Bowl-College/commit/3fa57e3b5f3813c915b7c3677aa2ee959f325bf8))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.33.2/patches-1.33.2.mpp",
   "signature_download_url": "",
-  "version": "1.33.1"
+  "version": "1.33.2"
 }
