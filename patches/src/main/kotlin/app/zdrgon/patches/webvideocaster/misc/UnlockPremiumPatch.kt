@@ -1,6 +1,5 @@
 package app.zdrgon.patches.webvideocaster.misc
 
-import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.extensions.InstructionExtensions.instructions
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
@@ -8,7 +7,9 @@ import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.zdrgon.patches.webvideocaster.shared.Constants.COMPATIBILITY_WEB_VIDEO_CASTER
 import app.zdrgon.util.getReference
+import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
+import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.formats.Instruction35c
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import com.android.tools.smali.dexlib2.iface.reference.MethodReference
@@ -43,10 +44,15 @@ import java.util.logging.Logger
  *    WebVideoCasterApplication.s() ("Premium user, no need to
  *    initialize ads") — sees the active entitlement.
  *
- * 2. In the same method, the Boolean that is about to be stored into
- *    Le89;->c is forced to true (const/4 into the valueOf argument
- *    register), so the hasPremium flow reports premium regardless of
- *    the account-linking sub-branches in the original computation.
+ * 2. In the same method, the single "has premium = false" assignment
+ *    (move v4, v1, where v1 holds 0, right before the Boolean store
+ *    into Le89;->c) is replaced with const/4 v4, 0x1, so the
+ *    hasPremium flow reports premium regardless of the
+ *    account-linking sub-branches in the original computation. An
+ *    insert before the valueOf call would be dead code: every real
+ *    path reaches that call through a goto, and branch targets bind
+ *    to the target instruction, skipping inserted instructions —
+ *    verified in the v1.35.0 Desktop output dex and fixed here.
  *
  * 3. Le89;-><init> seeds Le89;->c with Boolean.FALSE; that one
  *    sget-object is flipped to Boolean.TRUE so the flow is premium
@@ -98,7 +104,10 @@ val unlockPremiumPatch = bytecodePatch(
                 """.trimIndent(),
             )
 
-            // Edit 2 — force the hasPremium Boolean store to true.
+            // Edit 2 — force the hasPremium Boolean store to true by
+            // rewriting the method's one "result = false" move. The
+            // Boolean.valueOf argument register identifies the result
+            // register; the only plain MOVE into it is the false path.
             val insns = instructions.toList()
             val valueOfIndex = insns.indexOfFirst { insn ->
                 val ref = insn.getReference<MethodReference>()
@@ -109,7 +118,16 @@ val unlockPremiumPatch = bytecodePatch(
             }
             val valueOf = insns[valueOfIndex] as? Instruction35c
                 ?: throw PatchException("Boolean.valueOf call is not a 35c invoke.")
-            addInstruction(valueOfIndex, "const/4 v${valueOf.registerC}, 0x1")
+            val resultRegister = valueOf.registerC
+            val falseMoves = insns.indices.filter { idx ->
+                val insn = insns[idx]
+                insn.opcode == Opcode.MOVE &&
+                    (insn as? TwoRegisterInstruction)?.registerA == resultRegister
+            }
+            if (falseMoves.size != 1) {
+                throw PatchException("Expected exactly one false assignment to the premium result register, found ${falseMoves.size}.")
+            }
+            replaceInstruction(falseMoves[0], "const/4 v$resultRegister, 0x1")
         }
         logger.info("Web Video Caster: premium setter now wraps every account as entitled and stores hasPremium = true.")
 
