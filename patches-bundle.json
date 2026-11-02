@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-02T18:28:17",
-  "description": "## [1.37.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.37.0...v1.37.1) (2026-11-02)\n\n### 🐛 Bug Fixes\n\n* **poweramp:** merge output-pair probes and resolve all signatures before applying (overlapping split signatures missed after sibling rewrite) ([1419bc0](https://github.com/mwbra130/Retro-Bowl-College/commit/1419bc0b708ffc38d7de6a90c8a9b66513c2c380))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.37.1/patches-1.37.1.mpp",
+  "created_at": "2026-11-02T18:43:57",
+  "description": "## [1.38.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.37.1...v1.38.0) (2026-11-02)\n\n### ✨ New Features\n\n* add Disable PairIP startup program patch for Web Video Caster ([40e2866](https://github.com/mwbra130/Retro-Bowl-College/commit/40e28665c49a99951cbf39057fe5f241e57da7e4))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.38.0/patches-1.38.0.mpp",
   "signature_download_url": "",
-  "version": "1.37.1"
+  "version": "1.38.0"
 }

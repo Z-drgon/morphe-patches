@@ -30,7 +30,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 ---
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.37.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.37.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;29 patches total
+> **[v1.38.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.38.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;30 patches total
 <details open>
 <summary>Strava&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
@@ -102,7 +102,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 </details>
 
 <details open>
-<summary>Web Video Caster&nbsp;&nbsp;•&nbsp;&nbsp;4 patches</summary>
+<summary>Web Video Caster&nbsp;&nbsp;•&nbsp;&nbsp;5 patches</summary>
 <br>
 
 **Supported versions:**
@@ -115,6 +115,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 | [Bypass PairIP license check](#bypass-pairip-license-check) | Required for re-signed builds: PairIP asks Google Play to license the app at startup and sends non-Play installs to a Play Store block page. Disables that check, its verdict handler, both block-page launchers, the delayed shutdown, and the block activity itself so the patched app can open. |  |
 | [Bypass PairIP signature check](#bypass-pairip-signature-check) | Required for re-signed builds: PairIP checks the APK signature at startup and crashes the app on launch when it is not the developer's. Disables that one check so the patched app can start. |  |
 | [Disable PairIP license activity](#disable-pairip-license-activity) | Required for re-signed builds: disables PairIP's LicenseActivity component in the manifest, so the Play Store block page and license error dialog can never be shown, whatever tries to open them. |  |
+| [Disable PairIP startup program](#disable-pairip-startup-program) | Experimental: PairIP runs an encrypted startup program before the app itself starts, earlier than every other check, and it is the only code left that can open the Play Store block page. Stops that program from running. If the app will not start with this on, turn just this patch off. |  |
 | [Unlock premium](#unlock-premium) | Unlocks Web Video Caster Premium (ad removal, ad block, bookmarks, queue and the other premium features). No real purchase is made. |  |
 
 </details>

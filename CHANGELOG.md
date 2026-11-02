@@ -1,3 +1,9 @@
+## [1.38.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.37.1...v1.38.0) (2026-11-02)
+
+### ✨ New Features
+
+* add Disable PairIP startup program patch for Web Video Caster ([40e2866](https://github.com/mwbra130/Retro-Bowl-College/commit/40e28665c49a99951cbf39057fe5f241e57da7e4))
+
 ## [1.37.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.37.0...v1.37.1) (2026-11-02)
 
 ### 🐛 Bug Fixes
