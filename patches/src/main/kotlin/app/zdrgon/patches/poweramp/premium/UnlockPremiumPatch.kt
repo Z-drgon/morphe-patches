@@ -25,6 +25,7 @@ import com.android.tools.smali.dexlib2.iface.Method
 import com.android.tools.smali.dexlib2.iface.instruction.NarrowLiteralInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
+import com.android.tools.smali.dexlib2.iface.instruction.formats.Instruction35c
 import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import com.android.tools.smali.dexlib2.iface.reference.MethodReference
@@ -428,7 +429,16 @@ val unlockPremiumPatch = bytecodePatch(
         }.lastOrNull()?.index ?: throw PatchException(
             "Poweramp: initializer for Feature Package #1 state not found before the field store.",
         )
-        classInitializer.addInstructions(featureStateInitializerIndex, "const/4 v2, $FEATURE_PACKAGE_PURCHASED")
+        val featureInitializerRegister = (
+            classInitializer.instructions[featureStateInitializerIndex] as? Instruction35c
+            )?.registerD
+            ?: throw PatchException(
+                "Poweramp: Feature Package state initializer call shape changed.",
+            )
+        classInitializer.addInstructions(
+            featureStateInitializerIndex,
+            "const/4 v$featureInitializerRegister, $FEATURE_PACKAGE_PURCHASED",
+        )
 
         val preferenceStore = classDefByStrings("hide_verified").singleOrNull()
             ?: throw PatchException(
@@ -439,6 +449,33 @@ val unlockPremiumPatch = bytecodePatch(
                 "Poweramp: class matched by hide_verified is missing luae; wrong preference class.",
             )
         }
+        // Force a state holder's value at its restore-time store. The 1025 code inserted
+        // a const into a hardcoded register (v1) in front of the field reference; in 1031
+        // the loaded preference value travels in a different register, which left the
+        // const dead and the stored value untouched. Derive the value register from the
+        // holder setter call itself: the first (I)V invoke after the field reference
+        // whose argument list is exactly (holder, value).
+        fun stateStoreForceIndexAndRegister(
+            method: MutableMethod,
+            label: String,
+            fieldName: String,
+        ): Pair<Int, Int> {
+            val referenceIndex = method.singleStateFieldReferenceIndex(label, fieldName)
+            val setter = method.instructions.withIndex().drop(referenceIndex + 1)
+                .firstOrNull { (_, instruction) ->
+                    val reference =
+                        (instruction as? ReferenceInstruction)?.reference as? MethodReference
+                    reference != null &&
+                        reference.parameterTypes == listOf("I") &&
+                        reference.returnType == "V" &&
+                        (instruction as? Instruction35c)?.registerCount == 2
+                } ?: throw PatchException(
+                "Poweramp: state setter call not found after $fieldName in $label.",
+            )
+            val valueRegister = (setter.value as Instruction35c).registerD
+            return setter.index to valueRegister
+        }
+
         val mutablePreferenceStore = mutableClassDefBy(preferenceStore)
         val restoreLicenseState = mutablePreferenceStore.methods.singleOrNull { method ->
             method.stringLiterals().let { strings ->
@@ -447,17 +484,28 @@ val unlockPremiumPatch = bytecodePatch(
         } ?: throw PatchException(
             "Poweramp: shared preference restore method for license state not found.",
         )
-        restoreLicenseState.addInstructions(
-            restoreLicenseState.singleLicenseStateReferenceIndex("shared preference restore"),
-            "const/16 v1, $FULL_VERIFIED_CACHED",
+        // Resolve both store sites before editing: inserting shifts later indices, so
+        // apply the forces in descending index order.
+        val licenseStoreForce = stateStoreForceIndexAndRegister(
+            restoreLicenseState,
+            "shared preference restore",
+            "H",
         )
-        restoreLicenseState.addInstructions(
-            restoreLicenseState.singleStateFieldReferenceIndex(
-                "shared preference restore",
-                featurePackageStateFieldName,
-            ),
-            "const/4 v1, $FEATURE_PACKAGE_PURCHASED",
+        val featureStoreForce = stateStoreForceIndexAndRegister(
+            restoreLicenseState,
+            "shared preference restore",
+            featurePackageStateFieldName,
         )
+        val storeForces = listOf(
+            licenseStoreForce to "const/16 v\$REG, $FULL_VERIFIED_CACHED",
+            featureStoreForce to "const/4 v\$REG, $FEATURE_PACKAGE_PURCHASED",
+        ).sortedByDescending { (force, _) -> force.first }
+        for ((force, template) in storeForces) {
+            restoreLicenseState.addInstructions(
+                force.first,
+                template.replace("\$REG", force.second.toString()),
+            )
+        }
 
         val onCreate = baseApplication.methods.singleOrNull { method ->
             method.name == "onCreate" &&
