@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-02T22:32:10",
-  "description": "## [1.42.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.42.0...v1.42.1) (2026-11-02)\n\n### 🐛 Bug Fixes\n\n* **webvideocaster:** kill PairIP checks at the Application call site, remove LicenseActivity from manifest ([a571735](https://github.com/mwbra130/Retro-Bowl-College/commit/a5717350a32abe2525ca75b139165214b2d0b471))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.42.1/patches-1.42.1.mpp",
+  "created_at": "2026-11-02T22:35:00",
+  "description": "## [1.42.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.42.1...v1.42.2) (2026-11-02)\n\n### 🐛 Bug Fixes\n\n* **rainviewer:** pin premium status at the eh5 chokepoint (h/j) — tw7 sync is not the only writer ([3c3aefd](https://github.com/mwbra130/Retro-Bowl-College/commit/3c3aefdcf6eeaeada9a8969fd5f063523c64c5ad))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.42.2/patches-1.42.2.mpp",
   "signature_download_url": "",
-  "version": "1.42.1"
+  "version": "1.42.2"
 }

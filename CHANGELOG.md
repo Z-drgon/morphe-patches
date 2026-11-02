@@ -1,3 +1,9 @@
+## [1.42.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.42.1...v1.42.2) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **rainviewer:** pin premium status at the eh5 chokepoint (h/j) — tw7 sync is not the only writer ([3c3aefd](https://github.com/mwbra130/Retro-Bowl-College/commit/3c3aefdcf6eeaeada9a8969fd5f063523c64c5ad))
+
 ## [1.42.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.42.0...v1.42.1) (2026-11-02)
 
 ### 🐛 Bug Fixes
