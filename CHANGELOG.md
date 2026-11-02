@@ -1,3 +1,9 @@
+## [1.38.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.38.0...v1.38.1) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* correct StartupLauncher fingerprint flags for Web Video Caster (DECLARED_SYNCHRONIZED, not SYNCHRONIZED) ([3137f99](https://github.com/mwbra130/Retro-Bowl-College/commit/3137f99f68e5e5a0ffce7a79e9946a84e8f3b443))
+
 ## [1.38.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.37.1...v1.38.0) (2026-11-02)
 
 ### ✨ New Features
