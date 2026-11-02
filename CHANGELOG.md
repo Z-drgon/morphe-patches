@@ -1,3 +1,9 @@
+## [1.41.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.41.0...v1.41.1) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **webvideocaster:** remove startup-interference patches that crash the app ([b3143cd](https://github.com/mwbra130/Retro-Bowl-College/commit/b3143cdb634ba72f14ba5f6968f430971df1a66f))
+
 ## [1.41.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.40.0...v1.41.0) (2026-11-02)
 
 ### ✨ New Features
