@@ -18,6 +18,11 @@ import com.android.tools.smali.dexlib2.AccessFlags
  * Unity IAP fetches owned purchases through this call at store init. The
  * patch wraps it so the game's listener receives a forged owned purchase
  * for the VIP product alongside whatever Play actually returns.
+ *
+ * NOTE: Morphe fingerprints compare access flags by EXACT equality
+ * (Fingerprint.kt: accessFlagsLocal != method.accessFlags), and this
+ * billing build declares the method "public final" — PUBLIC alone does
+ * not match (v1.33.0 failed on exactly this). Both flags are required.
  */
 object QueryPurchasesAsyncFingerprint : Fingerprint(
     returnType = "V",
@@ -25,7 +30,7 @@ object QueryPurchasesAsyncFingerprint : Fingerprint(
         "Lcom/android/billingclient/api/QueryPurchasesParams;",
         "Lcom/android/billingclient/api/PurchasesResponseListener;"
     ),
-    accessFlags = listOf(AccessFlags.PUBLIC),
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
     definingClass = "Lcom/android/billingclient/api/BillingClientImpl;",
     name = "queryPurchasesAsync"
 )
