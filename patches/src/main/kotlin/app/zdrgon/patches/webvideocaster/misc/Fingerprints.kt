@@ -344,3 +344,46 @@ object StartupLauncherFingerprint : Fingerprint(
     parameters = listOf(),
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC, AccessFlags.DECLARED_SYNCHRONIZED),
 )
+
+// ── PairIP init context / instrumentation (classes2.dex), round 6 ────
+//
+// Round 5's device verdict split the startup program in two: with
+// StartupLauncher.launch() stubbed (v1.38.1) the Play Store block
+// page is GONE — the encrypted startup module was the actor opening
+// it — but the app now crashes on launch, so the same program also
+// performs initialization the runtime depends on. Round 6 therefore
+// leaves the program running and cuts only its ability to start
+// activities.
+//
+// The dex-side plumbing (all in classes2.dex, read from the stock
+// dex): every VMRunner.invoke(...) call — the startup program and
+// all 20 SDK trampolines alike — first calls
+// InitContextProvider.tryToCreateContextForBindingApp(), which
+// reflectively builds an app Context (ActivityThread.currentActivityThread
+// -> mBoundApplication -> AppBindData.info (LoadedApk) ->
+// ContextImpl.createAppContext) and, as its last step before
+// returning that Context, calls the method fingerprinted below to
+// install a basic Instrumentation into
+// ActivityThread.mInstrumentation. That install is the VM's
+// activity-start enabler for the pre-Application window: a census
+// of all 8 dexes finds exactly ONE "mInstrumentation" const-string
+// in the entire app, inside this method. The class declares only
+// <init>, tryToCreateContextForBindingApp and this method, and this
+// method's only dex caller is tryToCreateContextForBindingApp.
+
+/**
+ * Lcom/pairip/InitContextProvider;->tryToInitializeBasicInstrumentationForStartActivity(Ljava/lang/Class;Ljava/lang/Object;)V
+ * — reflectively replaces ActivityThread.mInstrumentation with a
+ * fresh android.app.Instrumentation (0x000a PRIVATE STATIC, verified
+ * in the 6.1.0 dex via dexdump; both of its const-strings, the field
+ * name "mInstrumentation" and the class name
+ * "android.app.Instrumentation", are in the method body).
+ */
+object InitContextInstrumentationFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/InitContextProvider;",
+    name = "tryToInitializeBasicInstrumentationForStartActivity",
+    returnType = "V",
+    parameters = listOf("Ljava/lang/Class;", "Ljava/lang/Object;"),
+    accessFlags = listOf(AccessFlags.PRIVATE, AccessFlags.STATIC),
+    strings = listOf("mInstrumentation", "android.app.Instrumentation"),
+)
