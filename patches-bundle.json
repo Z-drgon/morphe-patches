@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-02T18:12:10",
-  "description": "## [1.36.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.36.1...v1.36.2) (2026-11-02)\n\n### 🐛 Bug Fixes\n\n* **poweramp:** force signature-check field to valid after last store (1031 onCreate has no const/4 v2,0) ([1f52555](https://github.com/mwbra130/Retro-Bowl-College/commit/1f525551b8becc79fea15d599e3401fb99db6abe))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.36.2/patches-1.36.2.mpp",
+  "created_at": "2026-11-02T18:18:14",
+  "description": "## [1.36.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.36.2...v1.36.3) (2026-11-02)\n\n### 🐛 Bug Fixes\n\n* **poweramp:** find FeaturePackPref purchased store structurally (1031 renamed BuyPrefBase.n); derive controller state field instead of hardcoded f ([6d2a943](https://github.com/mwbra130/Retro-Bowl-College/commit/6d2a9436ee0fc76d4ea6055af50dc594756ef061))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.36.3/patches-1.36.3.mpp",
   "signature_download_url": "",
-  "version": "1.36.2"
+  "version": "1.36.3"
 }

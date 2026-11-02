@@ -1,3 +1,9 @@
+## [1.36.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.36.2...v1.36.3) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **poweramp:** find FeaturePackPref purchased store structurally (1031 renamed BuyPrefBase.n); derive controller state field instead of hardcoded f ([6d2a943](https://github.com/mwbra130/Retro-Bowl-College/commit/6d2a9436ee0fc76d4ea6055af50dc594756ef061))
+
 ## [1.36.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.36.1...v1.36.2) (2026-11-02)
 
 ### 🐛 Bug Fixes
