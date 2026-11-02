@@ -1,3 +1,13 @@
+## [1.36.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.35.3...v1.36.0) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **webvideocaster:** bypass PairIP license check so re-signed builds are not sent to the Play block page ([9169d5c](https://github.com/mwbra130/Retro-Bowl-College/commit/9169d5c4f01e63dfe6bb1f823ca4ec436199b2bb))
+
+### ✨ New Features
+
+* **poweramp:** port hooman Unlock Premium to build-1031 (dex anchors verified, native probes pending) ([654fbfa](https://github.com/mwbra130/Retro-Bowl-College/commit/654fbfa290ba71305051d289ab7921be127a6fe7))
+
 ## [1.35.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.35.2...v1.35.3) (2026-11-02)
 
 ### 🐛 Bug Fixes

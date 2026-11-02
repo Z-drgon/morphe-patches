@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.35.3",
+  "version": "1.36.0",
   "patches": [
     {
       "name": "Add settings",
@@ -89,6 +89,32 @@
           "targets": [
             {
               "version": "3.97.1",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Bypass PairIP license check",
+      "description": "Required for re-signed builds: PairIP asks Google Play to license the app at startup and sends non-Play installs to a Play Store block page. Disables that check so the patched app can open.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.instantbits.cast.webvideo",
+          "name": "Web Video Caster",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#3F51B5",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "6.1.0",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
@@ -737,6 +763,34 @@
             },
             {
               "version": "1.45",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Unlock Premium",
+      "description": "Unlocks Poweramp's full version state and Feature Package #1.",
+      "default": true,
+      "dependencies": [
+        "RawResourcePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.maxmpz.audioplayer",
+          "name": "Poweramp",
+          "description": null,
+          "apkFileType": null,
+          "appIconColor": "#FF6A00",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "build-1031-bundle-play",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
