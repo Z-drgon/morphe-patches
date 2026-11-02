@@ -73,7 +73,7 @@ val bypassPairipApplicationPatch = bytecodePatch(
         PairipApplicationAttachFingerprint.method.addInstructions(
             1,
             """
-                invoke-super {p0, p1}, Lcom/pairip/application/Application;->attachBaseContext:(Landroid/content/Context;)V
+                invoke-super {p0, p1}, Lcom/pairip/application/Application;->attachBaseContext(Landroid/content/Context;)V
                 return-void
             """.trimIndent(),
         )
