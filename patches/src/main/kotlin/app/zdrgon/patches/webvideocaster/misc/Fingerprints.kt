@@ -53,3 +53,32 @@ object PremiumManagerInitFingerprint : Fingerprint(
     parameters = listOf("Lcom/instantbits/cast/webvideo/WebVideoCasterApplication;"),
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.CONSTRUCTOR),
 )
+
+/**
+ * Lcom/pairip/SignatureCheck;->verifyIntegrity(Landroid/content/Context;)V
+ * (classes2.dex, PUBLIC STATIC, verified in the 6.1.0 dex).
+ *
+ * PairIP's Application class (com.pairip.application.Application, the
+ * app's real Application) calls this FIRST in attachBaseContext —
+ * before LicenseClient.checkLicense and before the app's own
+ * attachBaseContext/onCreate, with no try/catch around it. The method
+ * SHA-256-hashes the installed app's signing certificate and throws
+ * SignatureCheck$SignatureTamperedException ("Apk signature is
+ * invalid.") unless it matches PairIP's expected developer signature
+ * (or a hardcoded test signature). Any re-signed build — Morphe
+ * Manager's key included — therefore crashes uncatchably at process
+ * start, which is exactly the on-device crash of the v1.35.1 test
+ * build ("app crashed" dialog on launch). Gradient Weather ships an
+ * older PairIP config whose Application has NO SignatureCheck at all
+ * (attachBaseContext there only calls LicenseClient.checkLicense),
+ * which is why Gradient survives re-signing with just the installer
+ * spoof and WVC does not.
+ */
+object SignatureCheckFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/SignatureCheck;",
+    name = "verifyIntegrity",
+    returnType = "V",
+    parameters = listOf("Landroid/content/Context;"),
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    strings = listOf("Apk signature is invalid.", "Signature check ok"),
+)
