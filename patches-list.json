@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.36.3",
+  "version": "1.37.0",
   "patches": [
     {
       "name": "Add settings",
@@ -101,7 +101,7 @@
     },
     {
       "name": "Bypass PairIP license check",
-      "description": "Required for re-signed builds: PairIP asks Google Play to license the app at startup and sends non-Play installs to a Play Store block page. Disables that check so the patched app can open.",
+      "description": "Required for re-signed builds: PairIP asks Google Play to license the app at startup and sends non-Play installs to a Play Store block page. Disables that check, its verdict handler, both block-page launchers, the delayed shutdown, and the block activity itself so the patched app can open.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -334,6 +334,32 @@
           }
         }
       ]
+    },
+    {
+      "name": "Disable PairIP license activity",
+      "description": "Required for re-signed builds: disables PairIP's LicenseActivity component in the manifest, so the Play Store block page and license error dialog can never be shown, whatever tries to open them.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.instantbits.cast.webvideo",
+          "name": "Web Video Caster",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#3F51B5",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "6.1.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
     },
     {
       "name": "Disable video autoplay",

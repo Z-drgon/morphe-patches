@@ -1,3 +1,12 @@
+## [1.37.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.36.3...v1.37.0) (2026-11-02)
+
+### ✨ New Features
+
+* **poweramp:** re-derived 1031 native probe set (21 signatures vs libpowerampcore table slot 0x98f060, strict matching restored) ([615047d](https://github.com/mwbra130/Retro-Bowl-College/commit/615047d22566f90b3817a8d5b7bccd1a4717c9f8))
+* **webvideocaster:** add Disable PairIP license activity manifest patch ([21c3d47](https://github.com/mwbra130/Retro-Bowl-College/commit/21c3d47e4d4ecb38168ba02a9eeede855518089d))
+* **webvideocaster:** add round-3 PairIP license fingerprints (verdict handler, launchers, shutdown, activity) ([faa3bff](https://github.com/mwbra130/Retro-Bowl-College/commit/faa3bff4a36356648506b7daeb10335b21add6ef))
+* **webvideocaster:** stub PairIP verdict handler, launchers, delayed shutdown and license activity ([8571006](https://github.com/mwbra130/Retro-Bowl-College/commit/857100608d37a94ab5caba7b3342802e617cbdc4))
+
 ## [1.36.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.36.2...v1.36.3) (2026-11-02)
 
 ### 🐛 Bug Fixes
