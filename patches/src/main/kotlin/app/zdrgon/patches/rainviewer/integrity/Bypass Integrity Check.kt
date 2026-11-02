@@ -49,6 +49,15 @@ val bypassIntegrityCheckPatch = bytecodePatch(
         // dead pre-allocation with no throw after it). Return true (OK)
         // instead of throwing, leaving every other response code — 88,
         // 400, 5001, 5002, 5009, 11404 — handled exactly as stock.
+        //
+        // The return is inserted at the THROW, not at the new-instance:
+        // the throw blocks at the end of the method are reached by
+        // branches that target the new-instance instruction itself, and
+        // instructions inserted at a branch target are skipped by the
+        // branch-taken path. The throw is reached by fall-through from
+        // the <init> call, so inserting there intercepts every path.
+        // (First shipped version inserted at the new-instance; on-device
+        // the blocked screen still flashed once when an 81 came back.)
         ApiResponseCodeFingerprint.method.run {
             val insns = instructions.toList()
             val blockedIndex = insns.indices.firstOrNull { idx ->
@@ -61,7 +70,7 @@ val bypassIntegrityCheckPatch = bytecodePatch(
             } ?: throw PatchException("Could not find the blocked (81) throw in the API response checker.")
             val register = (insns[blockedIndex] as OneRegisterInstruction).registerA
             addInstructions(
-                blockedIndex,
+                blockedIndex + 2,
                 "const/4 v$register, 0x1\n" +
                     "return v$register",
             )
