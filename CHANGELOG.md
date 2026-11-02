@@ -1,3 +1,9 @@
+## [1.35.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.35.2...v1.35.3) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **webvideocaster:** bypass PairIP signature check so re-signed builds can start ([9fc1658](https://github.com/mwbra130/Retro-Bowl-College/commit/9fc16587b3a3cb953c357d6a8ede372f7118a04c))
+
 ## [1.35.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.35.1...v1.35.2) (2026-11-02)
 
 ### 🐛 Bug Fixes
