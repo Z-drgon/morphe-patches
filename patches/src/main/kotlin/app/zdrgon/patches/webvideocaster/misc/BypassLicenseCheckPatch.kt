@@ -64,6 +64,38 @@ import java.util.logging.Logger
  * bodies (not VM-virtualized). Required for ANY re-signed WVC build
  * to open, with or without the premium unlock, so it defaults on.
  *
+ * Round 3 (defense in depth): on-device, the block page persisted on
+ * a fresh, current bundle with every patch enabled and the round-2
+ * stubs verified in the output dex. A full execution-mode audit of
+ * the stock app (all 8 dexes + the PairIP VM assets + the native
+ * lib) found no independent paywall route — no other dex references
+ * the license classes at all, the encrypted VM modules and
+ * libpairipcore.so hold no LicenseActivity/paywall strings, and no
+ * licensecheck method is VM-executed (VMRunner.invoke has exactly
+ * five callers in classes2.dex, none of them license code) — so the
+ * remaining work is to close every downstream dex chokepoint as
+ * well, in case any path reaches the verdict machinery without
+ * going through the stubbed entries:
+ *   processResponse          -> return immediately (the verdict
+ *                               handler; its only caller is the
+ *                               service binder callback, and code 2
+ *                               is the only route to the paywall).
+ *   startPaywallActivity /
+ *   startErrorDialogActivity -> return immediately (the only two
+ *                               methods that can start LicenseActivity).
+ *   scheduleAppShutdown      -> return immediately, and the
+ *                               exitAction Runnable (LicenseClient$1)
+ *                               it schedules is emptied too, so
+ *                               PairIP's delayed System.exit shutdown
+ *                               is dead at both ends.
+ *   LicenseActivity.onStart  -> finish() + return (the activity has
+ *                               no onCreate; even if started, it
+ *                               displays nothing).
+ * The companion resource patch "Disable PairIP license activity"
+ * additionally sets android:enabled="false" on LicenseActivity in
+ * the manifest, the one chokepoint no in-process code path — dex,
+ * VM, or native — can bypass.
+ *
  * Release note: the first v1.35.4 CI run compiled this patch green
  * but semantic-release lost a push race against another commit
  * landing on main mid-run, so the release is re-cut from this
@@ -72,7 +104,7 @@ import java.util.logging.Logger
 @Suppress("unused")
 val bypassLicenseCheckPatch = bytecodePatch(
     name = "Bypass PairIP license check",
-    description = "Required for re-signed builds: PairIP asks Google Play to license the app at startup and sends non-Play installs to a Play Store block page. Disables that check so the patched app can open.",
+    description = "Required for re-signed builds: PairIP asks Google Play to license the app at startup and sends non-Play installs to a Play Store block page. Disables that check, its verdict handler, both block-page launchers, the delayed shutdown, and the block activity itself so the patched app can open.",
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_WEB_VIDEO_CASTER)
@@ -95,5 +127,32 @@ val bypassLicenseCheckPatch = bytecodePatch(
 
         HandleTrialEndFingerprint.method.addInstructions(0, "return-void")
         logger.info("Web Video Caster: PairIP trial-end re-check disabled (LicenseClient.handleTrialEnd returns immediately).")
+
+        // Round 3: downstream chokepoints, so the block page cannot be
+        // reached even if some path lands in the verdict machinery
+        // without passing through the stubbed entry points above.
+        ProcessResponseFingerprint.method.addInstructions(0, "return-void")
+        logger.info("Web Video Caster: PairIP license verdict handler disabled (LicenseClient.processResponse returns immediately).")
+
+        StartPaywallActivityFingerprint.method.addInstructions(0, "return-void")
+        logger.info("Web Video Caster: PairIP paywall launcher disabled (LicenseClient.startPaywallActivity returns immediately).")
+
+        StartErrorDialogActivityFingerprint.method.addInstructions(0, "return-void")
+        logger.info("Web Video Caster: PairIP error-dialog launcher disabled (LicenseClient.startErrorDialogActivity returns immediately).")
+
+        ScheduleAppShutdownFingerprint.method.addInstructions(0, "return-void")
+        logger.info("Web Video Caster: PairIP delayed shutdown disabled (LicenseClient.scheduleAppShutdown returns immediately).")
+
+        ExitActionFingerprint.method.addInstructions(0, "return-void")
+        logger.info("Web Video Caster: PairIP exit action emptied (LicenseClient\$1.run returns immediately).")
+
+        LicenseActivityOnStartFingerprint.method.addInstructions(
+            0,
+            """
+                invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+                return-void
+            """.trimIndent(),
+        )
+        logger.info("Web Video Caster: PairIP license activity neutralized (LicenseActivity.onStart finishes immediately).")
     }
 }
