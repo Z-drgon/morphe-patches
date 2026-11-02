@@ -1,3 +1,9 @@
+## [1.36.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.36.1...v1.36.2) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **poweramp:** force signature-check field to valid after last store (1031 onCreate has no const/4 v2,0) ([1f52555](https://github.com/mwbra130/Retro-Bowl-College/commit/1f525551b8becc79fea15d599e3401fb99db6abe))
+
 ## [1.36.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.36.0...v1.36.1) (2026-11-02)
 
 ### 🐛 Bug Fixes
