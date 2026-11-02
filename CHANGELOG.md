@@ -1,3 +1,9 @@
+## [1.36.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.36.0...v1.36.1) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **webvideocaster:** re-cut 1.35.4 after semantic-release push race (build was green) ([cdb61e4](https://github.com/mwbra130/Retro-Bowl-College/commit/cdb61e4dbd5188655287332ecaad2fb520d8582e))
+
 ## [1.36.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.35.3...v1.36.0) (2026-11-02)
 
 ### 🐛 Bug Fixes
