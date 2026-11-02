@@ -65,5 +65,29 @@ val enablePremiumPatch = bytecodePatch(
             addInstruction(castIndex + 1, "sget-object v$register, Lhw7;->e:Lhw7;")
         }
         logger.info("RainViewer: local premium status pinned to PRO.")
+
+        // Chokepoint pin, added after the first on-device test: integrity
+        // passed but premium still showed FREE. The tw7 sync is not the
+        // only writer of the feature state — a prefs-restore collector
+        // (Lv24;) re-applies the persisted status int directly into
+        // Leh5;->j, bypassing tw7, and Leh5;->h skips its delegate call
+        // when the incoming status equals the current one. Every status
+        // application in the app funnels through Leh5;->j, so overwrite
+        // the status parameter at the entry of both j and h: whatever any
+        // caller computed, PRO is what gets applied to the flows every
+        // gate reads.
+        //
+        // Both methods have descriptor (Lft0;Lhw7;Z)Ljava/lang/Object;
+        // with all single-width parameters, so the status parameter is
+        // the second-to-last register (registerCount - 2): v11 of 13 in
+        // j, v6 of 8 in h — verified against the dex.
+        listOf(FeatureStatusApplyFingerprint, FeatureStatusUpdateFingerprint).forEach { fingerprint ->
+            fingerprint.method.run {
+                val registerCount = implementation?.registerCount
+                    ?: throw PatchException("Feature status method has no implementation.")
+                addInstruction(0, "sget-object v${registerCount - 2}, Lhw7;->e:Lhw7;")
+            }
+        }
+        logger.info("RainViewer: feature status apply pinned to PRO.")
     }
 }

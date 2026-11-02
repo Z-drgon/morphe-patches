@@ -42,3 +42,38 @@ internal object LocalPremiumStatusFingerprint : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
     strings = listOf("premium_v1", "premium"),
 )
+
+/**
+ * Leh5;->j(Lft0;Lhw7;Z)Ljava/lang/Object; — the single chokepoint every
+ * premium status application funnels through: the tw7 sync (via h), and a
+ * prefs-restore collector (Lv24;) that re-applies the persisted status int
+ * straight into j, bypassing tw7 entirely. j logs the applied status and
+ * pushes it into the StateFlows all feature gates read. Overwriting its
+ * status parameter at entry pins every path at once.
+ *
+ * Register math verified from the dex: j has 13 registers; parameters sit
+ * in the top four (v9 = this, v10 = continuation, v11 = status, v12 =
+ * boolean), so the status register is registerCount - 2.
+ */
+internal object FeatureStatusApplyFingerprint : Fingerprint(
+    definingClass = "Leh5;",
+    name = "j",
+    returnType = "Ljava/lang/Object;",
+    parameters = listOf("Lft0;", "Lhw7;", "Z"),
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    strings = listOf("UserPremiumStatus is now "),
+)
+
+/**
+ * Leh5;->h(Lft0;Lhw7;Z)Ljava/lang/Object; — the guarded entry the tw7
+ * sync uses: it skips j entirely when the incoming status equals the
+ * current one, so pin h's status parameter too (8 registers, status at
+ * registerCount - 2 = v6) to guarantee the pinned value always reaches j.
+ */
+internal object FeatureStatusUpdateFingerprint : Fingerprint(
+    definingClass = "Leh5;",
+    name = "h",
+    returnType = "Ljava/lang/Object;",
+    parameters = listOf("Lft0;", "Lhw7;", "Z"),
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+)
