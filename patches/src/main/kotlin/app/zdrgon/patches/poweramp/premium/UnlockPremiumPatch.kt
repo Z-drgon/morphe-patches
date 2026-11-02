@@ -62,7 +62,10 @@ private fun movW(register: Int, value: Int): ByteArray {
 // 1031 probe set, re-derived from build-1031's libpowerampcore.so on 2026-11-02 (the 1025
 // signatures match nothing in the recompiled library). All 21 ldrb sites that read the
 // cert/buildstamp byte table (global slot 0x98f060, the 1031 counterpart of 1025's
-// 0x888060) are pinned: guards forced to the pass value, size multipliers to 1. Every
+// 0x888060) are pinned: guards forced to the pass value, size multipliers to 1. The four
+// output-size sites read two table bytes 8 bytes apart, so each is a single probe whose
+// replacement rewrites both loads (a split probe's signature would contain the sibling
+// load the previous probe just replaced, and sequential matching would miss it). Every
 // signature was verified to occur exactly once in the 1031 library. Unlike 1025, a
 // failed signature verification in 1031 installs a random-filled 0x400-byte table
 // instead of null, so no buildstamp writer/hash probes are needed: nothing can
@@ -159,42 +162,58 @@ private val arm64NativeProbePatches = listOf(
         replacement = movW(register = 8, value = 1),
     ),
     NativeProbePatch(
-        label = "output-pair1-269",
-        signature = ints(
-            0xE0, 0x03, 0x80, 0x3D, 0x48, 0x34, 0x00, 0x90,
-            0x08, 0x31, 0x40, 0xF9, 0x09, 0xA5, 0x49, 0x39,
-            0xE2, 0x7E, 0x09, 0x1B,
-        ),
-        offset = 12,
-        replacement = movW(register = 9, value = 1),
-    ),
-    NativeProbePatch(
-        label = "output-pair1-22b",
+        label = "output-pair1",
         signature = ints(
             0x48, 0x34, 0x00, 0x90, 0x08, 0x31, 0x40, 0xF9,
             0x09, 0xA5, 0x49, 0x39, 0xE2, 0x7E, 0x09, 0x1B,
             0x08, 0xAD, 0x48, 0x39, 0xC3, 0x7E, 0x08, 0x1B,
         ),
-        offset = 16,
-        replacement = movW(register = 8, value = 1),
+        offset = 8,
+        replacement = ints(
+            0x29, 0x00, 0x80, 0x52, 0xE2, 0x7E, 0x09, 0x1B,
+            0x28, 0x00, 0x80, 0x52, 0xC3, 0x7E, 0x08, 0x1B,
+        ),
     ),
     NativeProbePatch(
-        label = "output-pair2-269",
+        label = "output-pair2",
         signature = ints(
             0x48, 0x34, 0x00, 0x90, 0x08, 0x31, 0x40, 0xF9,
             0x09, 0xA5, 0x49, 0x39, 0x3F, 0x05, 0x00, 0x71,
+            0x01, 0x16, 0x00, 0x54, 0x08, 0xAD, 0x48, 0x39,
+            0x1F, 0x05, 0x00, 0x71,
         ),
         offset = 8,
-        replacement = movW(register = 9, value = 1),
+        replacement = ints(
+            0x29, 0x00, 0x80, 0x52, 0x3F, 0x05, 0x00, 0x71,
+            0x01, 0x16, 0x00, 0x54, 0x28, 0x00, 0x80, 0x52,
+            0x1F, 0x05, 0x00, 0x71,
+        ),
     ),
     NativeProbePatch(
-        label = "output-pair2-22b",
+        label = "output-pair3",
         signature = ints(
-            0x3F, 0x05, 0x00, 0x71, 0x01, 0x16, 0x00, 0x54,
-            0x08, 0xAD, 0x48, 0x39, 0x1F, 0x05, 0x00, 0x71,
+            0x48, 0x34, 0x00, 0x90, 0x08, 0x31, 0x40, 0xF9,
+            0x09, 0xA5, 0x49, 0x39, 0xE2, 0x7E, 0x09, 0x1B,
+            0x08, 0xAD, 0x48, 0x39, 0xA3, 0x7E, 0x08, 0x1B,
         ),
         offset = 8,
-        replacement = movW(register = 8, value = 1),
+        replacement = ints(
+            0x29, 0x00, 0x80, 0x52, 0xE2, 0x7E, 0x09, 0x1B,
+            0x28, 0x00, 0x80, 0x52, 0xA3, 0x7E, 0x08, 0x1B,
+        ),
+    ),
+    NativeProbePatch(
+        label = "output-pair4",
+        signature = ints(
+            0x28, 0x34, 0x00, 0xF0, 0x08, 0x31, 0x40, 0xF9,
+            0x09, 0xA5, 0x49, 0x39, 0xE2, 0x7E, 0x09, 0x1B,
+            0x08, 0xAD, 0x48, 0x39, 0xC3, 0x7E, 0x08, 0x1B,
+        ),
+        offset = 8,
+        replacement = ints(
+            0x29, 0x00, 0x80, 0x52, 0xE2, 0x7E, 0x09, 0x1B,
+            0x28, 0x00, 0x80, 0x52, 0xC3, 0x7E, 0x08, 0x1B,
+        ),
     ),
     NativeProbePatch(
         label = "output-269-extra",
@@ -213,44 +232,6 @@ private val arm64NativeProbePatches = listOf(
         ),
         offset = 8,
         replacement = movW(register = 23, value = 1),
-    ),
-    NativeProbePatch(
-        label = "output-pair3-269",
-        signature = ints(
-            0xE0, 0x17, 0x80, 0x3D, 0x48, 0x34, 0x00, 0x90,
-            0x08, 0x31, 0x40, 0xF9, 0x09, 0xA5, 0x49, 0x39,
-            0xE2, 0x7E, 0x09, 0x1B,
-        ),
-        offset = 12,
-        replacement = movW(register = 9, value = 1),
-    ),
-    NativeProbePatch(
-        label = "output-pair3-22b",
-        signature = ints(
-            0x09, 0xA5, 0x49, 0x39, 0xE2, 0x7E, 0x09, 0x1B,
-            0x08, 0xAD, 0x48, 0x39, 0xA3, 0x7E, 0x08, 0x1B,
-        ),
-        offset = 8,
-        replacement = movW(register = 8, value = 1),
-    ),
-    NativeProbePatch(
-        label = "output-pair4-269",
-        signature = ints(
-            0x28, 0x34, 0x00, 0xF0, 0x08, 0x31, 0x40, 0xF9,
-            0x09, 0xA5, 0x49, 0x39, 0xE2, 0x7E, 0x09, 0x1B,
-        ),
-        offset = 8,
-        replacement = movW(register = 9, value = 1),
-    ),
-    NativeProbePatch(
-        label = "output-pair4-22b",
-        signature = ints(
-            0x28, 0x34, 0x00, 0xF0, 0x08, 0x31, 0x40, 0xF9,
-            0x09, 0xA5, 0x49, 0x39, 0xE2, 0x7E, 0x09, 0x1B,
-            0x08, 0xAD, 0x48, 0x39, 0xC3, 0x7E, 0x08, 0x1B,
-        ),
-        offset = 16,
-        replacement = movW(register = 8, value = 1),
     ),
     NativeProbePatch(
         label = "guard-355",
@@ -288,12 +269,17 @@ val patchNativeTamperChecksPatch = rawResourcePatch(
         }
 
         val bytes = lib.readBytes()
-        for (entry in arm64NativeProbePatches) {
+        // Resolve every probe against the pristine bytes first, then apply: a probe's
+        // signature may legitimately contain a byte another probe rewrites, and
+        // searching the half-patched array would miss it.
+        val resolved = arm64NativeProbePatches.map { entry ->
             val match = bytes.findUnique(entry.signature, entry.label)
                 ?: throw PatchException(
                     "Poweramp: native probe ${entry.label} not found in $libPath",
                 )
-
+            entry to match
+        }
+        for ((entry, match) in resolved) {
             entry.replacement.copyInto(bytes, match + entry.offset)
         }
         lib.writeBytes(bytes)
