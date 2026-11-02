@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.42.0",
+  "version": "1.42.1",
   "patches": [
     {
       "name": "Add settings",
@@ -89,6 +89,32 @@
           "targets": [
             {
               "version": "3.97.1",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Bypass PairIP application checks",
+      "description": "Required for re-signed builds: PairIP's Application class runs the signature and license checks at startup. This rewrites that one method so it only registers the app context and never calls either check, instead of relying on the checks themselves being stubbed.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.instantbits.cast.webvideo",
+          "name": "Web Video Caster",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#3F51B5",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "6.1.0",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
@@ -405,7 +431,7 @@
     },
     {
       "name": "Disable PairIP license activity",
-      "description": "Required for re-signed builds: disables PairIP's LicenseActivity component in the manifest, so the Play Store block page and license error dialog can never be shown, whatever tries to open them.",
+      "description": "Required for re-signed builds: removes PairIP's LicenseActivity from the manifest entirely, so the Play Store block page and license error dialog can never be shown, whatever tries to open them.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [

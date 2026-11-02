@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-02T22:25:02",
-  "description": "## [1.42.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.41.1...v1.42.0) (2026-11-02)\n\n### ✨ New Features\n\n* **rainviewer:** add Bypass integrity check patch (Raindrop verdict + code 81) ([eff7eba](https://github.com/mwbra130/Retro-Bowl-College/commit/eff7eba3e4ac7158836389615bfe4b47c4671763))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.42.0/patches-1.42.0.mpp",
+  "created_at": "2026-11-02T22:32:10",
+  "description": "## [1.42.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.42.0...v1.42.1) (2026-11-02)\n\n### 🐛 Bug Fixes\n\n* **webvideocaster:** kill PairIP checks at the Application call site, remove LicenseActivity from manifest ([a571735](https://github.com/mwbra130/Retro-Bowl-College/commit/a5717350a32abe2525ca75b139165214b2d0b471))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.42.1/patches-1.42.1.mpp",
   "signature_download_url": "",
-  "version": "1.42.0"
+  "version": "1.42.1"
 }

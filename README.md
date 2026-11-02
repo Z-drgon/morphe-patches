@@ -30,7 +30,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 ---
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.42.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.42.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;33 patches total
+> **[v1.42.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.42.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;34 patches total
 <details open>
 <summary>Strava&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
@@ -102,7 +102,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 </details>
 
 <details open>
-<summary>Web Video Caster&nbsp;&nbsp;•&nbsp;&nbsp;4 patches</summary>
+<summary>Web Video Caster&nbsp;&nbsp;•&nbsp;&nbsp;5 patches</summary>
 <br>
 
 **Supported versions:**
@@ -112,9 +112,10 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 
 | Patch | Description | Options |
 |----------|----------------|-----------|
+| [Bypass PairIP application checks](#bypass-pairip-application-checks) | Required for re-signed builds: PairIP's Application class runs the signature and license checks at startup. This rewrites that one method so it only registers the app context and never calls either check, instead of relying on the checks themselves being stubbed. |  |
 | [Bypass PairIP license check](#bypass-pairip-license-check) | Required for re-signed builds: PairIP asks Google Play to license the app at startup and sends non-Play installs to a Play Store block page. Disables that check, its verdict handler, both block-page launchers, the delayed shutdown, and the block activity itself so the patched app can open. |  |
 | [Bypass PairIP signature check](#bypass-pairip-signature-check) | Required for re-signed builds: PairIP checks the APK signature at startup and crashes the app on launch when it is not the developer's. Disables that one check so the patched app can start. |  |
-| [Disable PairIP license activity](#disable-pairip-license-activity) | Required for re-signed builds: disables PairIP's LicenseActivity component in the manifest, so the Play Store block page and license error dialog can never be shown, whatever tries to open them. |  |
+| [Disable PairIP license activity](#disable-pairip-license-activity) | Required for re-signed builds: removes PairIP's LicenseActivity from the manifest entirely, so the Play Store block page and license error dialog can never be shown, whatever tries to open them. |  |
 | [Unlock premium](#unlock-premium) | Unlocks Web Video Caster Premium (ad removal, ad block, bookmarks, queue and the other premium features). No real purchase is made. |  |
 
 </details>

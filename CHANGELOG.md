@@ -1,3 +1,9 @@
+## [1.42.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.42.0...v1.42.1) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **webvideocaster:** kill PairIP checks at the Application call site, remove LicenseActivity from manifest ([a571735](https://github.com/mwbra130/Retro-Bowl-College/commit/a5717350a32abe2525ca75b139165214b2d0b471))
+
 ## [1.42.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.41.1...v1.42.0) (2026-11-02)
 
 ### ✨ New Features
