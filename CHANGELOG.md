@@ -1,3 +1,9 @@
+## [1.35.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.35.1...v1.35.2) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* add PairIP SignatureCheck fingerprint for Web Video Caster ([2880ec3](https://github.com/mwbra130/Retro-Bowl-College/commit/2880ec31d719cc402b4c08364515ab29f87684c0))
+
 ## [1.35.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.35.0...v1.35.1) (2026-11-02)
 
 ### 🐛 Bug Fixes

@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-02T17:33:08",
-  "description": "## [1.35.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.35.0...v1.35.1) (2026-11-02)\n\n### 🐛 Bug Fixes\n\n* **webvideocaster:** rewrite the false assignment instead of inserting before valueOf (goto paths skipped the insert) ([fc2659f](https://github.com/mwbra130/Retro-Bowl-College/commit/fc2659fa0b82868fb98dbdfefc0214d3656cab42))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.35.1/patches-1.35.1.mpp",
+  "created_at": "2026-11-02T17:46:53",
+  "description": "## [1.35.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.35.1...v1.35.2) (2026-11-02)\n\n### 🐛 Bug Fixes\n\n* add PairIP SignatureCheck fingerprint for Web Video Caster ([2880ec3](https://github.com/mwbra130/Retro-Bowl-College/commit/2880ec31d719cc402b4c08364515ab29f87684c0))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.35.2/patches-1.35.2.mpp",
   "signature_download_url": "",
-  "version": "1.35.1"
+  "version": "1.35.2"
 }
