@@ -325,19 +325,22 @@ object LicenseActivityOnStartFingerprint : Fingerprint(
 
 /**
  * Lcom/pairip/StartupLauncher;->launch()V — the VM bootstrap entry
- * (0x20009 PUBLIC STATIC SYNCHRONIZED, verified in the 6.1.0 dex —
- * flags read from the class data, and Morphe compares access flags
- * by EXACT equality, so SYNCHRONIZED must be listed). The method
- * body contains no const-string instructions (the program name is a
- * static field read via sget-object), so the match rests on class +
- * name + signature + exact flags; launch is the only method of its
- * name in the class (the class declares only <clinit>, <init> and
- * launch).
+ * (0x20009 PUBLIC STATIC DECLARED_SYNCHRONIZED, verified in the
+ * 6.1.0 dex via dexdump — flags read from the class data, and
+ * Morphe compares access flags by EXACT equality). The dex bit is
+ * DECLARED_SYNCHRONIZED (0x20000), NOT dexlib2's SYNCHRONIZED
+ * (0x20): the first shipped fingerprint listed SYNCHRONIZED and
+ * failed to match on exactly that bit — the v1.38.0 Desktop run is
+ * the evidence. The method body contains no const-string
+ * instructions (the program name is a static field read via
+ * sget-object), so the match rests on class + name + signature +
+ * exact flags; launch is the only method of its name in the class
+ * (the class declares only <clinit>, <init> and launch).
  */
 object StartupLauncherFingerprint : Fingerprint(
     definingClass = "Lcom/pairip/StartupLauncher;",
     name = "launch",
     returnType = "V",
     parameters = listOf(),
-    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC, AccessFlags.SYNCHRONIZED),
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC, AccessFlags.DECLARED_SYNCHRONIZED),
 )
