@@ -1,3 +1,11 @@
+## [1.35.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.34.0...v1.35.0) (2026-11-02)
+
+### ✨ New Features
+
+* **webvideocaster:** add premium manager fingerprints (Lv36 setter, Le89 init) ([0f6afc7](https://github.com/mwbra130/Retro-Bowl-College/commit/0f6afc7387e33c8e0ac4e415a76a80d77168c7e3))
+* **webvideocaster:** add Web Video Caster 6.1.0 compatibility ([f13a85a](https://github.com/mwbra130/Retro-Bowl-College/commit/f13a85a90d917832815b160f15df8f1fa2606934))
+* **webvideocaster:** unlock premium via central premium funnel (force Yes entitlement + hasPremium) ([6f258b4](https://github.com/mwbra130/Retro-Bowl-College/commit/6f258b4f61f49d887f2f9c01d2faed0f3cc08f8b))
+
 ## [1.34.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.33.3...v1.34.0) (2026-11-02)
 
 ### ✨ New Features
