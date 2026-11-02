@@ -1,3 +1,10 @@
+## [1.39.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.39.0...v1.39.1) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **poweramp:** pin the missed cert-table reader in native scan_root (byte 0x32a must equal 2; unpinned it reads the random tamper-fill, scanner returns FAIL and playback of scanner-resolved files breaks) ([32c54d4](https://github.com/mwbra130/Retro-Bowl-College/commit/32c54d423f9badd69a38b09bc178c352fd6b8f2f))
+* **poweramp:** restore the MutableMethod import clobbered by a stale-file push (it was added in 3816e7a18; the scan-gate push overwrote the file from an older copy) ([359af48](https://github.com/mwbra130/Retro-Bowl-College/commit/359af4822a8b8880e98f49fb2949a3fdec0f2e72))
+
 ## [1.39.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.38.1...v1.39.0) (2026-11-02)
 
 ### 🐛 Bug Fixes
