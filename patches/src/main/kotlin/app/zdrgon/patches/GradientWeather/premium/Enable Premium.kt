@@ -28,7 +28,7 @@ val enablePremiumPatch = bytecodePatch(
         // is_lifetime / is_premium prefs. Force the is_lifetime read to true, and
         // remember which enum field the constructor picks in that branch: it is the
         // LIFETIME tier value, whatever the obfuscated field is named in this build.
-        val lifetimeReference = InitSubscriptionTierFingerprint.method.apply {
+        val lifetimeReference = InitSubscriptionTierFingerprint.method.run {
             val insns = instructions.toList()
             val stringIndex = insns.indexOfFirst {
                 it.getReference<StringReference>()?.string == "is_lifetime"
