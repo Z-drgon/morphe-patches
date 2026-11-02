@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-02T20:24:43",
-  "description": "## [1.39.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.39.0...v1.39.1) (2026-11-02)\n\n### 🐛 Bug Fixes\n\n* **poweramp:** pin the missed cert-table reader in native scan_root (byte 0x32a must equal 2; unpinned it reads the random tamper-fill, scanner returns FAIL and playback of scanner-resolved files breaks) ([32c54d4](https://github.com/mwbra130/Retro-Bowl-College/commit/32c54d423f9badd69a38b09bc178c352fd6b8f2f))\n* **poweramp:** restore the MutableMethod import clobbered by a stale-file push (it was added in 3816e7a18; the scan-gate push overwrote the file from an older copy) ([359af48](https://github.com/mwbra130/Retro-Bowl-College/commit/359af4822a8b8880e98f49fb2949a3fdec0f2e72))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.39.1/patches-1.39.1.mpp",
+  "created_at": "2026-11-02T21:13:12",
+  "description": "## [1.40.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.39.1...v1.40.0) (2026-11-02)\n\n### ✨ New Features\n\n* **happycolor:** Remove ads patch for Happy Color 2.24.1 (AppLovin MAX loadAd no-ops) ([ed416a0](https://github.com/mwbra130/Retro-Bowl-College/commit/ed416a03a85871402cc79d8327127c14c9bfdf52))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.40.0/patches-1.40.0.mpp",
   "signature_download_url": "",
-  "version": "1.39.1"
+  "version": "1.40.0"
 }

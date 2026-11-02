@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.39.1",
+  "version": "1.40.0",
   "patches": [
     {
       "name": "Add settings",
@@ -689,6 +689,32 @@
           "values": null
         }
       ]
+    },
+    {
+      "name": "Remove ads",
+      "description": "Stops banner, interstitial and app-open ads from loading (AppLovin MAX). Rewarded ads for hints are left working.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.pixel.art.coloring.color.number",
+          "name": "Happy Color",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#FF7043",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "2.24.1",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
     },
     {
       "name": "Remove suggested-people card",

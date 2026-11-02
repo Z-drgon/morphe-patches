@@ -1,3 +1,9 @@
+## [1.40.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.39.1...v1.40.0) (2026-11-02)
+
+### ✨ New Features
+
+* **happycolor:** Remove ads patch for Happy Color 2.24.1 (AppLovin MAX loadAd no-ops) ([ed416a0](https://github.com/mwbra130/Retro-Bowl-College/commit/ed416a03a85871402cc79d8327127c14c9bfdf52))
+
 ## [1.39.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.39.0...v1.39.1) (2026-11-02)
 
 ### 🐛 Bug Fixes
