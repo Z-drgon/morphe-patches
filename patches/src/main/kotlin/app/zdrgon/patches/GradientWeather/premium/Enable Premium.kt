@@ -10,7 +10,7 @@ import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import com.android.tools.smali.dexlib2.iface.reference.StringReference
 import morningentree.morphe.patches.gradientweather.shared.Constants
-import morningentree.morphe.util.getReference
+import app.zdrgon.util.getReference
 import java.util.logging.Logger
 
 @Suppress("unused")
