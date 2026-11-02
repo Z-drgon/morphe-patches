@@ -166,3 +166,127 @@ object HandleTrialEndFingerprint : Fingerprint(
     accessFlags = listOf(AccessFlags.PROTECTED),
     strings = listOf("Trial end event triggered; initiating full license check."),
 )
+
+// ── PairIP license check, round 3: defense in depth ────────────────────
+//
+// On-device, the round-2 stubs (checkLicense / initializeLicenseCheck /
+// handleTrialEnd, all verified present in the patched output dex) did
+// NOT stop the Play Store block page, even on a fresh, current bundle
+// with every patch enabled. Execution-mode audit of the stock dex
+// (round 3) establishes why these extra layers are still dex work and
+// not VM work: VMRunner.invoke is called from exactly five methods in
+// classes2.dex (PairIP's StartupLauncher plus four protected app/SDK
+// methods) and NO licensecheck method references VMRunner or is
+// declared native — every method below is a genuine dex body with a
+// full instruction graph, the same execution mode as
+// SignatureCheck.verifyIntegrity, whose dex edit demonstrably took
+// effect on-device (the startup crash stopped in round 1). The
+// PairIP VM asset modules are encrypted (IAP container) and contain
+// no plaintext LicenseActivity / licensecheck / PAYWALL strings, and
+// libpairipcore.so contains no such strings either, so no
+// independent native/VM paywall launcher exists in the shipped
+// artifacts. The remaining dex chokepoints, all in classes2.dex:
+//
+//   processResponse          — the licensing-service verdict handler;
+//                              sole caller is the binder callback
+//                              LicenseClient$2.verifyLicense. Code 2
+//                              (NOT_LICENSED) is the only route to
+//                              startPaywallActivity.
+//   startPaywallActivity /
+//   startErrorDialogActivity — the ONLY two methods that build the
+//                              LicenseActivity intent (via
+//                              createCloseAppIntentOrExitIfAppInBackground)
+//                              and start it; each also calls
+//                              scheduleAppShutdown.
+//   scheduleAppShutdown      — PairIP's delayed process shutdown:
+//                              DelayedTaskExecutor.schedule(exitAction)
+//                              where exitAction (LicenseClient$1) is a
+//                              Runnable whose run() calls System.exit.
+//   LicenseActivity.onStart  — the activity has NO onCreate; onStart
+//                              dispatches on the "activitytype" extra
+//                              to showPaywallAndCloseApp (sends the
+//                              PAYWALL_INTENT PendingIntent, i.e. the
+//                              Play listing) or the error dialog.
+// Access flags and body strings below are taken from the 6.1.0 dex.
+
+/**
+ * LicenseClient.processResponse(ILandroid/os/Bundle;)V — the verdict
+ * handler (0x0002 PRIVATE, verified in the 6.1.0 dex).
+ */
+object ProcessResponseFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/licensecheck/LicenseClient;",
+    name = "processResponse",
+    returnType = "V",
+    parameters = listOf("I", "Landroid/os/Bundle;"),
+    accessFlags = listOf(AccessFlags.PRIVATE),
+    strings = listOf("License check succeeded.", "PAYWALL_INTENT"),
+)
+
+/**
+ * LicenseClient.startPaywallActivity(Landroid/app/PendingIntent;)V —
+ * one of the two LicenseActivity launchers (0x0002 PRIVATE, verified
+ * in the 6.1.0 dex).
+ */
+object StartPaywallActivityFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/licensecheck/LicenseClient;",
+    name = "startPaywallActivity",
+    returnType = "V",
+    parameters = listOf("Landroid/app/PendingIntent;"),
+    accessFlags = listOf(AccessFlags.PRIVATE),
+    strings = listOf("paywallintent", "activitytype"),
+)
+
+/**
+ * LicenseClient.startErrorDialogActivity()V — the other LicenseActivity
+ * launcher (0x0002 PRIVATE, verified in the 6.1.0 dex).
+ */
+object StartErrorDialogActivityFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/licensecheck/LicenseClient;",
+    name = "startErrorDialogActivity",
+    returnType = "V",
+    parameters = listOf(),
+    accessFlags = listOf(AccessFlags.PRIVATE),
+    strings = listOf("activitytype"),
+)
+
+/**
+ * LicenseClient.scheduleAppShutdown()V — the delayed-shutdown
+ * scheduler (0x0002 PRIVATE, verified in the 6.1.0 dex; the method
+ * body contains no const-strings, so the match rests on class + name
+ * + signature + exact flags; it is the only method of its name).
+ */
+object ScheduleAppShutdownFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/licensecheck/LicenseClient;",
+    name = "scheduleAppShutdown",
+    returnType = "V",
+    parameters = listOf(),
+    accessFlags = listOf(AccessFlags.PRIVATE),
+)
+
+/**
+ * LicenseClient$1.run()V — the exitAction Runnable itself; its whole
+ * body is System.exit (0x0001 PUBLIC, verified in the 6.1.0 dex; no
+ * const-strings; the anonymous class declares only <init> and run).
+ */
+object ExitActionFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/licensecheck/LicenseClient\$1;",
+    name = "run",
+    returnType = "V",
+    parameters = listOf(),
+    accessFlags = listOf(AccessFlags.PUBLIC),
+)
+
+/**
+ * LicenseActivity.onStart()V — the blocking activity's only display
+ * entry (the class declares no onCreate) (0x0001 PUBLIC, verified in
+ * the 6.1.0 dex; 3 registers, so the parameter register p0 is v2 and
+ * safe to name in inserted instructions).
+ */
+object LicenseActivityOnStartFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/licensecheck/LicenseActivity;",
+    name = "onStart",
+    returnType = "V",
+    parameters = listOf(),
+    accessFlags = listOf(AccessFlags.PUBLIC),
+    strings = listOf("activitytype", "Couldn't process license activity correctly."),
+)
