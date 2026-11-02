@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.38.1",
+  "version": "1.39.0",
   "patches": [
     {
       "name": "Add settings",
@@ -63,6 +63,32 @@
           "targets": [
             {
               "version": "3.70.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Block PairIP startup activity launch",
+      "description": "Lets PairIP's startup program run (the app needs its initialization) but removes the one step that lets it launch an activity before the app starts, so it cannot open the Play Store block page. Use with 'Disable PairIP startup program' turned OFF.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.instantbits.cast.webvideo",
+          "name": "Web Video Caster",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#3F51B5",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "6.1.0",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,

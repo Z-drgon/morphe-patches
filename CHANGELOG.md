@@ -1,3 +1,14 @@
+## [1.39.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.38.1...v1.39.0) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **poweramp:** add missing MutableMethod import (compile fix; unblocks the v1.39.0 release) ([3816e7a](https://github.com/mwbra130/Retro-Bowl-College/commit/3816e7a183a69b1d49caedf46db3432ec06bff7e))
+* **poweramp:** force license/FP state at the restore setter's real value register (1031 loads prefs into v0; the 1025 v1 const was dead and skewed later defaults) ([5756c78](https://github.com/mwbra130/Retro-Bowl-College/commit/5756c780425047adaecf2e904cdaa81594f86ab4))
+
+### ✨ New Features
+
+* add Block PairIP startup activity launch patch for Web Video Caster ([28025ce](https://github.com/mwbra130/Retro-Bowl-College/commit/28025cee6570e6cdb9da06fe2eeda7518fc0bb04))
+
 ## [1.38.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.38.0...v1.38.1) (2026-11-02)
 
 ### 🐛 Bug Fixes
