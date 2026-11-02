@@ -1,3 +1,9 @@
+## [1.37.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.37.0...v1.37.1) (2026-11-02)
+
+### 🐛 Bug Fixes
+
+* **poweramp:** merge output-pair probes and resolve all signatures before applying (overlapping split signatures missed after sibling rewrite) ([1419bc0](https://github.com/mwbra130/Retro-Bowl-College/commit/1419bc0b708ffc38d7de6a90c8a9b66513c2c380))
+
 ## [1.37.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.36.3...v1.37.0) (2026-11-02)
 
 ### ✨ New Features
