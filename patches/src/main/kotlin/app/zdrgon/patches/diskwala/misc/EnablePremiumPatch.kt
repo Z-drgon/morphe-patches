@@ -36,18 +36,22 @@ import app.zdrgon.patches.diskwala.shared.Constants.COMPATIBILITY_DISKWALA
  * store state into its own state.
  *
  * PairIP note: 27.3 ships full PairIP (application class, license
- * check and VM in classes2.dex, libpairipcore.so in the native split)
- * and its LOCAL installer check is live — LicenseClient
- * .performLocalInstallerCheck reads the installing package name and
- * rejects non-Play installs. The companion "Change installer source"
- * patch in this folder is therefore REQUIRED for a re-signed build to
- * get past the license check, exactly as with Video Cutter. Both
- * patches ship default-on; keep the companion enabled.
+ * check and VM in classes2.dex, libpairipcore.so in the native
+ * split). What blocks a re-signed build at launch is PairIP's
+ * ONLINE license check: LicenseClient asks Play's licensing
+ * service, gets NOT_LICENSED, and opens the "Get this app from
+ * Play" block page (bundle v1.52.0 failed on-device exactly this
+ * way; the local installer branch is dead code in this build —
+ * localCheckEnabled is never enabled). The "Bypass PairIP
+ * application checks", "Bypass PairIP license check" and "Disable
+ * PairIP license activity" patches in this folder are therefore
+ * REQUIRED companions for the patched app to open at all. All of
+ * them ship default-on; keep them enabled.
  */
 @Suppress("unused")
 val enablePremiumPatch = bytecodePatch(
     name = "Enable Premium",
-    description = "Turns on Premium (no ads, real file names, HD downloads, faster streaming) as if subscribed. Also enable the Change installer source patch (pre-selected) — PairIP's installer check requires it.",
+    description = "Turns on Premium (no ads, real file names, HD downloads, faster streaming) as if subscribed. Keep the pre-selected PairIP bypass patches on — a re-signed build cannot pass PairIP's startup license check without them.",
     default = true
 ) {
     compatibleWith(COMPATIBILITY_DISKWALA)
