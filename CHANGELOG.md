@@ -1,3 +1,11 @@
+## [1.57.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.57.0...v1.57.1) (2026-11-03)
+
+### 🐛 Bug Fixes
+
+* 1DM Remove ads - cut NewBannerView show funnel, downloads offer strip (method + layout), old BannerView setAd ([3c5f6ad](https://github.com/mwbra130/Retro-Bowl-College/commit/3c5f6ad6983c513573de66c9058c49b563aee6e2))
+* 1DM Remove ads - escape dollar in MainActivity$a definingClass (Kotlin string template broke generatePatchesList) ([0580ee7](https://github.com/mwbra130/Retro-Bowl-College/commit/0580ee74a3359164ec3f10470cfd031d476dfb8f))
+* 1DM Remove ads - pin real house-promo show entry, add offer strip + old BannerView fingerprints ([d700ac5](https://github.com/mwbra130/Retro-Bowl-College/commit/d700ac56721824e0b9c09f170aaa02e15673663f))
+
 ## [1.57.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.56.2...v1.57.0) (2026-11-03)
 
 ### ✨ New Features
