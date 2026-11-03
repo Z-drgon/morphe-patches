@@ -1,3 +1,9 @@
+## [1.46.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.45.0...v1.46.0) (2026-11-03)
+
+### ✨ New Features
+
+* Add Echo Equalizer Pro unlock (is-Pro gate pin + installer source) ([b807280](https://github.com/mwbra130/Retro-Bowl-College/commit/b8072805cf60d3ad7244100fe1f3b0081a120640))
+
 ## [1.45.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.44.0...v1.45.0) (2026-11-03)
 
 ### 🐛 Bug Fixes
