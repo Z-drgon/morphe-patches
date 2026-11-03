@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.56.2",
+  "version": "1.57.0",
   "patches": [
     {
       "name": "Add settings",
@@ -1229,6 +1229,34 @@
               "version": "2.24.1",
               "versionCodes": null,
               "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Remove ads",
+      "description": "Removes ads (Appodeal mediation and the direct Amazon ads path), hides the app's own promo banner strip and the green \"Upgrade to 1DM+\" bar in the settings drawer. Does NOT unlock 1DM+ features — 1DM+ is a separate paid app and its features are not in this app.",
+      "default": true,
+      "dependencies": [
+        "ResourcePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "idm.internet.download.manager",
+          "name": "1DM: Browser & Video Download",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#6A1B9A",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "20.0",
+              "versionCodes": null,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }

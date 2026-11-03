@@ -1,3 +1,11 @@
+## [1.57.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.56.2...v1.57.0) (2026-11-03)
+
+### ✨ New Features
+
+* 1DM Remove ads patch (Appodeal + direct Amazon funnels, house promo strip, 1DM+ drawer upsell bar) ([4612a09](https://github.com/mwbra130/Retro-Bowl-College/commit/4612a097ebd94b1b66d7a133a34f9e4cadc624a7))
+* 1DM Remove ads patch (Appodeal + direct Amazon funnels, house promo strip, 1DM+ drawer upsell bar) ([db9c609](https://github.com/mwbra130/Retro-Bowl-College/commit/db9c609e674b81898eb82953c1969c555c72e6ba))
+* 1DM Remove ads patch (Appodeal + direct Amazon funnels, house promo strip, 1DM+ drawer upsell bar) ([b492319](https://github.com/mwbra130/Retro-Bowl-College/commit/b492319d6118ce522350df68716e84857b0beeea))
+
 ## [1.56.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.56.1...v1.56.2) (2026-11-03)
 
 ### 🐛 Bug Fixes
