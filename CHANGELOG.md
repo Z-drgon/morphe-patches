@@ -1,3 +1,9 @@
+## [1.59.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.58.1...v1.59.0) (2026-11-03)
+
+### ✨ New Features
+
+* **businessx:** add Enable Premium patch with required installer source companion ([a27cd85](https://github.com/mwbra130/Retro-Bowl-College/commit/a27cd850f01586d5974c38f66cb347e72af00b00))
+
 ## [1.58.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.58.0...v1.58.1) (2026-11-03)
 
 ### 🐛 Bug Fixes
