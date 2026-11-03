@@ -1,3 +1,9 @@
+## [1.54.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.53.0...v1.54.0) (2026-11-03)
+
+### ✨ New Features
+
+* Add Smart MP3 Tagger Enable Lifetime Pro patch ([2fa3466](https://github.com/mwbra130/Retro-Bowl-College/commit/2fa3466e3a7361708be41fb06dc14b2af786dd06))
+
 ## [1.53.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.52.0...v1.53.0) (2026-11-03)
 
 ### ✨ New Features

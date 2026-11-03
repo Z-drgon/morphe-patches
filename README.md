@@ -30,7 +30,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 ---
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.53.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.53.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;42 patches total
+> **[v1.54.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.54.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;44 patches total
 <details open>
 <summary>Strava&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
@@ -117,6 +117,22 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 |----------|----------------|-----------|
 | [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from an app store. Required for Enable Pro to take effect — keep it on. | • Spoofed package installer name |
 | [Enable Pro](#enable-pro) | Unlocks Echo Pro (the lifetime tier: Auto EQ, limiter, compressor and all other Pro features). Use with Change installer source. |  |
+
+</details>
+
+<details open>
+<summary>Smart MP3 Tagger&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<br>
+
+**Supported versions:**
+
+| 26.8.130 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from Google Play. Required for Smart MP3 Tagger: its PairIP local installer check is live, so a re-signed build fails the license check without it — keep it on. | • Spoofed package installer name |
+| [Enable Lifetime Pro](#enable-lifetime-pro) | Turns on the app's Pro state (no ads, unlimited functions) as if the one-time "Super Pro Forever" purchase were owned — the lifetime state, with nothing to expire. |  |
 
 </details>
 
