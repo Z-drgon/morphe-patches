@@ -1,3 +1,13 @@
+## [1.50.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.49.0...v1.50.0) (2026-11-03)
+
+### 🐛 Bug Fixes
+
+* Mark Vehico Remove ads patch experimental ([a8d3920](https://github.com/mwbra130/Retro-Bowl-College/commit/a8d39205738819a33c666027dcd357debd7bb021))
+
+### ✨ New Features
+
+* Add Notes Remove ads patch (AdMob interstitial + native load no-ops) ([7f28606](https://github.com/mwbra130/Retro-Bowl-College/commit/7f286064a1bf9132e76253e53aad3c679a283c45))
+
 ## [1.49.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.48.1...v1.49.0) (2026-11-03)
 
 ### ✨ New Features

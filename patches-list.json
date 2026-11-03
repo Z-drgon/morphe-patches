@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.49.0",
+  "version": "1.50.0",
   "patches": [
     {
       "name": "Add settings",
@@ -863,6 +863,32 @@
     },
     {
       "name": "Remove ads",
+      "description": "Stops interstitial ad breaks and native ads in the notes list from loading (Google Mobile Ads). Rewarded ads that unlock features when watched are left working. Does not unlock premium.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.inotesapp.inotes",
+          "name": "Notes",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#FFB300",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "2.2.2",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Remove ads",
       "description": "Stops banner and interstitial ads from loading (Google Mobile Ads).",
       "default": true,
       "dependencies": [],
@@ -878,7 +904,7 @@
             {
               "version": "1.2.31",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
