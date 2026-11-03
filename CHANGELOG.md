@@ -1,3 +1,10 @@
+## [1.49.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.48.1...v1.49.0) (2026-11-03)
+
+### ✨ New Features
+
+* Add Hermit Enable Premium patch (entitlement predicate pin) ([5eae64d](https://github.com/mwbra130/Retro-Bowl-College/commit/5eae64da41243a1b69efc149adbe186ab557828c))
+* Add Vehico Remove ads patch ([e305a64](https://github.com/mwbra130/Retro-Bowl-College/commit/e305a642c331a1a27b4548e31b8c1131c0fcfde0))
+
 ## [1.48.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.48.0...v1.48.1) (2026-11-03)
 
 ### 🐛 Bug Fixes

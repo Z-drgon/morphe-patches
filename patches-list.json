@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.48.1",
+  "version": "1.49.0",
   "patches": [
     {
       "name": "Add settings",
@@ -430,6 +430,32 @@
     },
     {
       "name": "Enable Premium",
+      "description": "Unlocks Premium (the one-time all-features purchase) and every individually sold feature.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.chimbori.hermitcrab",
+          "name": "Hermit",
+          "description": null,
+          "apkFileType": null,
+          "appIconColor": "#2E7D32",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "31.8.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Enable Premium",
       "description": "Turns on the app's Pro state (no ads, Pro features) as if the Pro version were purchased.",
       "default": true,
       "dependencies": [],
@@ -827,6 +853,32 @@
               "version": "2.24.1",
               "versionCodes": null,
               "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Remove ads",
+      "description": "Stops banner and interstitial ads from loading (Google Mobile Ads).",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.optimageeks.vehico_app",
+          "name": "Vehico",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#1E88E5",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "1.2.31",
+              "versionCodes": null,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }

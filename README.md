@@ -30,7 +30,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 ---
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.48.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.48.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;32 patches total
+> **[v1.49.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.49.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;34 patches total
 <details open>
 <summary>Strava&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
@@ -136,6 +136,21 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 </details>
 
 <details open>
+<summary>Hermit&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
+
+**Supported versions:**
+
+| 31.8.0 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Enable Premium](#enable-premium) | Unlocks Premium (the one-time all-features purchase) and every individually sold feature. |  |
+
+</details>
+
+<details open>
 <summary>ISS Live Now&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -209,6 +224,21 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 | Patch | Description | Options |
 |----------|----------------|-----------|
 | [Remove ads](#remove-ads) | Stops banner, interstitial and app-open ads from loading (AppLovin MAX). Rewarded ads for hints are left working. |  |
+
+</details>
+
+<details open>
+<summary>Vehico&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
+
+**Supported versions:**
+
+| 1.2.31 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Remove ads](#remove-ads) | Stops banner and interstitial ads from loading (Google Mobile Ads). |  |
 
 </details>
 
