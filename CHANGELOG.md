@@ -1,3 +1,13 @@
+## [1.45.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.44.0...v1.45.0) (2026-11-03)
+
+### 🐛 Bug Fixes
+
+* Correct ISS Live Now Constants to patcher API types ([09a3d5d](https://github.com/mwbra130/Retro-Bowl-College/commit/09a3d5d39cbc80094394804f3c434a34e6e4d8ef))
+
+### ✨ New Features
+
+* Add ISS Live Now Enable Premium patch ([33b88ec](https://github.com/mwbra130/Retro-Bowl-College/commit/33b88ecbdc48d8fb6b671045cd180eb1dc9be9a4))
+
 ## [1.44.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.43.0...v1.44.0) (2026-11-03)
 
 ### ✨ New Features

@@ -30,7 +30,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 ---
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.44.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.44.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;27 patches total
+> **[v1.45.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.45.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;28 patches total
 <details open>
 <summary>Strava&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
@@ -101,6 +101,21 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 |----------|----------------|-----------|
 | [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from an app store. | • Spoofed package installer name |
 | [Enable Premium](#enable-premium) | Unlocks Gradient Weather Premium. Use With Spoof Install Source |  |
+
+</details>
+
+<details open>
+<summary>ISS Live Now&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
+
+**Supported versions:**
+
+| 8.7.3 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Enable Premium](#enable-premium) | Turns on the app's Pro state (no ads, Pro features) as if the Pro version were purchased. |  |
 
 </details>
 

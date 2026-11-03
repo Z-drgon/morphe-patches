@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.44.0",
+  "version": "1.45.0",
   "patches": [
     {
       "name": "Add settings",
@@ -352,6 +352,32 @@
               "version": "6.1.0",
               "versionCodes": null,
               "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Enable Premium",
+      "description": "Turns on the app's Pro state (no ads, Pro features) as if the Pro version were purchased.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.nicedayapps.iss_free",
+          "name": "ISS Live Now",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "8.7.3",
+              "versionCodes": null,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
