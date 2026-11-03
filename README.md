@@ -30,7 +30,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 ---
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.48.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.48.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;32 patches total
+> **[v1.48.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.48.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;32 patches total
 <details open>
 <summary>Strava&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
@@ -99,7 +99,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 
 | Patch | Description | Options |
 |----------|----------------|-----------|
-| [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from an app store. | • Spoofed package installer name |
+| [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from an app store. Required for Enable Pro to take effect — keep it on. | • Spoofed package installer name |
 | [Enable Pro](#enable-pro) | Unlocks Echo Pro (the lifetime tier: Auto EQ, limiter, compressor and all other Pro features). Use with Change installer source. |  |
 
 </details>

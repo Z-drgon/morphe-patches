@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-03T05:38:15",
-  "description": "## [1.48.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.47.0...v1.48.0) (2026-11-03)\n\n### ✨ New Features\n\n* Add Tuner (Cifra Club) Enable Premium patch (is-registered gate pin, removes ads) ([0a626c5](https://github.com/mwbra130/Retro-Bowl-College/commit/0a626c5f0f490b73f4d021f298249fc52a9feeb0))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.48.0/patches-1.48.0.mpp",
+  "created_at": "2026-11-03T14:37:12",
+  "description": "## [1.48.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.48.0...v1.48.1) (2026-11-03)\n\n### 🐛 Bug Fixes\n\n* Make Echo Change installer source recommended (on by default) ([90e55a7](https://github.com/mwbra130/Retro-Bowl-College/commit/90e55a7c9ce960442497ed667330d6db5fecf48a))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.48.1/patches-1.48.1.mpp",
   "signature_download_url": "",
-  "version": "1.48.0"
+  "version": "1.48.1"
 }
