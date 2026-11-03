@@ -9,7 +9,7 @@ internal object Constants {
         packageName = "com.lucky_apps.RainViewer",
         appIconColor = 0x1E88E5,
         targets = listOf(
-            AppTarget("8.4.1"),
+            AppTarget("8.4.1", isExperimental = true),
         ),
     )
 }
