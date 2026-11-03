@@ -1,3 +1,9 @@
+## [1.47.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.46.0...v1.47.0) (2026-11-03)
+
+### ✨ New Features
+
+* Add Alarmy Enable Premium patch (PremiumState gate pins for 26.42.0) ([76e4036](https://github.com/mwbra130/Retro-Bowl-College/commit/76e40361a70cb6b0e9321dc49afb702019c7956e))
+
 ## [1.46.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.45.0...v1.46.0) (2026-11-03)
 
 ### ✨ New Features

@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.46.0",
+  "version": "1.47.0",
   "patches": [
     {
       "name": "Add settings",
@@ -394,6 +394,32 @@
               "version": "6.1.0",
               "versionCodes": null,
               "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Enable Premium",
+      "description": "Turns on the app's premium state (premium features, no ads) as if a lifetime premium were active.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "droom.sleepIfUCan",
+          "name": "Alarmy",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#FF6B4C",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "26.42.0",
+              "versionCodes": null,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
