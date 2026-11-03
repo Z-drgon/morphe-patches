@@ -1,3 +1,9 @@
+## [1.44.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.43.0...v1.44.0) (2026-11-03)
+
+### ✨ New Features
+
+* **rokuremote:** Enable Pro patch for Roku Remote 1.3.2 (pin X_PREMIUM_ENABLED reader) ([8621031](https://github.com/mwbra130/Retro-Bowl-College/commit/86210316304fb3fae83a04123d87f0d08ddd506b))
+
 ## [1.43.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.42.4...v1.43.0) (2026-11-03)
 
 ### ✨ New Features

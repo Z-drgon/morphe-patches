@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.43.0",
+  "version": "1.44.0",
   "patches": [
     {
       "name": "Add settings",
@@ -409,6 +409,32 @@
             },
             {
               "version": "1.3.4",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Enable Pro",
+      "description": "Turns on the app's Pro state (no ads, Pro features) as if the lifetime plan were active.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.swiftsofts.rokuremote",
+          "name": "Roku Remote",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#FF9800",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "1.3.2",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
