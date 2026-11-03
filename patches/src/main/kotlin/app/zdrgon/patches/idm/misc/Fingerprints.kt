@@ -47,17 +47,62 @@ import com.android.tools.smali.dexlib2.AccessFlags
 //        response and bails to its continuation runnable on null, so
 //        pinning both to null is safe.
 //
-// 3) The house promo strip (NewBannerView, id/defaultBannerViewNew)
-//    is NOT a network ad: it is the app's own cross-promo view,
-//    populated from Lcom/aspsine/multithreaddownload/core/BannerInfo;
-//    (e.g. the baked-in NordVPN offers — strings "Click to Install
-//    NordVPN", "Hide VPN offer"). Its show trigger is
-//    Li/l82;->ۦۖ۬(MyAppCompatActivity)Z: it finds the NewBannerView
-//    in the activity and schedules the fill/show runnable. Pinning
-//    the trigger to false means the strip is never scheduled; the
-//    rotation treats false as "not shown" and moves on.
+// 3) The house cross-promo system (BannerInfo offers baked into the
+//    app: VPN offers, the Telegram help group, 1DM+ itself, third-party
+//    app promos). The offers ROTATE — the same placement shows different
+//    creatives over time. Three render paths exist:
 //
-// NOTE: Morphe fingerprints compare access flags by EXACT equality.
+//    a) NewBannerView (id/defaultBannerViewNew 0x7f0a0372, layout
+//       res/layout/default_banner_new.xml, root starts visibility=gone)
+//       — the tall bar at the bottom of the downloads screen (icon +
+//       text + "Get 1DM+"/INSTALL buttons) and the same container in
+//       the browser / torrent-details layouts. It is filled and shown
+//       by exactly one funnel: the "FallbackNetwork" source Li/l82;
+//       (driven from MyAppCompatActivity.onPostCreate via Li/k82;
+//       runnables). l82's method U+06E6 U+06D6 U+06E4 registers the
+//       offer list (built by Li/x73;), U+06E6 U+06D6 U+06E6 is the
+//       SHOW entry: it picks the next due BannerInfo, finds the
+//       NewBannerView and schedules the fill runnable Li/ba1; (case
+//       24), whose body sets every field and ends with
+//       setVisibility(VISIBLE) on the view. No other code path fills
+//       the view or sets it visible (full census 2026-11-03).
+//       FIX HISTORY: v1.57.0 pinned U+06E6 U+06D6 U+06EC instead —
+//       that sibling method is the HIDE trigger (it schedules
+//       Li/vq1; to set the view GONE). The show entry stayed live,
+//       so both placements kept rendering on-device. This round pins
+//       the show entry and drops the hide pin (stock hide behaviour
+//       is harmless once nothing can show).
+//
+//    b) The OLD Lightning BannerView (id/defaultBannerView 0x7f0a0371,
+//       layout res/layout/default_banner.xml, also starts gone) sits
+//       in the same banner containers. BannerManager delivers house
+//       BannerInfos to it via DefaultBannerCallback ->
+//       BannerView.onAdReceived -> BannerView.setAd(Integer,
+//       BannerInfo) (private), the view's only fill/show method
+//       (its APS backfill half is already dead via the AmazonService
+//       stub above). Pin setAd and this view can never render a
+//       house creative either.
+//
+//    c) The downloads-list fragment's OWN offer strip — a different,
+//       simpler system, NOT BannerInfo: LinearLayout
+//       id/offer_vpnLL (0x7f0a089c) at the top of
+//       res/layout/download_list.xml (MyTextView id/offer_vpn +
+//       EImageView id/hide_vpn_message close icon). The layout
+//       declares NO visibility, so it starts VISIBLE; the fragment
+//       (MainActivity$a) decides content/visibility in exactly one
+//       method, U+06E6 U+06D6 U+06DF (Z)V: it picks between the
+//       shoppers-search promo (string/install_shoppers_search_desc),
+//       the Telegram help text (string/info_help_telegram) and the
+//       VPN offer (string/vpn_offer_x formatted with the configured
+//       VPN name), then calls setVisibility(VISIBLE) — which would
+//       override a layout-only edit. So this path is cut twice:
+//       the method is pinned to return-void AND the layout element
+//       is set visibility=gone in the resource half of the patch
+//       (see RemoveAdsPatch). Field census: the strip view field is
+//       written once in onCreateView (plus its click listeners) and
+//       its visibility is written ONLY inside that one method.
+//
+// // NOTE: Morphe fingerprints compare access flags by EXACT equality.
 // The obfuscated method names below are the exact dex names, verified
 // codepoint-by-codepoint against the 20.0 dexes:
 
@@ -115,11 +160,36 @@ object AmazonDirectFetchBackfillFingerprint : Fingerprint(
     name = "ۦۖۜ"
 )
 
-/** House promo (NewBannerView) show trigger in Li/l82; (name U+06E6 U+06D6 U+06EC). */
-object HousePromoTriggerFingerprint : Fingerprint(
+/** House promo SHOW entry in Li/l82; (name U+06E6 U+06D6 U+06E6).
+ *  Schedules the Li/ba1; fill runnable that populates NewBannerView
+ *  and sets it VISIBLE. Returning false is a normal stock outcome
+ *  (no due offer / wrong provider tag), so callers handle it. */
+object HousePromoShowFingerprint : Fingerprint(
     returnType = "Z",
     parameters = listOf("Lacr/browser/lightning/activity/MyAppCompatActivity;"),
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
     definingClass = "Li/l82;",
-    name = "ۦۖ۬"
+    name = "ۦۖۦ"
+)
+
+/** Downloads-fragment offer strip decider in MainActivity$a
+ *  (name U+06E6 U+06D6 U+06DF). The only method that can set the
+ *  id/offer_vpnLL strip VISIBLE or fill its text. */
+object OfferStripFingerprint : Fingerprint(
+    returnType = "V",
+    parameters = listOf("Z"),
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    definingClass = "Lidm/internet/download/manager/MainActivity$a;",
+    name = "ۦۖ۟"
+)
+
+/** Old Lightning BannerView fill/show: BannerView.setAd (private).
+ *  Sole entry from onAdReceived(DefaultBannerCallback); fills the
+ *  house creative (or APS backfill) and makes the view visible. */
+object HouseBannerSetAdFingerprint : Fingerprint(
+    returnType = "V",
+    parameters = listOf("Ljava/lang/Integer;", "Lcom/aspsine/multithreaddownload/core/BannerInfo;"),
+    accessFlags = listOf(AccessFlags.PRIVATE),
+    definingClass = "Lacr/browser/lightning/view/BannerView;",
+    name = "setAd"
 )
