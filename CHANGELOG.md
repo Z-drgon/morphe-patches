@@ -1,3 +1,9 @@
+## [1.51.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.50.0...v1.51.0) (2026-11-03)
+
+### ✨ New Features
+
+* **videocutter:** add Remove ads patch with required installer source companion ([5fa133f](https://github.com/mwbra130/Retro-Bowl-College/commit/5fa133fe2316bf7bc89bd2539cffa42fae429e7e))
+
 ## [1.50.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.49.0...v1.50.0) (2026-11-03)
 
 ### 🐛 Bug Fixes
