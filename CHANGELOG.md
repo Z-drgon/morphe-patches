@@ -1,3 +1,10 @@
+## [1.56.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.56.0...v1.56.1) (2026-11-03)
+
+### 🐛 Bug Fixes
+
+* **mp3tagger:** correct reader polarity in fingerprints — Lmr0.a is the free-tier predicate ([1de33d8](https://github.com/mwbra130/Retro-Bowl-College/commit/1de33d84a3f54c38c27933d89c70391210eb2507))
+* **mp3tagger:** pin free-tier reader to 0 (owned) — v1.54.0 pinned the free value 1 ([a3427d8](https://github.com/mwbra130/Retro-Bowl-College/commit/a3427d800bb6358660448d3209ae072c0ef747fb))
+
 ## [1.56.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.55.0...v1.56.0) (2026-11-03)
 
 ### ✨ New Features
