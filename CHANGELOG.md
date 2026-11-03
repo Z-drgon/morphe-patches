@@ -1,3 +1,9 @@
+## [1.53.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.52.0...v1.53.0) (2026-11-03)
+
+### ✨ New Features
+
+* **unifiedremote:** add Enable Full patch pinning the license status reader ([cc10957](https://github.com/mwbra130/Retro-Bowl-College/commit/cc109573b9f810882d8cf726ab647656d6f9c5da))
+
 ## [1.52.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.51.0...v1.52.0) (2026-11-03)
 
 ### 🐛 Bug Fixes

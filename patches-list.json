@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.52.0",
+  "version": "1.53.0",
   "patches": [
     {
       "name": "Add settings",
@@ -520,6 +520,32 @@
               "version": "6.1.0",
               "versionCodes": null,
               "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Enable Full",
+      "description": "Unlocks Unified Remote Full for free, as if the one-time Full purchase were bought: 70+ remotes, no ads, screen mirroring, floating remotes, extended keyboard, widgets and quick actions, voice commands, custom remotes, IR and NFC actions.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.Relmtech.Remote",
+          "name": "Unified Remote",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#43A047",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "3.25.1",
+              "versionCodes": null,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
