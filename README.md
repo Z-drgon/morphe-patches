@@ -30,7 +30,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 ---
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.54.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.54.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;44 patches total
+> **[v1.55.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.55.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;45 patches total
 <details open>
 <summary>Strava&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
@@ -241,6 +241,21 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 | Patch | Description | Options |
 |----------|----------------|-----------|
 | [Enable Premium](#enable-premium) | Turns on the app's Pro state (no ads, Pro features) as if the Pro version were purchased. |  |
+
+</details>
+
+<details open>
+<summary>Rocket Player&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
+
+**Supported versions:**
+
+| 6.3.4 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Enable Premium](#enable-premium) | Grants Premium, whose only features over Basic are no ads and VIP support: removes all banner and interstitial ads (the player, playlists and equalizer are already free). |  |
 
 </details>
 

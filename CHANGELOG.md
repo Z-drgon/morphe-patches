@@ -1,3 +1,9 @@
+## [1.55.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.54.1...v1.55.0) (2026-11-03)
+
+### ✨ New Features
+
+* **rocketplayer:** add Enable Premium patch pinning the PremiumHelper entitlement reader ([b4e2e70](https://github.com/mwbra130/Retro-Bowl-College/commit/b4e2e7043a76d42876410dc6ffb81e2637437e10))
+
 ## [1.54.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.54.0...v1.54.1) (2026-11-03)
 
 ### 🐛 Bug Fixes
