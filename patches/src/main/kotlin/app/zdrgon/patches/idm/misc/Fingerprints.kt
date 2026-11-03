@@ -179,7 +179,7 @@ object OfferStripFingerprint : Fingerprint(
     returnType = "V",
     parameters = listOf("Z"),
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
-    definingClass = "Lidm/internet/download/manager/MainActivity$a;",
+    definingClass = "Lidm/internet/download/manager/MainActivity\$a;",
     name = "ۦۖ۟"
 )
 
