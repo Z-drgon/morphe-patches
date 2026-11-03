@@ -19,16 +19,15 @@ import java.util.logging.Logger
  * These are exactly the call sites the official Morphe "Change installer
  * source" library patch rewrites.
  *
- * Why DiskWala needs this: 27.3 ships full PairIP (application class,
- * licensecheck and VMRunner in classes2.dex, libpairipcore.so in the
- * native split) and its LOCAL installer check is live
- * (LicenseClient.localCheckEnabled). LicenseClient
- * .performLocalInstallerCheck reads the installing package name through
- * InstallSourceInfo.getInstallingPackageName and rejects a re-signed
- * build that was not installed from a real app store ("Local install
- * check failed due to wrong installer."). Without this rewrite the
- * patched app never gets past the license check, so this patch is
- * REQUIRED alongside "Enable Premium" — both ship default-on.
+ * Why DiskWala keeps this: installer identity is read all over the
+ * app (22 call sites across the dexes, mostly ad SDKs). PairIP's own
+ * local installer check exists in 27.3 too, but its branch is dead
+ * in this build — LicenseClient.localCheckEnabled is never enabled,
+ * so performLocalInstallerCheck never runs; the launch block
+ * Matsen hit with v1.52.0 was PairIP's ONLINE license check, which
+ * the "Bypass PairIP ..." patches handle. This spoof is kept on as
+ * a pre-selected companion so every installer read in the app
+ * consistently reports Google Play on a re-signed build.
  */
 private fun Instruction.isInstallerGetterCall(): Boolean {
     if (opcode != Opcode.INVOKE_VIRTUAL && opcode != Opcode.INVOKE_VIRTUAL_RANGE) return false
@@ -52,7 +51,7 @@ private fun Instruction.isInstallerGetterCall(): Boolean {
 @Suppress("unused")
 val changeInstallerSourcePatch = bytecodePatch(
     name = "Change installer source",
-    description = "Spoofs the installer source so the app appears to be installed from Google Play. Required for DiskWala: its PairIP local installer check is live, so a re-signed build fails the license check without it — keep it on.",
+    description = "Spoofs the installer source so the app appears to be installed from Google Play everywhere it is read. Pre-selected companion for the DiskWala patch set — keep it on.",
     default = true,
 ) {
     compatibleWith(Constants.COMPATIBILITY_DISKWALA)
