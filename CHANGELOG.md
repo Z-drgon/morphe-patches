@@ -1,3 +1,14 @@
+## [1.52.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.51.0...v1.52.0) (2026-11-03)
+
+### 🐛 Bug Fixes
+
+* **yinyang:** appIconColor must be an Int literal (6-digit hex) ([f94d72c](https://github.com/mwbra130/Retro-Bowl-College/commit/f94d72cbfa70c80a6c7f16721486342ed1c0e6b0))
+
+### ✨ New Features
+
+* Add DiskWala Enable Premium patch ([fde8443](https://github.com/mwbra130/Retro-Bowl-College/commit/fde8443b246cb36be952c3d8056012ec3712a993))
+* **yinyang:** add Enable Premium and Change installer source patches for Yin Yang Launcher 5.13.1 ([7877414](https://github.com/mwbra130/Retro-Bowl-College/commit/787741403b13573c8aa2d2104a3adbcb75b50e07))
+
 ## [1.51.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.50.0...v1.51.0) (2026-11-03)
 
 ### ✨ New Features
