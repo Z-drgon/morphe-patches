@@ -1,3 +1,9 @@
+## [1.60.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.59.0...v1.60.0) (2026-11-03)
+
+### ✨ New Features
+
+* quarantine not-working patch sets (DiskWala, WVC, RainViewer, X-plore, Yin Yang, Vehico) to morphe-quarantine ([ab760f1](https://github.com/mwbra130/Retro-Bowl-College/commit/ab760f1f40ccbdcef43d4204e282a3e6028d2fc9))
+
 ## [1.59.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.58.1...v1.59.0) (2026-11-03)
 
 ### ✨ New Features
