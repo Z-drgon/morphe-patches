@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.56.1",
+  "version": "1.56.2",
   "patches": [
     {
       "name": "Add settings",
@@ -47,7 +47,7 @@
             {
               "version": "27.3",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -99,7 +99,7 @@
             {
               "version": "27.3",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -203,7 +203,7 @@
             {
               "version": "27.3",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -413,7 +413,7 @@
             {
               "version": "5.13.1",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -613,7 +613,7 @@
             {
               "version": "27.3",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -743,7 +743,7 @@
             {
               "version": "27.3",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -899,7 +899,7 @@
             {
               "version": "5.13.1",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }

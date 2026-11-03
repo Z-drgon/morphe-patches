@@ -1,3 +1,10 @@
+## [1.56.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.56.1...v1.56.2) (2026-11-03)
+
+### 🐛 Bug Fixes
+
+* **diskwala:** mark DiskWala patches experimental (PairIP native wall confirmed on-device) ([bff689b](https://github.com/mwbra130/Retro-Bowl-College/commit/bff689ba1c48b898b5c44a2fff137c6cfbc3742d))
+* **yinyang:** mark Yin Yang patches experimental (parked unresolved on-device) ([0542b12](https://github.com/mwbra130/Retro-Bowl-College/commit/0542b129a73c809c7d476b23a027bf3bb99bbedd))
+
 ## [1.56.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.56.0...v1.56.1) (2026-11-03)
 
 ### 🐛 Bug Fixes
