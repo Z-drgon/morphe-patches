@@ -1,3 +1,9 @@
+## [1.48.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.47.0...v1.48.0) (2026-11-03)
+
+### ✨ New Features
+
+* Add Tuner (Cifra Club) Enable Premium patch (is-registered gate pin, removes ads) ([0a626c5](https://github.com/mwbra130/Retro-Bowl-College/commit/0a626c5f0f490b73f4d021f298249fc52a9feeb0))
+
 ## [1.47.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.46.0...v1.47.0) (2026-11-03)
 
 ### ✨ New Features
