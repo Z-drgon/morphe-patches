@@ -42,8 +42,7 @@ private fun Instruction.isInstallerGetterCall(): Boolean {
 @Suppress("unused")
 val changeInstallerSourcePatch = bytecodePatch(
     name = "Change installer source",
-    description = "Spoofs the installer source so the app appears to be installed from an app store.",
-    default = false,
+    description = "Spoofs the installer source so the app appears to be installed from an app store. Required for Enable Pro to take effect — keep it on.",
 ) {
     compatibleWith(Constants.COMPATIBILITY)
 
