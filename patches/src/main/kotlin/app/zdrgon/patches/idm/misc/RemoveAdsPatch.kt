@@ -36,12 +36,29 @@ import org.w3c.dom.Element
  *   Li/g0;'s two (Z)DTBAdResponse fetchers -> return null
  *     The separate direct-APS loader used by the Amazon fallback in
  *     Li/b0;, which null-checks the response and bails cleanly.
- *   Li/l82; house-promo trigger        -> return false
- *     The screenshot's red promo strip under the toolbar is the
- *     app's OWN cross-promo view (NewBannerView, filled from
- *     BannerInfo — e.g. the baked-in NordVPN offers), not a network
- *     ad. Its show trigger schedules the fill/show runnable; pinned
- *     to false it is never scheduled.
+ *   House cross-promo (the app's OWN rotating BannerInfo offers —
+ *     VPN offers, the Telegram help group, 1DM+ itself, third-party
+ *     app promos; NOT network ads). Three render paths, all cut:
+ *     a) Li/l82; SHOW entry (U+06E6 U+06D6 U+06E6) -> return false.
+ *        The only funnel that fills/shows NewBannerView (the tall
+ *        bottom bar on the downloads screen): it schedules the
+ *        Li/ba1; fill runnable, which sets the view VISIBLE.
+ *        FIX (v1.57.0 miss): the first version pinned the sibling
+ *        method U+06E6 U+06D6 U+06EC, which is the HIDE trigger —
+ *        the show entry stayed live and the bar kept rendering.
+ *        That pin is removed; this round pins the show entry.
+ *     b) BannerView.setAd(Integer, BannerInfo) -> return-void.
+ *        The OLD Lightning BannerView in the same containers is
+ *        filled with house offers by BannerManager via
+ *        onAdReceived -> setAd, its only fill/show method.
+ *     c) Downloads-fragment offer strip (id/offer_vpnLL in
+ *        res/layout/download_list.xml — the VPN/Telegram strip
+ *        under the tab bar): its decider method in MainActivity$a
+ *        (U+06E6 U+06D6 U+06DF)(Z)V -> return-void, AND the layout
+ *        element is set visibility=gone in the resource half
+ *        below. Both are needed: the layout starts VISIBLE (no
+ *        visibility attribute) and the method would re-show it
+ *        with setVisibility(VISIBLE) if only the layout changed.
  *
  * Rewarded: the app has NO opt-in rewarded flow (zero app callers of
  * the rewarded callbacks, no rewarded type in the init mask), so
@@ -55,7 +72,11 @@ import org.w3c.dom.Element
  * green background. No dex code references its string resource — it
  * is declared, not added in code — so the suppression is a layout
  * edit: android:visibility="gone" on that one element. Neighbouring
- * drawer items are untouched.
+ * drawer items are untouched. The same resource half also hides
+ * the downloads offer strip (id/offer_vpnLL, see (c) above); the
+ * orange storage-warning bar directly above the banner container
+ * in the downloads footer is a different element and is NOT
+ * touched.
  *
  * NOT an ad, deliberately left alone: the orange "Click to fix" bar
  * is the app's own notice "The download location is not writable.
@@ -77,18 +98,18 @@ import org.w3c.dom.Element
 @Suppress("unused")
 val removeAdsPatch = bytecodePatch(
     name = "Remove ads",
-    description = "Removes ads (Appodeal mediation and the direct Amazon ads path), hides the app's own promo banner strip and the green \"Upgrade to 1DM+\" bar in the settings drawer. Does NOT unlock 1DM+ features — 1DM+ is a separate paid app and its features are not in this app.",
+    description = "Removes ads (Appodeal mediation and the direct Amazon ads path), hides the app's own rotating promo bars (the bottom house-promo bar and the downloads-screen VPN/Telegram offer strip) and the green \"Upgrade to 1DM+\" bar in the settings drawer. Does NOT unlock 1DM+ features — 1DM+ is a separate paid app and its features are not in this app.",
     default = true
 ) {
     compatibleWith(COMPATIBILITY_IDM)
 
-    // ══ Upsell bar — inline resourcePatch dependency ══════════════════
+    // ══ Layout edits — inline resourcePatch dependency ═══════════════
     // Defined INSIDE dependsOn() so PatchLoader never discovers it as a
     // separate top-level entry (see KDoc "WHY one entry").
     dependsOn(
         resourcePatch(
-            name = "Remove ads (drawer upsell bar)",
-            description = "Hides the green \"Upgrade to 1DM+\" bar (id/nav_upgrade) at the bottom of the settings drawer by setting its layout visibility to gone.",
+            name = "Remove ads (layout edits)",
+            description = "Hides the green \"Upgrade to 1DM+\" bar (id/nav_upgrade) at the bottom of the settings drawer and the downloads-screen offer strip (id/offer_vpnLL) by setting their layout visibility to gone.",
             default = true
         ) {
             compatibleWith(COMPATIBILITY_IDM)
@@ -115,6 +136,26 @@ val removeAdsPatch = bytecodePatch(
                         )
                     }
                     logger.info("1DM Remove ads: \"Upgrade to 1DM+\" drawer bar set to gone ($hidden element(s)).")
+                }
+
+                document("res/layout/download_list.xml").use { document ->
+                    val all = document.getElementsByTagName("*")
+                    var hidden = 0
+                    for (i in 0 until all.length) {
+                        val element = all.item(i) as Element
+                        val id = element.getAttribute("android:id")
+                        if (id.endsWith("offer_vpnLL")) {
+                            element.setAttribute("android:visibility", "gone")
+                            hidden++
+                        }
+                    }
+                    if (hidden == 0) {
+                        throw PatchException(
+                            "1DM Remove ads: the downloads offer strip (id/offer_vpnLL) was not found " +
+                                "in res/layout/download_list.xml; refusing to ship without the strip edit."
+                        )
+                    }
+                    logger.info("1DM Remove ads: downloads offer strip (id/offer_vpnLL) set to gone ($hidden element(s)).")
                 }
             }
         }
@@ -146,13 +187,24 @@ val removeAdsPatch = bytecodePatch(
         AmazonDirectFetchFingerprint.method.addInstructions(0, returnNull)
         AmazonDirectFetchBackfillFingerprint.method.addInstructions(0, returnNull)
 
-        // House promo strip: never schedule the fill/show runnable.
-        HousePromoTriggerFingerprint.method.addInstructions(
+        // House promo: pin the SHOW entry so the fill runnable that
+        // populates NewBannerView and sets it VISIBLE is never
+        // scheduled. (v1.57.0 pinned the HIDE sibling by mistake.)
+        HousePromoShowFingerprint.method.addInstructions(
             0,
             """
                 const/4 v0, 0x0
                 return v0
             """.trimIndent()
         )
+
+        // Old Lightning BannerView: never fill/show a house creative
+        // (or APS backfill) delivered by BannerManager.
+        HouseBannerSetAdFingerprint.method.addInstructions(0, "return-void")
+
+        // Downloads-fragment offer strip: its decider can never fill
+        // the text or set the strip VISIBLE again (the layout half
+        // above starts it gone).
+        OfferStripFingerprint.method.addInstructions(0, "return-void")
     }
 }
