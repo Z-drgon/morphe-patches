@@ -1,3 +1,9 @@
+## [1.56.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.55.0...v1.56.0) (2026-11-03)
+
+### ✨ New Features
+
+* **diskwala:** bypass PairIP startup license checks so re-signed builds launch ([07c20d6](https://github.com/mwbra130/Retro-Bowl-College/commit/07c20d6c8a3919f7ea29200f47e38a965248e933))
+
 ## [1.55.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.54.1...v1.55.0) (2026-11-03)
 
 ### ✨ New Features

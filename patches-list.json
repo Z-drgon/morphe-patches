@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.55.0",
+  "version": "1.56.0",
   "patches": [
     {
       "name": "Add settings",
@@ -37,6 +37,32 @@
       "dependencies": [],
       "compatiblePackages": [
         {
+          "packageName": "com.diskwalaapp",
+          "name": "DiskWala",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#E8A317",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "27.3",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Bypass PairIP application checks",
+      "description": "Required for re-signed builds: PairIP's Application class runs the signature and license checks at startup. This rewrites that one method so it only registers the app context and never calls either check, instead of relying on the checks themselves being stubbed.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
           "packageName": "com.instantbits.cast.webvideo",
           "name": "Web Video Caster",
           "description": null,
@@ -48,6 +74,32 @@
               "version": "6.1.0",
               "versionCodes": null,
               "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Bypass PairIP license check",
+      "description": "Required for re-signed builds: PairIP asks Google Play to license the app at startup and sends non-Play installs to a Play Store block page. Disables that check, its verdict handler, both block-page launchers, the delayed shutdown, and the block activity itself so the patched app can open.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.diskwalaapp",
+          "name": "DiskWala",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#E8A317",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "27.3",
+              "versionCodes": null,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -136,7 +188,7 @@
     },
     {
       "name": "Change installer source",
-      "description": "Spoofs the installer source so the app appears to be installed from Google Play. Required for DiskWala: its PairIP local installer check is live, so a re-signed build fails the license check without it — keep it on.",
+      "description": "Spoofs the installer source so the app appears to be installed from Google Play everywhere it is read. Pre-selected companion for the DiskWala patch set — keep it on.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -551,6 +603,32 @@
       "dependencies": [],
       "compatiblePackages": [
         {
+          "packageName": "com.diskwalaapp",
+          "name": "DiskWala",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#E8A317",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "27.3",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Disable PairIP license activity",
+      "description": "Required for re-signed builds: removes PairIP's LicenseActivity from the manifest entirely, so the Play Store block page and license error dialog can never be shown, whatever tries to open them.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
           "packageName": "com.instantbits.cast.webvideo",
           "name": "Web Video Caster",
           "description": null,
@@ -650,7 +728,7 @@
     },
     {
       "name": "Enable Premium",
-      "description": "Turns on Premium (no ads, real file names, HD downloads, faster streaming) as if subscribed. Also enable the Change installer source patch (pre-selected) — PairIP's installer check requires it.",
+      "description": "Turns on Premium (no ads, real file names, HD downloads, faster streaming) as if subscribed. Keep the pre-selected PairIP bypass patches on — a re-signed build cannot pass PairIP's startup license check without them.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [
