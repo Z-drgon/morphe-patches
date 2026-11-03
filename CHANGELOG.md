@@ -1,3 +1,9 @@
+## [1.58.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.57.1...v1.58.0) (2026-11-03)
+
+### ✨ New Features
+
+* X-plore Enable Premium (Dinner-tier donation state) + PairIP signature bypass for 4.52.02 ([c81ca0d](https://github.com/mwbra130/Retro-Bowl-College/commit/c81ca0d35221ba6ed407cf838f5c2a1b72fc3211))
+
 ## [1.57.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.57.0...v1.57.1) (2026-11-03)
 
 ### 🐛 Bug Fixes

@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.57.1",
+  "version": "1.58.0",
   "patches": [
     {
       "name": "Add settings",
@@ -152,6 +152,32 @@
               "version": "6.1.0",
               "versionCodes": null,
               "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Bypass PairIP signature check",
+      "description": "Required for re-signed builds: PairIP verifies the app's signing certificate at startup and kills the app if it isn't the Play signature. This disables that one check so the patched app can open.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.lonelycatgames.Xplore",
+          "name": "X-plore",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "4.52.02",
+              "versionCodes": null,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -872,6 +898,32 @@
           "targets": [
             {
               "version": "3.7.36",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Enable Premium",
+      "description": "Unlocks all premium features and removes ads by enabling the app's top donation tier state (the Dinner tier) — no purchase is made.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.lonelycatgames.Xplore",
+          "name": "X-plore",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "4.52.02",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
