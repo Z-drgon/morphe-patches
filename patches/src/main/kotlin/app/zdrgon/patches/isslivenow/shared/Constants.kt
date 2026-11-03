@@ -9,9 +9,9 @@ object Constants {
         name = "ISS Live Now",
         packageName = "com.nicedayapps.iss_free",
         apkFileType = ApkFileType.XAPK,
-        appIconColor = 0xFF2196F3,
+        appIconColor = 0x2196F3,
         targets = listOf(
-            AppTarget(version = "8.7.3", isExperimental = false)
+            AppTarget(version = "8.7.3")
         )
     )
 }
