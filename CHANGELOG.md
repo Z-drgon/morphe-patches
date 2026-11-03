@@ -1,3 +1,9 @@
+## [1.58.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.58.0...v1.58.1) (2026-11-03)
+
+### 🐛 Bug Fixes
+
+* **xplore:** mark Enable Premium + PairIP bypass experimental (on-device PairIP Play wall, parked) ([ecb68a6](https://github.com/mwbra130/Retro-Bowl-College/commit/ecb68a6138416b765e66a70b81de75434709ee2f))
+
 ## [1.58.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.57.1...v1.58.0) (2026-11-03)
 
 ### ✨ New Features
