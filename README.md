@@ -30,44 +30,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 ---
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.60.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.60.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;35 patches total
-<details open>
-<summary>Strava&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
-<br>
-
-**Supported versions:**
-
-| 486.9 |
-| :---: |
-
-| Patch | Description | Options |
-|----------|----------------|-----------|
-| [Add settings](#add-settings) | Long-press the Home tab in Strava's bottom bar to open 'Morphe patch settings'. Lets you toggle feed cleanup, route trim, bottom bar tabs and the launcher name/icon at runtime, without re-patching. |  |
-| [Custom app name and icon](#custom-app-name-and-icon) | Changes the app's displayed name and launcher icon. The icon choices are Strava's own built-in alternate icons, plus an accent-colored one. Name and icon can later be switched at runtime from the patch settings screen. | • App name<br>• App icon |
-| [Custom theme colors](#custom-theme-colors) | Replaces Strava's brand orange (#FC5200) accent color in the app's native screens with a color of your choice. | • Accent color |
-| [Enable password login](#enable-password-login) | Shows the email and password login option instead of forcing the one-time email code flow. Your password is still checked by Strava's servers exactly as in the official app. |  |
-| [Hide feed elements](#hide-feed-elements) | Hides who-to-follow suggestions, suggested challenges and other clutter cards from the activity feed. Requires the 'Hide subscription promotions' patch, which provides the shared feed filtering. | • Who to Follow<br>• Suggested Challenges<br>• Join Challenge<br>• Joined a club<br>• Activity lookback<br>• Local events |
-| [Hide subscription promotions](#hide-subscription-promotions) | Hides subscription upsell modules and promotional cards from the feed and other modular screens. UI cleanup only: does not unlock any paid features. | • Upselling<br>• Promotions |
-| [Local route privacy trim](#local-route-privacy-trim) | Trims extra route distance from both ends of the activity map on this device only, on top of Strava's own privacy filtering. Display-only: recorded and uploaded data are unchanged, and other people still see the activity exactly as your Strava privacy settings dictate. | • Meters to trim |
-
-</details>
-
-<details open>
-<summary>BusinessX&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
-<br>
-
-**Supported versions:**
-
-| 6.5.2 |
-| :---: |
-
-| Patch | Description | Options |
-|----------|----------------|-----------|
-| [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from Google Play. Required for BusinessX: its PairIP local installer check is live, so a re-signed build fails the license check without it — keep it on. | • Spoofed package installer name |
-| [Enable Premium](#enable-premium) | Grants Premium's on-device features: inventory & sales export (PDF/Excel/CSV), full sales history and trends, shop sharing, no ads, and Google Drive backup. BusinessX Cloud backup/sync are authorized on the developer's server and may still require a real subscription. |  |
-
-</details>
-
+> **[v1.61.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.61.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;26 patches total
 <details open>
 <summary>Echo&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>

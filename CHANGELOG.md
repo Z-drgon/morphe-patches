@@ -1,3 +1,10 @@
+## [1.61.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.60.0...v1.61.0) (2026-11-03)
+
+### ✨ New Features
+
+* isolate Strava patch set to morphe-quarantine ([397f6a0](https://github.com/mwbra130/Retro-Bowl-College/commit/397f6a0ac0c6ca48250c02eed3ef7b895f19d6be))
+* quarantine BusinessX patch set to morphe-quarantine (at Matsen's instruction) ([4bd91b9](https://github.com/mwbra130/Retro-Bowl-College/commit/4bd91b9fdab5d3db8c9e609fca1c5d49d759cef9))
+
 ## [1.60.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.59.0...v1.60.0) (2026-11-03)
 
 ### ✨ New Features
