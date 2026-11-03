@@ -1,3 +1,10 @@
+## [1.54.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.54.0...v1.54.1) (2026-11-03)
+
+### 🐛 Bug Fixes
+
+* **yinyang:** add YSubscription constructor fingerprint for the premium source pin ([35b7e6c](https://github.com/mwbra130/Retro-Bowl-College/commit/35b7e6caadad7a5abfd611d6aa22c047cf2366c2))
+* **yinyang:** pin YSubscription isPremium and isLifetime at its constructor so lifetime is actually granted ([fbd9c10](https://github.com/mwbra130/Retro-Bowl-College/commit/fbd9c10598012cb18c90b2703abdf591efca45ea))
+
 ## [1.54.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.53.0...v1.54.0) (2026-11-03)
 
 ### ✨ New Features

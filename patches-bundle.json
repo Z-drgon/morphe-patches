@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-03T16:07:50",
-  "description": "## [1.54.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.53.0...v1.54.0) (2026-11-03)\n\n### ✨ New Features\n\n* Add Smart MP3 Tagger Enable Lifetime Pro patch ([2fa3466](https://github.com/mwbra130/Retro-Bowl-College/commit/2fa3466e3a7361708be41fb06dc14b2af786dd06))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.54.0/patches-1.54.0.mpp",
+  "created_at": "2026-11-03T16:13:20",
+  "description": "## [1.54.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.54.0...v1.54.1) (2026-11-03)\n\n### 🐛 Bug Fixes\n\n* **yinyang:** add YSubscription constructor fingerprint for the premium source pin ([35b7e6c](https://github.com/mwbra130/Retro-Bowl-College/commit/35b7e6caadad7a5abfd611d6aa22c047cf2366c2))\n* **yinyang:** pin YSubscription isPremium and isLifetime at its constructor so lifetime is actually granted ([fbd9c10](https://github.com/mwbra130/Retro-Bowl-College/commit/fbd9c10598012cb18c90b2703abdf591efca45ea))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.54.1/patches-1.54.1.mpp",
   "signature_download_url": "",
-  "version": "1.54.0"
+  "version": "1.54.1"
 }
