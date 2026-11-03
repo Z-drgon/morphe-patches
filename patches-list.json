@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.42.4",
+  "version": "1.43.0",
   "patches": [
     {
       "name": "Add settings",
@@ -21,76 +21,7 @@
             {
               "version": "486.9",
               "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Block Ads",
-      "description": "Blocks all Unity Ads (interstitial and rewarded) by no-opping the show() methods. No ads will display.",
-      "default": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "packageName": "com.kiloo.subwaysurfers",
-          "name": "Subway Surfers",
-          "description": null,
-          "apkFileType": "XAPK",
-          "appIconColor": "#111111",
-          "signatures": null,
-          "targets": [
-            {
-              "version": "3.70.0",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        },
-        {
-          "packageName": "com.kiloo.subwaysurf",
-          "name": "Subway Surfers",
-          "description": null,
-          "apkFileType": "XAPK",
-          "appIconColor": "#111111",
-          "signatures": null,
-          "targets": [
-            {
-              "version": "3.70.0",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Block ads",
-      "description": "Blocks fullscreen interstitial ads and removes sponsored posts from feeds.",
-      "default": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "packageName": "com.bereal.ft",
-          "name": "BeReal",
-          "description": null,
-          "apkFileType": "XAPK",
-          "appIconColor": "#111111",
-          "signatures": null,
-          "targets": [
-            {
-              "version": "3.97.1",
-              "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -116,7 +47,7 @@
             {
               "version": "6.1.0",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -142,7 +73,7 @@
             {
               "version": "6.1.0",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -168,7 +99,7 @@
             {
               "version": "6.1.0",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -194,7 +125,7 @@
             {
               "version": "8.4.1",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -220,7 +151,7 @@
             {
               "version": "8.4.1",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -295,32 +226,6 @@
       ]
     },
     {
-      "name": "Complete all levels",
-      "description": "Marks every official level 100% complete with all secret coins.",
-      "default": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "packageName": "com.robtopx.geometryjumplite",
-          "name": "Geometry Dash Lite",
-          "description": null,
-          "apkFileType": "XAPK",
-          "appIconColor": "#2DB3FF",
-          "signatures": null,
-          "targets": [
-            {
-              "version": "2.2.147",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
       "name": "Custom app name and icon",
       "description": "Changes the app's displayed name and launcher icon. The icon choices are Strava's own built-in alternate icons, plus an accent-colored one. Name and icon can later be switched at runtime from the patch settings screen.",
       "default": false,
@@ -337,7 +242,7 @@
             {
               "version": "486.9",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -400,7 +305,7 @@
             {
               "version": "486.9",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -446,33 +351,7 @@
             {
               "version": "6.1.0",
               "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Disable video autoplay",
-      "description": "Videos stay paused until you tap them. Works in all feeds and profiles.",
-      "default": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "packageName": "com.bereal.ft",
-          "name": "BeReal",
-          "description": null,
-          "apkFileType": "XAPK",
-          "appIconColor": "#111111",
-          "signatures": null,
-          "targets": [
-            {
-              "version": "3.97.1",
-              "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -498,7 +377,7 @@
             {
               "version": "8.4.1",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -557,7 +436,7 @@
             {
               "version": "486.9",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -613,7 +492,7 @@
             {
               "version": "486.9",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -694,7 +573,7 @@
             {
               "version": "486.9",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -739,7 +618,7 @@
             {
               "version": "486.9",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -775,76 +654,7 @@
             {
               "version": "2.24.1",
               "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Remove suggested-people card",
-      "description": "Removes the suggested-people card from the feed.",
-      "default": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "packageName": "com.bereal.ft",
-          "name": "BeReal",
-          "description": null,
-          "apkFileType": "XAPK",
-          "appIconColor": "#111111",
-          "signatures": null,
-          "targets": [
-            {
-              "version": "3.97.1",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Skip Unity Ads",
-      "description": "Blocks forced interstitial ads — no fullscreen ad between runs. Rewarded ads still work normally and grant their reward.",
-      "default": true,
-      "dependencies": [],
-      "compatiblePackages": [
-        {
-          "packageName": "com.kiloo.subwaysurfers",
-          "name": "Subway Surfers",
-          "description": null,
-          "apkFileType": "XAPK",
-          "appIconColor": "#111111",
-          "signatures": null,
-          "targets": [
-            {
-              "version": "3.70.0",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        },
-        {
-          "packageName": "com.kiloo.subwaysurf",
-          "name": "Subway Surfers",
-          "description": null,
-          "apkFileType": "XAPK",
-          "appIconColor": "#111111",
-          "signatures": null,
-          "targets": [
-            {
-              "version": "3.70.0",
-              "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1068,7 +878,7 @@
             {
               "version": "6.1.0",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }

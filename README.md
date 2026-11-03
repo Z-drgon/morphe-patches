@@ -30,7 +30,7 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 ---
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.42.4](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.42.4)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;34 patches total
+> **[v1.43.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.43.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;26 patches total
 <details open>
 <summary>Strava&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
@@ -49,55 +49,6 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 | [Hide feed elements](#hide-feed-elements) | Hides who-to-follow suggestions, suggested challenges and other clutter cards from the activity feed. Requires the 'Hide subscription promotions' patch, which provides the shared feed filtering. | • Who to Follow<br>• Suggested Challenges<br>• Join Challenge<br>• Joined a club<br>• Activity lookback<br>• Local events |
 | [Hide subscription promotions](#hide-subscription-promotions) | Hides subscription upsell modules and promotional cards from the feed and other modular screens. UI cleanup only: does not unlock any paid features. | • Upselling<br>• Promotions |
 | [Local route privacy trim](#local-route-privacy-trim) | Trims extra route distance from both ends of the activity map on this device only, on top of Strava's own privacy filtering. Display-only: recorded and uploaded data are unchanged, and other people still see the activity exactly as your Strava privacy settings dictate. | • Meters to trim |
-
-</details>
-
-<details open>
-<summary>Subway Surfers&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
-<br>
-
-**Supported versions:**
-
-| 3.70.0 |
-| :---: |
-
-| Patch | Description | Options |
-|----------|----------------|-----------|
-| [Block Ads](#block-ads) | Blocks all Unity Ads (interstitial and rewarded) by no-opping the show() methods. No ads will display. |  |
-| [Skip Unity Ads](#skip-unity-ads) | Blocks forced interstitial ads — no fullscreen ad between runs. Rewarded ads still work normally and grant their reward. |  |
-
-</details>
-
-<details open>
-<summary>Subway Surfers&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
-<br>
-
-**Supported versions:**
-
-| 3.70.0 |
-| :---: |
-
-| Patch | Description | Options |
-|----------|----------------|-----------|
-| [Block Ads](#block-ads) | Blocks all Unity Ads (interstitial and rewarded) by no-opping the show() methods. No ads will display. |  |
-| [Skip Unity Ads](#skip-unity-ads) | Blocks forced interstitial ads — no fullscreen ad between runs. Rewarded ads still work normally and grant their reward. |  |
-
-</details>
-
-<details open>
-<summary>BeReal&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
-<br>
-
-**Supported versions:**
-
-| 3.97.1 |
-| :---: |
-
-| Patch | Description | Options |
-|----------|----------------|-----------|
-| [Block ads](#block-ads) | Blocks fullscreen interstitial ads and removes sponsored posts from feeds. |  |
-| [Disable video autoplay](#disable-video-autoplay) | Videos stay paused until you tap them. Works in all feeds and profiles. |  |
-| [Remove suggested-people card](#remove-suggested-people-card) | Removes the suggested-people card from the feed. |  |
 
 </details>
 
@@ -150,21 +101,6 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 |----------|----------------|-----------|
 | [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from an app store. | • Spoofed package installer name |
 | [Enable Premium](#enable-premium) | Unlocks Gradient Weather Premium. Use With Spoof Install Source |  |
-
-</details>
-
-<details open>
-<summary>Geometry Dash Lite&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
-<br>
-
-**Supported versions:**
-
-| 2.2.147 |
-| :---: |
-
-| Patch | Description | Options |
-|----------|----------------|-----------|
-| [Complete all levels](#complete-all-levels) | Marks every official level 100% complete with all secret coins. |  |
 
 </details>
 

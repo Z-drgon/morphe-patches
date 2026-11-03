@@ -1,3 +1,9 @@
+## [1.43.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.42.4...v1.43.0) (2026-11-03)
+
+### ✨ New Features
+
+* remove BeReal, Geometry Dash Lite and Subway Surfers patches; mark Happy Color, RainViewer, Strava, Web Video Caster experimental ([9e03135](https://github.com/mwbra130/Retro-Bowl-College/commit/9e03135651812722e9fb5a8d6dc58eb3305a60f8))
+
 ## [1.42.4](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.42.3...v1.42.4) (2026-11-02)
 
 ### 🐛 Bug Fixes
