@@ -449,11 +449,6 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 <!-- PATCHES_END -->
 
-## App notes
-
-**Retro Bowl College** (`com.newstargames.retrobowlcollege`, v1.1.2) — uninstall the original game first (patched builds are signed with a different key and won't install over it), then install the patched APK.
-
-**Crossy Road** (`com.yodo1.crossyroad`, XAPK, 7.14.0) — patch the full XAPK/APKM bundle, not a base-only .apk: in 7.14.0 the game libraries ship only in the bundle's split APKs, so a base-only file fails with a "no libil2cpp.so" error. Uninstall the original first, then install the patched build.
 
 ## Building locally
 
