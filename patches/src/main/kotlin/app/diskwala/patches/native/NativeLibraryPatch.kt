@@ -4,6 +4,7 @@ import app.diskwala.patches.shared.Constants.COMPATIBILITY_DISKWALA
 import app.morphe.patcher.patch.rawResourcePatch
 import java.io.File
 import java.io.RandomAccessFile
+import org.w3c.dom.Element
 
 /**
  * Patches native .so libraries to neutralize PairIP anti-tamper traps.
@@ -15,7 +16,7 @@ import java.io.RandomAccessFile
 @Suppress("unused")
 val nativeLibraryPatch = rawResourcePatch(
     name = "Patch native libraries",
-    description = "Neutralizes PairIP traps in native .so libraries and patches Hermes bundle.",
+    description = "Neutralizes PairIP traps in native .so libraries and patches Hermes bundle. Also applies the standalone-install manifest fixes (real Application class, original component factory, native library extraction) and removes the stock baseline profiles.",
     default = true
 ) {
     compatibleWith(COMPATIBILITY_DISKWALA)
@@ -253,6 +254,69 @@ val nativeLibraryPatch = rawResourcePatch(
                 raf.seek(0)
                 raf.write(data)
             } finally { raf.close() }
+        }
+
+        // === 8. AndroidManifest.xml standalone-install fixes ===
+        // patch_diskwala.py's patch_manifest() (step 9 of his pipeline: "Fix
+        // AndroidManifest.xml for standalone installation and direct
+        // MainApplication start"), adapted to 27.3:
+        // - Application class: his build switches the manifest from PairIP's
+        //   Application to the app's real one. In 27.3 PairIP's Application is
+        //   a thin subclass of the real Lcom/diskwalaapp/app/DiskWalaApp; whose
+        //   only added behavior is the PairIP attachBaseContext checks, so the
+        //   manifest now names DiskWalaApp directly.
+        // - ComponentFactory bypass (27.3-only addition): 27.3's manifest
+        //   declares android:appComponentFactory=
+        //   com.pairip.vmencryption.KeyImportAppComponentFactory, which gates
+        //   EVERY component instantiation (application, activities, providers,
+        //   receivers, services) on an encryption key that Google Play imports
+        //   into the Android Keystore. A re-signed build can never obtain that
+        //   key, so the factory would hand out placeholder components and the
+        //   KeyImportActivity dead-end. Point the manifest at the original
+        //   factory instead — KeyImportConstants in the app itself names
+        //   androidx.core.app.CoreComponentFactory as the original.
+        // - extractNativeLibs: kuntal flips false -> true for standalone
+        //   installs; 27.3 ships false.
+        // His split-attribute removals (requiredSplitTypes / splitTypes /
+        // isSplitRequired / com.android.vending.splits meta-data) are no-ops
+        // in 27.3: none of them exist in this manifest (verified), and Morphe
+        // Manager handles the XAPK splits itself.
+        // The stock values are verified before editing — the same guard
+        // philosophy as the .so patch above: refuse rather than ship an
+        // unedited or wrongly-edited manifest.
+        document("AndroidManifest.xml").use { doc ->
+            val applications = doc.getElementsByTagName("application")
+            require(applications.length == 1) {
+                "DiskWala: expected exactly one <application> element, found ${applications.length}; refusing to patch"
+            }
+            val app = applications.item(0) as Element
+            val stockName = app.getAttribute("android:name")
+            require(stockName == "com.pairip.application.Application") {
+                "DiskWala: unexpected application class '$stockName' (expected PairIP Application, 27.3); refusing to patch"
+            }
+            val stockFactory = app.getAttribute("android:appComponentFactory")
+            require(stockFactory == "com.pairip.vmencryption.KeyImportAppComponentFactory") {
+                "DiskWala: unexpected appComponentFactory '$stockFactory' (expected PairIP KeyImport factory, 27.3); refusing to patch"
+            }
+            app.setAttribute("android:name", "com.diskwalaapp.app.DiskWalaApp")
+            app.setAttribute("android:appComponentFactory", "androidx.core.app.CoreComponentFactory")
+            app.setAttribute("android:extractNativeLibs", "true")
+            println("Patched AndroidManifest.xml: application -> com.diskwalaapp.app.DiskWalaApp, " +
+                "appComponentFactory -> androidx.core.app.CoreComponentFactory, extractNativeLibs -> true")
+        }
+
+        // === 9. Remove precompiled baseline profiles ===
+        // patch_diskwala.py's remove_dexopt_profiles(): the stock baseline
+        // profiles describe the stock (PairIP-wrapped) code layout; kuntal
+        // deletes assets/dexopt/ so ART never applies a stale profile to the
+        // patched build. 27.3 carries baseline.prof + baseline.profm there.
+        for (profile in listOf("assets/dexopt/baseline.prof", "assets/dexopt/baseline.profm")) {
+            if (get(profile).exists()) {
+                delete(profile)
+                println("Deleted $profile")
+            } else {
+                println("WARN: $profile missing")
+            }
         }
 
         println("=== All native patches applied ===")

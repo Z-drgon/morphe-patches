@@ -416,6 +416,62 @@ internal object ArgumentsAddEntryFingerprint : Fingerprint(
     parameters = listOf("Lcom/facebook/react/bridge/WritableNativeMap;", "Ljava/lang/String;", "Ljava/lang/Object;")
 )
 
+// 22. 27.3 startup restoration (kuntal pipeline parity — see DisableForceUpdatePatch §16
+// and RECON.md). In 27.3 PairIP's VM-encryption layer extracted the bodies of
+// DiskWalaApp.onCreate and MainActivity.onCreate: both dispatch through static
+// java.lang.reflect.Method fields (LH9/wEh/AbhHeHndst;) that only the VM startup
+// program populates — a whole-dex census shows zero dex writers for either field.
+// His 24.5 build had no such extraction; his pipeline instead restores the app
+// entry points and stubs the factory <clinit>s that invoke StartupLauncher.
+internal object CoreComponentFactoryClinitFingerprint : Fingerprint(
+    definingClass = "Landroidx/core/app/CoreComponentFactory;",
+    name = "<clinit>",
+    returnType = "V"
+)
+
+// 27.3 counterpart of his MainApplication.<clinit> stub: Lm5/n is the obfuscated
+// Hilt base class of DiskWalaApp, and PairIP injected the same
+// StartupLauncher.launch() call into its <clinit>.
+internal object HiltApplicationClinitFingerprint : Fingerprint(
+    definingClass = "Lm5/n;",
+    name = "<clinit>",
+    returnType = "V"
+)
+
+internal object DiskWalaAppOnCreateFingerprint : Fingerprint(
+    definingClass = "Lcom/diskwalaapp/app/DiskWalaApp;",
+    name = "onCreate",
+    returnType = "V",
+    parameters = listOf()
+)
+
+internal object DiskWalaMainActivityOnCreateFingerprint : Fingerprint(
+    definingClass = "Lcom/diskwalaapp/app/MainActivity;",
+    name = "onCreate",
+    returnType = "V",
+    parameters = listOf("Landroid/os/Bundle;")
+)
+
+// 27.3's LicenseActivity has no onCreate at all — onStart is the only lifecycle
+// method, and it is the one patch_diskwala.py stubs (finish + return).
+internal object LicenseActivityOnStartFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/licensecheck/LicenseActivity;",
+    name = "onStart",
+    returnType = "V"
+)
+
+internal object AudienceNetworkContentProviderOnCreateFingerprint : Fingerprint(
+    definingClass = "Lcom/facebook/ads/AudienceNetworkContentProvider;",
+    name = "onCreate",
+    returnType = "Z"
+)
+
+internal object BidMachineInitProviderOnCreateFingerprint : Fingerprint(
+    definingClass = "Lio/bidmachine/BidMachineInitProvider;",
+    name = "onCreate",
+    returnType = "Z"
+)
+
 // 21. WritableNativeMap null-key safety
 internal object WritableNativeMapPutMapFingerprint : Fingerprint(
     definingClass = "Lcom/facebook/react/bridge/WritableNativeMap;",

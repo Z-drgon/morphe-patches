@@ -652,5 +652,84 @@ val disableForceUpdatePatch = bytecodePatch(
                 """
             )
         }
+
+        // 16) 27.3 startup restoration — kuntal pipeline parity.
+        // patch_diskwala.py step 1 stubs the <clinit> of the two component
+        // factory classes PairIP hijacked (androidx CoreComponentFactory and
+        // the framework AppComponentFactory). A whole-dex census of 27.3 shows
+        // exactly two <clinit>s in the entire app call StartupLauncher.launch():
+        // CoreComponentFactory's and Lm5/n's (the obfuscated Hilt base class of
+        // DiskWalaApp — the counterpart of his MainApplication.<clinit> stub).
+        // The framework AppComponentFactory is not part of the APK, so there is
+        // nothing to stub for it. Both stubs are defense-in-depth: launch()
+        // itself is already stubbed in step 1 above.
+        runCatching { CoreComponentFactoryClinitFingerprint.method.addInstructions(0, "return-void") }
+        runCatching { HiltApplicationClinitFingerprint.method.addInstructions(0, "return-void") }
+
+        // patch_diskwala.py step 3 stubs LicenseActivity.onStart to finish().
+        // His Kotlin set only carries onCreate/showErrorDialog/showPaywall
+        // fingerprints; in 27.3 LicenseActivity has NO onCreate — onStart is
+        // its only lifecycle method, so this is the operative stub.
+        runCatching {
+            LicenseActivityOnStartFingerprint.method.addInstructions(
+                0,
+                """
+                    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+                    return-void
+                """
+            )
+        }
+
+        // patch_diskwala.py step 6 provider coverage not present in his Kotlin
+        // set: AudienceNetwork and BidMachine init providers are declared in
+        // 27.3's manifest and run at every process start.
+        runCatching {
+            AudienceNetworkContentProviderOnCreateFingerprint.method.addInstructions(
+                0,
+                """
+                    const/4 v0, 0x1
+                    return v0
+                """
+            )
+        }
+        runCatching {
+            BidMachineInitProviderOnCreateFingerprint.method.addInstructions(
+                0,
+                """
+                    const/4 v0, 0x1
+                    return v0
+                """
+            )
+        }
+
+        // CRITICAL 27.3 restoration (his step 6: "Restore proper
+        // MainApplication.onCreate and MainActivity.onCreate"). 27.3's PairIP
+        // VM-encryption layer extracted both bodies: DiskWalaApp.onCreate and
+        // MainActivity.onCreate are 9-11 instruction stubs that pack their
+        // arguments and invoke a static java.lang.reflect.Method field
+        // (LH9/wEh/AbhHeHndst;->qYVTIiSh / ->njOleJAZhTsY). Nothing in any dex
+        // writes those fields — only the VM startup program populates them —
+        // so with the VM bypassed both fields stay null and the first
+        // onCreate throws NullPointerException: the patched app crashes on
+        // launch. Restore the standard bodies the same way his pipeline does
+        // (invoke-super + return): Lm5/n.onCreate performs the Hilt injection
+        // for DiskWalaApp, and Hilt_MainActivity.onCreate performs the
+        // activity-side injection. These two are NOT runCatching-wrapped: if
+        // either fingerprint ever misses, the patch must fail loudly instead
+        // of shipping a build that crashes on launch.
+        DiskWalaAppOnCreateFingerprint.method.addInstructions(
+            0,
+            """
+                invoke-super {p0}, Lm5/n;->onCreate()V
+                return-void
+            """
+        )
+        DiskWalaMainActivityOnCreateFingerprint.method.addInstructions(
+            0,
+            """
+                invoke-super {p0, p1}, Lcom/diskwalaapp/app/Hilt_MainActivity;->onCreate(Landroid/os/Bundle;)V
+                return-void
+            """
+        )
     }
 }
