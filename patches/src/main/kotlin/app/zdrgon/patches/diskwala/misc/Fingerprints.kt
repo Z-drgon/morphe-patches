@@ -256,8 +256,6 @@ object StartupLauncherLaunchFingerprint : Fingerprint(
     definingClass = "Lcom/pairip/StartupLauncher;",
     name = "launch",
     returnType = "V",
-    parameters = listOf(),
-    accessFlags = listOf(AccessFlags.PUBLIC),
 )
 
 object VMRunnerInvokeFingerprint : Fingerprint(
