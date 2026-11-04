@@ -1,3 +1,9 @@
+## [1.63.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.6...v1.63.0) (2026-11-04)
+
+### ✨ New Features
+
+* quarantine DiskWala patch set to morphe-quarantine (at Matsen's instruction) ([fae2a11](https://github.com/mwbra130/Retro-Bowl-College/commit/fae2a11b89deae74866020f07a4aa07de42c224d))
+
 ## [1.62.6](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.5...v1.62.6) (2026-11-04)
 
 ### 🐛 Bug Fixes
