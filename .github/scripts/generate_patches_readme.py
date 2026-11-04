@@ -3,9 +3,8 @@
 Generates the patches section of README.md from patches-list.json
 and injects it between <!-- PATCHES_START --> / <!-- PATCHES_END --> markers.
 
-Spoilers are expanded (open by default) if:
-  1. Total patch count <= AUTO_EXPAND_THRESHOLD.
-  2. The README marker explicitly says: <!-- PATCHES_START EXPANDED -->
+Spoilers always start closed (plain <details>, no "open" attribute) —
+the repo owner wants readers to expand only the app they came for.
 
 python3 generate_patches_readme.py <owner/repo> <branch> [patches-list.json] [README.md]
 """
@@ -199,17 +198,9 @@ if not marker_match or END_MARKER not in readme:
 
 actual_start = marker_match.group(0)
 
-# Auto-expand threshold
-AUTO_EXPAND_THRESHOLD = 20
-
-# Spoilers are expanded if:
-# 1. Total patch count is small (≤ AUTO_EXPAND_THRESHOLD)
-#    with only a few patches where collapsing adds no benefit.
-# 2. The README marker explicitly requests it: <!-- PATCHES_START EXPANDED -->
-expanded = (
-    total <= AUTO_EXPAND_THRESHOLD or
-    "EXPANDED" in actual_start
-)
+# Spoilers always start closed — no auto-expand, and an EXPANDED
+# marker (kept parseable above for compatibility) no longer opens them.
+expanded = False
 
 generated  = build_content(expanded=expanded)
 

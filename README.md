@@ -132,9 +132,9 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 ## Every patch, app by app
 
-<!-- PATCHES_START EXPANDED -->
+<!-- PATCHES_START -->
 > **[v1.62.2](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.62.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;33 patches total
-<details open>
+<details>
 <summary>DiskWala&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
 
@@ -155,7 +155,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Echo&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
 
@@ -171,7 +171,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Smart MP3 Tagger&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
 
@@ -187,7 +187,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Video Cutter&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
 
@@ -203,7 +203,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Gradient Weather&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
 
@@ -219,7 +219,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Unified Remote&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -234,7 +234,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Alarmy&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -249,7 +249,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Hermit&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -264,7 +264,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>ISS Live Now&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -279,7 +279,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Rocket Player&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -294,7 +294,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Tuner&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -309,7 +309,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Roku Remote&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -324,7 +324,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Crossy Road&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
 <br>
 
@@ -341,7 +341,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Happy Color&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -356,7 +356,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>1DM: Browser & Video Download&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -371,7 +371,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Notes&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -386,7 +386,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Smashy Road 2&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
 
@@ -402,7 +402,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Poweramp&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -417,7 +417,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Games In One - Watch Games&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -432,7 +432,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 </details>
 
-<details open>
+<details>
 <summary>Retro Bowl College&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
@@ -466,3 +466,18 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](LICENSE).
+
+## Credits
+
+Some patches in this bundle are ports or updates of other creators' work — credit to the original authors:
+
+- **DiskWala** — [kuntal-devrat](https://github.com/kuntal-devrat/diskwala-patches): the DiskWala patches in this bundle are a port and update of his diskwala-patches (his version targeted DiskWala 24.5; the port here targets 27.3).
+- **Poweramp** — [arandomhooman](https://github.com/arandomhooman/hoomans-morphe-patches): the Poweramp "Unlock Premium" patch is a port of his patch for Poweramp build-1025, retargeted to build-1031.
+- **Gradient Weather** — [morningentree (Entree3k)](https://github.com/Entree3k/Morning-Entree-Patches): the Gradient Weather "Enable Premium" patch was authored from his Morning Entree Patches template.
+- **Crossy Road** — [byehi98](https://github.com/byehi98/okish-morphe-patches): the Crossy Road "Free store" patch is a port of his okish-morphe-patches version (his targeted Crossy Road 7.13.0; updated here for 7.14.0).
+
+## Disclaimer
+
+Use these patches at your own risk. They modify third-party apps, and a patched app can break, crash, lose data, or stop working when the app updates. Using them may also violate an app's terms of service — if your account gets banned or suspended, that is your responsibility, not mine.
+
+These patches are provided as-is, with no warranty of any kind, and I accept no responsibility for crashes, bans, data loss, or any other damage that comes from using them. If that is not acceptable to you, do not use them.
