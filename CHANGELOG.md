@@ -1,3 +1,9 @@
+## [1.62.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.0...v1.62.1) (2026-11-04)
+
+### 🐛 Bug Fixes
+
+* **diskwala:** match StartupLauncher.launch on 27.3 (instance method, PUBLIC only) and fail loudly if VM stubs miss ([120379b](https://github.com/mwbra130/Retro-Bowl-College/commit/120379b1be044694e11136a2a995bcc9a7d4f0fb))
+
 ## [1.62.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.61.0...v1.62.0) (2026-11-04)
 
 ### ✨ New Features

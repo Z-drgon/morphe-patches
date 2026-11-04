@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-04T00:02:10",
-  "description": "## [1.62.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.61.0...v1.62.0) (2026-11-04)\n\n### ✨ New Features\n\n* **diskwala:** restore DiskWala patches, port kuntal PairIP VM + native bypass to 27.3 ([762f8d7](https://github.com/mwbra130/Retro-Bowl-College/commit/762f8d7a859263cd646a2ed57f7baa9bf77aca9c))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.62.0/patches-1.62.0.mpp",
+  "created_at": "2026-11-04T00:06:58",
+  "description": "## [1.62.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.0...v1.62.1) (2026-11-04)\n\n### 🐛 Bug Fixes\n\n* **diskwala:** match StartupLauncher.launch on 27.3 (instance method, PUBLIC only) and fail loudly if VM stubs miss ([120379b](https://github.com/mwbra130/Retro-Bowl-College/commit/120379b1be044694e11136a2a995bcc9a7d4f0fb))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.62.1/patches-1.62.1.mpp",
   "signature_download_url": "",
-  "version": "1.62.0"
+  "version": "1.62.1"
 }
