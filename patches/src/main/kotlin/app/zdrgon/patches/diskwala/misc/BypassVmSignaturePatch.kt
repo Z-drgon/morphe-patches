@@ -50,21 +50,21 @@ val bypassVmSignaturePatch = bytecodePatch(
     execute {
         val logger = Logger.getLogger(this::class.java.name)
 
-        runCatching {
-            StartupLauncherLaunchFingerprint.method.addInstructions(0, "return-void")
-            logger.info("DiskWala: PairIP StartupLauncher.launch stubbed — the startup program never runs.")
-        }.onFailure { logger.warning("DiskWala: StartupLauncher stub skipped: $it") }
+        // NOT wrapped in runCatching: these two stubs are the point of
+        // this patch. If either fingerprint ever fails to match, the
+        // patch must fail loudly instead of shipping a build whose
+        // PairIP VM can still run.
+        StartupLauncherLaunchFingerprint.method.addInstructions(0, "return-void")
+        logger.info("DiskWala: PairIP StartupLauncher.launch stubbed — the startup program never runs.")
 
-        runCatching {
-            VMRunnerInvokeFingerprint.method.addInstructions(
-                0,
-                """
-                    const/4 v0, 0x0
-                    return-object v0
-                """.trimIndent(),
-            )
-            logger.info("DiskWala: PairIP VMRunner.invoke stubbed to return null — executeVM is never entered.")
-        }.onFailure { logger.warning("DiskWala: VMRunner.invoke stub skipped: $it") }
+        VMRunnerInvokeFingerprint.method.addInstructions(
+            0,
+            """
+                const/4 v0, 0x0
+                return-object v0
+            """.trimIndent(),
+        )
+        logger.info("DiskWala: PairIP VMRunner.invoke stubbed to return null — executeVM is never entered.")
 
         runCatching {
             VMRunnerSetContextFingerprint.method.addInstructions(0, "return-void")

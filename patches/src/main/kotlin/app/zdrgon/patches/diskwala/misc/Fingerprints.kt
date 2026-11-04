@@ -233,7 +233,9 @@ object LicenseActivityOnStartFingerprint : Fingerprint(
 // startup program and the VM itself. Every target below was
 // re-verified against Matsen's exact 27.3 dexes (androguard census
 // 2026-11-03):
-//   StartupLauncher.launch          classes2.dex, PUBLIC STATIC ()V,
+//   StartupLauncher.launch          classes2.dex, PUBLIC ()V (instance
+//                                   method in 27.3 — kuntal's flagless
+//                                   fingerprint matched for this reason),
 //                                   sole caller PairipApplication
 //                                   .<clinit> — i.e. it runs at class
 //                                   load, BEFORE attachBaseContext.
@@ -255,7 +257,7 @@ object StartupLauncherLaunchFingerprint : Fingerprint(
     name = "launch",
     returnType = "V",
     parameters = listOf(),
-    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+    accessFlags = listOf(AccessFlags.PUBLIC),
 )
 
 object VMRunnerInvokeFingerprint : Fingerprint(
