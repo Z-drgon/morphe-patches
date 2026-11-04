@@ -133,7 +133,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 ## Every patch, app by app
 
 <!-- PATCHES_START -->
-> **[v1.62.3](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.62.3)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;30 patches total
+> **[v1.62.4](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.62.4)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;30 patches total
 <details>
 <summary>Echo&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>

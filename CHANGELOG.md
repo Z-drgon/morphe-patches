@@ -1,3 +1,9 @@
+## [1.62.4](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.3...v1.62.4) (2026-11-04)
+
+### 🐛 Bug Fixes
+
+* **diskwala:** correct adrp stock words in native guard (0x2a6dc/0x2a6f8) ([5799521](https://github.com/mwbra130/Retro-Bowl-College/commit/579952188463033b009ca8c3c53ad96734e2c939))
+
 ## [1.62.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.2...v1.62.3) (2026-11-04)
 
 ### 🐛 Bug Fixes
