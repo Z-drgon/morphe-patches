@@ -2,7 +2,7 @@
 
 A personal bundle of Morphe patches for Android — premium unlocks, ad removal, and a few quality-of-life tweaks, all in one source. Add the bundle to Morphe Manager or Morphe Desktop, pick your app, and patch it yourself.
 
-**19 apps · 26 patches** · current bundle: [v1.61.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.61.0)
+**19 apps · 26 patches** · current bundle: [v1.63.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.63.0)
 
 ## Apps at a glance
 
@@ -450,7 +450,6 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 Some patches in this bundle are ports or updates of other creators' work — credit to the original authors:
 
-- **DiskWala** — [kuntal-devrat](https://github.com/kuntal-devrat/diskwala-patches): the DiskWala patches in this bundle are a port and update of his diskwala-patches (his version targeted DiskWala 24.5; the port here targets 27.3).
 - **Poweramp** — [arandomhooman](https://github.com/arandomhooman/hoomans-morphe-patches): the Poweramp "Unlock Premium" patch is a port of his patch for Poweramp build-1025, retargeted to build-1031.
 - **Gradient Weather** — [morningentree (Entree3k)](https://github.com/Entree3k/Morning-Entree-Patches): the Gradient Weather "Enable Premium" patch was authored from his Morning Entree Patches template.
 - **Crossy Road** — [byehi98](https://github.com/byehi98/okish-morphe-patches): the Crossy Road "Free store" patch is a port of his okish-morphe-patches version (his targeted Crossy Road 7.13.0; updated here for 7.14.0).
