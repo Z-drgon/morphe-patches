@@ -1,3 +1,9 @@
+## [1.62.5](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.4...v1.62.5) (2026-11-04)
+
+### 🐛 Bug Fixes
+
+* **diskwala:** full kuntal pipeline parity — restore VM-extracted onCreates, factory/manifest bypass, clinit stubs ([e166905](https://github.com/mwbra130/Retro-Bowl-College/commit/e166905aaacb0f37062881d8404943c3842facf5))
+
 ## [1.62.4](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.3...v1.62.4) (2026-11-04)
 
 ### 🐛 Bug Fixes

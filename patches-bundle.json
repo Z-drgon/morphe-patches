@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-04T00:37:52",
-  "description": "## [1.62.4](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.3...v1.62.4) (2026-11-04)\n\n### 🐛 Bug Fixes\n\n* **diskwala:** correct adrp stock words in native guard (0x2a6dc/0x2a6f8) ([5799521](https://github.com/mwbra130/Retro-Bowl-College/commit/579952188463033b009ca8c3c53ad96734e2c939))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.62.4/patches-1.62.4.mpp",
+  "created_at": "2026-11-04T01:15:43",
+  "description": "## [1.62.5](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.4...v1.62.5) (2026-11-04)\n\n### 🐛 Bug Fixes\n\n* **diskwala:** full kuntal pipeline parity — restore VM-extracted onCreates, factory/manifest bypass, clinit stubs ([e166905](https://github.com/mwbra130/Retro-Bowl-College/commit/e166905aaacb0f37062881d8404943c3842facf5))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.62.5/patches-1.62.5.mpp",
   "signature_download_url": "",
-  "version": "1.62.4"
+  "version": "1.62.5"
 }

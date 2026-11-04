@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.62.4",
+  "version": "1.62.5",
   "patches": [
     {
       "name": "Change installer source",
@@ -544,7 +544,7 @@
     },
     {
       "name": "Patch native libraries",
-      "description": "Neutralizes PairIP traps in native .so libraries and patches Hermes bundle.",
+      "description": "Neutralizes PairIP traps in native .so libraries and patches Hermes bundle. Also applies the standalone-install manifest fixes (real Application class, original component factory, native library extraction) and removes the stock baseline profiles.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [

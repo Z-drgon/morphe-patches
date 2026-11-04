@@ -133,7 +133,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 ## Every patch, app by app
 
 <!-- PATCHES_START -->
-> **[v1.62.4](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.62.4)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;30 patches total
+> **[v1.62.5](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.62.5)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;30 patches total
 <details>
 <summary>Echo&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
@@ -211,7 +211,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 |----------|----------------|-----------|
 | [Disable ads](#disable-ads) | Stubs AppLovin, AdMob, InMobi and other ad SDKs at the bytecode level to prevent ads from loading without breaking the app. |  |
 | [Disable forced update](#disable-forced-update) | Bypasses PairIP license check ('Download from Play Store'), Play Integrity, and signature verification to allow modified and sideloaded app usage. |  |
-| [Patch native libraries](#patch-native-libraries) | Neutralizes PairIP traps in native .so libraries and patches Hermes bundle. |  |
+| [Patch native libraries](#patch-native-libraries) | Neutralizes PairIP traps in native .so libraries and patches Hermes bundle. Also applies the standalone-install manifest fixes (real Application class, original component factory, native library extraction) and removes the stock baseline profiles. |  |
 | [Unlock premium](#unlock-premium) | Makes RevenueCat entitlements appear active so ads-free and premium features are unlocked. |  |
 
 </details>
