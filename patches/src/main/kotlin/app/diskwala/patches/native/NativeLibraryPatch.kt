@@ -1,7 +1,7 @@
 package app.diskwala.patches.native
 
 import app.diskwala.patches.shared.Constants.COMPATIBILITY_DISKWALA
-import app.morphe.patcher.patch.rawResourcePatch
+import app.morphe.patcher.patch.resourcePatch
 import java.io.File
 import java.io.RandomAccessFile
 import org.w3c.dom.Element
@@ -10,11 +10,20 @@ import org.w3c.dom.Element
  * Patches native .so libraries to neutralize PairIP anti-tamper traps.
  * This is equivalent to Steps 3-6 of build_master_apk.py.
  *
- * Uses rawResourcePatch to get file system access to the decoded APK,
- * then performs offset-based binary writes to .so files.
+ * Uses the arbitrary-file API of the resource context to perform
+ * offset-based binary writes to .so files, plus the manifest and
+ * baseline-profile fixes from patch_diskwala.py (sections 8-9 below).
+ *
+ * This is a resourcePatch, not a rawResourcePatch: the manifest surgery
+ * in section 8 needs the decoded AndroidManifest.xml document, and in an
+ * all-raw patch set the patcher decodes resources in raw mode, where
+ * document() has no manifest file to open (verified: FileNotFoundException
+ * on the decoded-manifest path). The arbitrary-file API used for the .so
+ * writes behaves the same under full resource decoding — the v1.62.2
+ * bundle proved both in a single run (manifest edit + .so writes).
  */
 @Suppress("unused")
-val nativeLibraryPatch = rawResourcePatch(
+val nativeLibraryPatch = resourcePatch(
     name = "Patch native libraries",
     description = "Neutralizes PairIP traps in native .so libraries and patches Hermes bundle. Also applies the standalone-install manifest fixes (real Application class, original component factory, native library extraction) and removes the stock baseline profiles.",
     default = true
