@@ -133,7 +133,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 ## Every patch, app by app
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.62.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.62.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;33 patches total
+> **[v1.62.2](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.62.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;33 patches total
 <details open>
 <summary>DiskWala&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>

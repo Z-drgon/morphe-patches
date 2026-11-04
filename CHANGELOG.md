@@ -1,3 +1,9 @@
+## [1.62.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.1...v1.62.2) (2026-11-04)
+
+### 🐛 Bug Fixes
+
+* **diskwala:** StartupLauncher fingerprint to kuntal's exact minimal shape ([8466945](https://github.com/mwbra130/Retro-Bowl-College/commit/846694537ade1cf73e5d459ea38e6f56141f2d35))
+
 ## [1.62.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.0...v1.62.1) (2026-11-04)
 
 ### 🐛 Bug Fixes
