@@ -1,3 +1,9 @@
+## [1.62.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.2...v1.62.3) (2026-11-04)
+
+### 🐛 Bug Fixes
+
+* **diskwala:** replace hybrid set with kuntal-devrat exact patches ported to 27.3 ([50152c4](https://github.com/mwbra130/Retro-Bowl-College/commit/50152c4eafdac7aad94629e6f08a3c3d5cf16e70))
+
 ## [1.62.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.1...v1.62.2) (2026-11-04)
 
 ### 🐛 Bug Fixes
