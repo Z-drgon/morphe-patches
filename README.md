@@ -1,6 +1,122 @@
 # Mwbra130's Morphe Patches
 
-Custom Morphe patches for Android apps. Add this repo as a source in Morphe Manager or Morphe Desktop, pick an app, and patch.
+A personal bundle of Morphe patches for Android — premium unlocks, ad removal, and a few quality-of-life tweaks, all in one source. Add the bundle to Morphe Manager or Morphe Desktop, pick your app, and patch it yourself.
+
+**19 apps · 26 patches** · current bundle: [v1.61.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.61.0)
+
+## Apps at a glance
+
+<!-- App icon grid: maintained by hand and kept OUTSIDE the auto-generated patches block
+     below on purpose, so releases don't overwrite it. Reflects bundle v1.61.0. -->
+
+<table>
+<tr>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/O22rWPbgLS6WhWbdzPnX5CuLSbWd4dyFS0XTfHR-sQxNQkS317Jt5kK3Bbwaccm7Zp-HsCsGWhep9zSNRS4B=w128-h128" width="72" height="72" alt="1DM: Browser & Video Download icon">
+<br><b>1DM: Browser & Video Download</b>
+<br><sub>1 patch</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/3b2xdcIvbLFtNiOP1vCbQuszwP2qWyGsa_pGC63VNQlSC4ddP3sApprJ0r4ajU5bypFYjIWaHe_pjNzvE5cKvQ=w128-h128" width="72" height="72" alt="Alarmy icon">
+<br><b>Alarmy</b>
+<br><sub>1 patch</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/LX__Y8tKCvkvEgboZtQfDsvYiNFa6kwWSpqObipZI2MLK5rFVd5tEU8xgMNoMj1ICOf9TO7PFoFmiKGeIpf1=w128-h128" width="72" height="72" alt="Crossy Road icon">
+<br><b>Crossy Road</b>
+<br><sub>3 patches</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/pVUW445uF1ek7vCeJetlNWk6bb4gMBnbSUtMEbzMkNHU6dDwoyO3KiEsSvYoiFByfHfAHXtcKf8nIGrCsu4ueQ=w128-h128" width="72" height="72" alt="Echo icon">
+<br><b>Echo</b>
+<br><sub>2 patches</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/n-VW4rcGGAZNvcAxpAA6gM64UTXU2iuPuCXBluW83Kd21zGhNgOThvhsYTo25mME4VioiXXbg3oL3S_BIk5QvYQ=w128-h128" width="72" height="72" alt="Games In One - Watch Games icon">
+<br><b>Games In One - Watch Games</b>
+<br><sub>1 patch</sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/04xiToIui2lD8Co9xPb-_V3JW90vSS8ej7aEAMqzdA9uadnjkGbPFvtkQPxB4okIIkrZquPYnxE3Eg6d6Ik_XQ=w128-h128" width="72" height="72" alt="Gradient Weather icon">
+<br><b>Gradient Weather</b>
+<br><sub>2 patches</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/SrSr_L4l99jgmGMy79N0_mEhpdn-fBqpg1hxobrs_daqRyZU-IUaiz3_07Bx-c5fB8JtHE0R5HpB2S8V3XAfJTs=w128-h128" width="72" height="72" alt="Happy Color icon">
+<br><b>Happy Color</b>
+<br><sub>1 patch · 🧪 experimental</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/SkxvvpzgHvzG3ODTIf3EZA5kbAvFX6ahey_-wQppGxG4X6jxXBHY2LeBQShRLi7RktS02Tl6HlqON22dH62TZQ=w128-h128" width="72" height="72" alt="Hermit icon">
+<br><b>Hermit</b>
+<br><sub>1 patch</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/bOSkPoR8m9Qc_TPwrID8_Db51EL9oO0rq4UzRPAHKN2Zc1mq7gCq_0tySpBp1h6PkV5h7IOr0IvA1MTBiGyQCw=w128-h128" width="72" height="72" alt="ISS Live Now icon">
+<br><b>ISS Live Now</b>
+<br><sub>1 patch</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/juZBxj0uxtz80RMbyvPxco2O7rD7aU71VvhLsgConfsM4FmtzXTprkGXiEZQHugPU0A17AYnQ_tgF-0Nph9MIQ=w128-h128" width="72" height="72" alt="Notes icon">
+<br><b>Notes</b>
+<br><sub>1 patch</sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/-21ASw97RWIu-CnDVbEEtTrfVIDqpfhY4eofgk5aT98q4E8jnrMVxNqI0J7JYgRTkHjoOoWM58ScUzu30cxevQ=w128-h128" width="72" height="72" alt="Poweramp icon">
+<br><b>Poweramp</b>
+<br><sub>1 patch</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/DrvO8zMElYMrKfmdRtxwyH_kkvk6MJD87mBaC_38Bw1Pkq0DJB0h-SpfbK5SOAkoJQRJ2TpUU0QvW3bSdUe8=w128-h128" width="72" height="72" alt="Retro Bowl College icon">
+<br><b>Retro Bowl College</b>
+<br><sub>1 patch</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/ssy9sm_kmFckXCA5OT-VpT4pYOE_P0dy8oM8mTvvXaD692W14esUS6saR8qaprJcrfMrmPyYG4Dvyr4Mudp3gg=w128-h128" width="72" height="72" alt="Rocket Player icon">
+<br><b>Rocket Player</b>
+<br><sub>1 patch</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/8Y6RokzLQKhDAFcI5vYbgCd-_Hi8b6pQbrSAYB3a40ZH_NoBOz3U25qcvzOOEOkQrXzraI9DCs1NzJxpgZs2=w128-h128" width="72" height="72" alt="Roku Remote icon">
+<br><b>Roku Remote</b>
+<br><sub>1 patch</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/OdQDxdeo_WyMUftwJbJHF4PALrfSJ4B4vpOWkXPKar1_JN3NKc9ULakQ5o3mjzcuRRTDheF36xSh9mxVRnjD=w128-h128" width="72" height="72" alt="Smart MP3 Tagger icon">
+<br><b>Smart MP3 Tagger</b>
+<br><sub>2 patches</sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/c-cyyIsMn659H-p3XFezpj3wjkC9Z7XhmZIz-WiZuVGZyMWp7t_pGUdpS0_be_Qu8_9UewBqVxFtONQ4-GiwaQ=w128-h128" width="72" height="72" alt="Smashy Road 2 icon">
+<br><b>Smashy Road 2</b>
+<br><sub>2 patches</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/5wJZegUK2e_dXD14bp1NqX_Op20rpfnSLAYiuVJR7e32095qA8-yEDlezpbT7r1mx69VzjqWbCyVhHMm1T8O=w128-h128" width="72" height="72" alt="Tuner icon">
+<br><b>Tuner</b>
+<br><sub>1 patch</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/o2AAUlWu7gGP5WwbE7eg0aP3vqNKjna0HbfFP3LIFVAHpUpT3KfLxnGv3R8Nn6z0XUP9hsly0SBR4jniSW08Dw=w128-h128" width="72" height="72" alt="Unified Remote icon">
+<br><b>Unified Remote</b>
+<br><sub>1 patch</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/z74H5YZukP3qJGkbJGUZj39y_1rDADZI_rkRUB04ID1x9WjhpuBA_t_FMdMQ7vFm0MFwLWkMFQPInRq-kC7MXg=w128-h128" width="72" height="72" alt="Video Cutter icon">
+<br><b>Video Cutter</b>
+<br><sub>2 patches</sub>
+</td>
+<td width="20%"></td>
+</tr>
+</table>
+
+Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe Manager's settings, or they won't show up in the patch list.
 
 ## How to use
 
@@ -14,20 +130,7 @@ Custom Morphe patches for Android apps. Add this repo as a source in Morphe Mana
 
    Tip: if the patches don't show up or look outdated, remove this source and add it again. Morphe Manager caches the patch bundle.
 
-## Building locally
-
-To build the patch bundle (`.mpp`) on your machine:
-
-```powershell
-.\gradlew.bat buildAndroid
-```
-
-The compiled patch package will be generated at:
-`patches/build/libs/patches-*.mpp`
-
-Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-desktop) or Morphe Manager to patch your APKs.
-
----
+## Every patch, app by app
 
 <!-- PATCHES_START EXPANDED -->
 > **[v1.61.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.61.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;26 patches total
@@ -327,13 +430,22 @@ Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-
 
 ## App notes
 
-**BeReal** (`com.bereal.ft`, XAPK) — the fingerprints target **3.96.0** specifically (the app is obfuscated, so class/method names change every release). If BeReal updates, patches may fail to apply until the fingerprints are re-derived. Uninstall the original first and log back in after installing the patched build — back up anything you care about first. No login, posting, or messaging functionality is touched.
-
-**Geometry Dash Lite** (`com.robtopx.geometryjumplite`, XAPK) — open the game **twice**: the first launch creates the save file, the second applies the completions. Each launch (until it succeeds once) shows a short toast: "no save yet — reopen the game once", "could not read save, will retry", or "marked N levels + M coins complete — reopen the game". Diagnostics land in the app's external files dir (`/Android/data/com.robtopx.geometryjumplite/files/`, readable over USB): `gdl_patch_before.xml`, `gdl_patch_after.xml`, `gdl_patch_log.txt`. Fake completions sync to RobTop's servers, which carries a ban risk.
-
 **Retro Bowl College** (`com.newstargames.retrobowlcollege`, v1.1.2) — uninstall the original game first (patched builds are signed with a different key and won't install over it), then install the patched APK.
 
 **Crossy Road** (`com.yodo1.crossyroad`, XAPK, 7.14.0) — patch the full XAPK/APKM bundle, not a base-only .apk: in 7.14.0 the game libraries ship only in the bundle's split APKs, so a base-only file fails with a "no libil2cpp.so" error. Uninstall the original first, then install the patched build.
+
+## Building locally
+
+To build the patch bundle (`.mpp`) on your machine:
+
+```powershell
+.\gradlew.bat buildAndroid
+```
+
+The compiled patch package will be generated at:
+`patches/build/libs/patches-*.mpp`
+
+Load this `.mpp` file into [Morphe Desktop](https://github.com/MorpheApp/morphe-desktop) or Morphe Manager to patch your APKs.
 
 ## License
 
