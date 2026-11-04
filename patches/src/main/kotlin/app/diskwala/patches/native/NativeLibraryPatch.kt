@@ -89,8 +89,8 @@ val nativeLibraryPatch = rawResourcePatch(
                     0x1af6cL to 0xd503245fL,
                     0x2a614L to 0xd10503ffL,
                     0x2a678L to 0xd10503ffL,
-                    0x2a6dcL to 0xb0030040L,
-                    0x2a6f8L to 0xb0030040L
+                    0x2a6dcL to 0xb0000340L,
+                    0x2a6f8L to 0xb0000340L
                 )
                 require(pairip.length() == 608896L) {
                     "libpairipcore.so size ${pairip.length()} != 608896 (27.3); refusing to patch unknown build"
