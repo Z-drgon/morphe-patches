@@ -133,7 +133,28 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 ## Every patch, app by app
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.61.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.61.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;26 patches total
+> **[v1.62.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.62.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;33 patches total
+<details open>
+<summary>DiskWala&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
+<br>
+
+**Supported versions:**
+
+| 27.3 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Bypass PairIP VM and signature check](#bypass-pairip-vm-and-signature-check) | Required for re-signed builds: PairIP runs an encrypted startup/license program inside its native VM (libpairipcore) at app start — before the license-check code the other patches stub. This stops the VM from ever executing (StartupLauncher and VMRunner return immediately), makes the signature check a no-op, and prevents the PairIP license provider from starting a check. |  |
+| [Bypass PairIP application checks](#bypass-pairip-application-checks) | Required for re-signed builds: PairIP's Application class runs the signature and license checks at startup. This rewrites that one method so it only registers the app context and never calls either check, instead of relying on the checks themselves being stubbed. |  |
+| [Bypass PairIP license check](#bypass-pairip-license-check) | Required for re-signed builds: PairIP asks Google Play to license the app at startup and sends non-Play installs to a Play Store block page. Disables that check, its verdict handler, both block-page launchers, the delayed shutdown, and the block activity itself so the patched app can open. |  |
+| [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from Google Play everywhere it is read. Pre-selected companion for the DiskWala patch set — keep it on. | • Spoofed package installer name |
+| [Disable PairIP license activity](#disable-pairip-license-activity) | Required for re-signed builds: removes PairIP's LicenseActivity from the manifest entirely, so the Play Store block page and license error dialog can never be shown, whatever tries to open them. |  |
+| [Enable Premium](#enable-premium) | Turns on Premium (no ads, real file names, HD downloads, faster streaming) as if subscribed. Keep the pre-selected PairIP bypass patches on — a re-signed build cannot pass PairIP's startup license check without them. |  |
+| [Patch native libraries](#patch-native-libraries) | Required for re-signed builds: neutralizes PairIP inside libpairipcore.so itself — JNI_OnLoad returns success without registering the PairIP VM, and ExecuteProgram (the VM interpreter) returns without running any PairIP program. Offsets were re-derived for 27.3 from the library's exported symbols and are verified against the stock bytes before anything is written. |  |
+
+</details>
+
 <details open>
 <summary>Echo&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>

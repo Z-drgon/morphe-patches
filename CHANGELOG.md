@@ -1,3 +1,9 @@
+## [1.62.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.61.0...v1.62.0) (2026-11-04)
+
+### ✨ New Features
+
+* **diskwala:** restore DiskWala patches, port kuntal PairIP VM + native bypass to 27.3 ([762f8d7](https://github.com/mwbra130/Retro-Bowl-College/commit/762f8d7a859263cd646a2ed57f7baa9bf77aca9c))
+
 ## [1.61.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.60.0...v1.61.0) (2026-11-03)
 
 ### ✨ New Features
