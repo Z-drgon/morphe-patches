@@ -1,3 +1,9 @@
+## [1.62.6](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.5...v1.62.6) (2026-11-04)
+
+### 🐛 Bug Fixes
+
+* **diskwala:** Patch native libraries must be a resourcePatch for the manifest surgery ([7db7a19](https://github.com/mwbra130/Retro-Bowl-College/commit/7db7a1983f8017d3900db9638bdded9cb1e7626d))
+
 ## [1.62.5](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.4...v1.62.5) (2026-11-04)
 
 ### 🐛 Bug Fixes

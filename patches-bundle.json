@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-04T01:15:43",
-  "description": "## [1.62.5](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.4...v1.62.5) (2026-11-04)\n\n### 🐛 Bug Fixes\n\n* **diskwala:** full kuntal pipeline parity — restore VM-extracted onCreates, factory/manifest bypass, clinit stubs ([e166905](https://github.com/mwbra130/Retro-Bowl-College/commit/e166905aaacb0f37062881d8404943c3842facf5))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.62.5/patches-1.62.5.mpp",
+  "created_at": "2026-11-04T01:20:24",
+  "description": "## [1.62.6](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.5...v1.62.6) (2026-11-04)\n\n### 🐛 Bug Fixes\n\n* **diskwala:** Patch native libraries must be a resourcePatch for the manifest surgery ([7db7a19](https://github.com/mwbra130/Retro-Bowl-College/commit/7db7a1983f8017d3900db9638bdded9cb1e7626d))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.62.6/patches-1.62.6.mpp",
   "signature_download_url": "",
-  "version": "1.62.5"
+  "version": "1.62.6"
 }
