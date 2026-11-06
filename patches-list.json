@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.63.0",
+  "version": "1.64.0",
   "patches": [
     {
       "name": "Change installer source",
@@ -181,7 +181,9 @@
       "name": "Disable PairIP protection",
       "description": "Lets the patched app run: replaces PairIP's VM startup with harvested vault/handle data and removes the signature check and license dialog. Requires 'Disable PairIP protection (runtime files)'. DroidCam 9.0 only.",
       "default": true,
-      "dependencies": [],
+      "dependencies": [
+        "ResourcePatch"
+      ],
       "compatiblePackages": [
         {
           "packageName": "com.dev47apps.obsdroidcam",
@@ -205,7 +207,7 @@
     },
     {
       "name": "Disable PairIP protection (runtime files)",
-      "description": "Adds the runtime-only lifecycle classes and the decrypted native libraries (libmjpg, libmdns) that 'Disable PairIP protection' needs. Enable both together. DroidCam 9.0 only.",
+      "description": "Swaps the VM-encrypted native libraries (libmjpg, libmdns) for decrypted builds that 'Disable PairIP protection' needs. Enable both together. DroidCam 9.0 only.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [

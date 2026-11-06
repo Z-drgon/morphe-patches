@@ -133,7 +133,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 ## Every patch, app by app
 
 <!-- PATCHES_START -->
-> **[v1.63.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.63.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;26 patches total
+> **[v1.64.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.64.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;29 patches total
 <details>
 <summary>Echo&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
@@ -195,6 +195,23 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 |----------|----------------|-----------|
 | [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from an app store. | • Spoofed package installer name |
 | [Enable Premium](#enable-premium) | Unlocks Gradient Weather Premium. Use With Spoof Install Source |  |
+
+</details>
+
+<details>
+<summary>DroidCam&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
+<br>
+
+**Supported versions:**
+
+| 9.0 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Disable PairIP protection](#disable-pairip-protection) | Lets the patched app run: replaces PairIP's VM startup with harvested vault/handle data and removes the signature check and license dialog. Requires 'Disable PairIP protection (runtime files)'. DroidCam 9.0 only. |  |
+| [Disable PairIP protection (runtime files)](#disable-pairip-protection-runtime-files) | Swaps the VM-encrypted native libraries (libmjpg, libmdns) for decrypted builds that 'Disable PairIP protection' needs. Enable both together. DroidCam 9.0 only. |  |
+| [Unlock Pro](#unlock-pro) | Unlocks DroidCam Pro (HD/4K, no watermark, all options): the license verdict is forced to Pro and renews itself at every silent re-check. Requires 'Disable PairIP protection'. DroidCam 9.0 only. |  |
 
 </details>
 

@@ -1,3 +1,9 @@
+## [1.64.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.63.0...v1.64.0) (2026-11-06)
+
+### ✨ New Features
+
+* **droidcam:** add PairIP bypass and Pro unlock patches for DroidCam 9.0 ([bda54cd](https://github.com/mwbra130/Retro-Bowl-College/commit/bda54cd8134f323bdbc231bc07abf510e6ad8885))
+
 ## [1.63.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.62.6...v1.63.0) (2026-11-04)
 
 ### ✨ New Features
