@@ -178,6 +178,58 @@
       ]
     },
     {
+      "name": "Disable PairIP protection",
+      "description": "Lets the patched app run: replaces PairIP's VM startup with harvested vault/handle data and removes the signature check and license dialog. Requires 'Disable PairIP protection (runtime files)'. DroidCam 9.0 only.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.dev47apps.obsdroidcam",
+          "name": "DroidCam",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#03A9F4",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "9.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Disable PairIP protection (runtime files)",
+      "description": "Adds the runtime-only lifecycle classes and the decrypted native libraries (libmjpg, libmdns) that 'Disable PairIP protection' needs. Enable both together. DroidCam 9.0 only.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.dev47apps.obsdroidcam",
+          "name": "DroidCam",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#03A9F4",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "9.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Enable Full",
       "description": "Unlocks Unified Remote Full for free, as if the one-time Full purchase were bought: 70+ remotes, no ads, screen mirroring, floating remotes, extended keyboard, widgets and quick actions, voice commands, custom remotes, IR and NFC actions.",
       "default": true,
@@ -688,6 +740,32 @@
           "targets": [
             {
               "version": "build-1031-bundle-play",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Unlock Pro",
+      "description": "Unlocks DroidCam Pro (HD/4K, no watermark, all options): the license verdict is forced to Pro and renews itself at every silent re-check. Requires 'Disable PairIP protection'. DroidCam 9.0 only.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.dev47apps.obsdroidcam",
+          "name": "DroidCam",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#03A9F4",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "9.0",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
