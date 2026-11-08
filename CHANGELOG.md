@@ -1,3 +1,9 @@
+## [1.65.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.64.0...v1.65.0) (2026-11-08)
+
+### ✨ New Features
+
+* **googlemessages:** add OLED black mode patch for Google Messages ([532ac1a](https://github.com/mwbra130/Retro-Bowl-College/commit/532ac1a2c9afdb11e834b703751d242017367355))
+
 ## [1.64.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.63.0...v1.64.0) (2026-11-06)
 
 ### ✨ New Features

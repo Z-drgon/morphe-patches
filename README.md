@@ -133,7 +133,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 ## Every patch, app by app
 
 <!-- PATCHES_START -->
-> **[v1.64.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.64.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;29 patches total
+> **[v1.65.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.65.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;30 patches total
 <details>
 <summary>Echo&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
@@ -334,6 +334,21 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 | [Free store](#free-store) | The in-game store is free. Just tap "Buy" and the item is yours — no payment needed. For an ad-free game, just buy the ad-block item from the store. |  |
 | [Unlimited gold](#unlimited-gold) | Your coin balance always shows 65,535 and spending coins always works without deducting any — pull the prize machine and buy coin characters as much as you want. |  |
 | [Unlock all characters](#unlock-all-characters) | Every character is unlocked and playable — paid, coin, prize machine, progress and secret characters included. Your real collection progress is not changed; characters are unlocked while the patch is applied. |  |
+
+</details>
+
+<details>
+<summary>Google Messages&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
+
+**Supported versions:**
+
+| messages.android_20261020_00_RC01.phone_dynamic |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [OLED black mode](#oled-black-mode) | Turns the dark theme true black (#000000) for OLED screens: backgrounds and surfaces go pure black, raised containers (cards, dialogs, bubbles, the message input field) become near-black steps so they stay visible. Dark theme only — light mode is untouched. Needs the stock APK of the target version (messages.android_20261020_00_RC01.phone_dynamic, the universal APK — not a BUNDLE — from APKMirror: https://www.apkmirror.com/apk/google-inc/messenger-google-inc/); Morphe Manager also suggests that exact version when you don't have the file. A few settings screens on Android 12+ take surfaces from the system palette and stay dark grey. |  |
 
 </details>
 
