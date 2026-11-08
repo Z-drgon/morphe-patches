@@ -1,3 +1,9 @@
+## [1.66.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.66.0...v1.66.1) (2026-11-08)
+
+### 🐛 Bug Fixes
+
+* **aodnotify:** mark 6.10 targets as stable after on-device confirmation ([2d30712](https://github.com/mwbra130/Retro-Bowl-College/commit/2d30712599b428b2b5af6cdf6138f105e4601985))
+
 ## [1.66.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.65.1...v1.66.0) (2026-11-08)
 
 ### ✨ New Features

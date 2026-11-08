@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.66.0",
+  "version": "1.66.1",
   "patches": [
     {
       "name": "Bypass PairIP license check",
@@ -19,7 +19,7 @@
             {
               "version": "6.10",
               "versionCodes": null,
-              "isExperimental": true,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
@@ -489,7 +489,7 @@
             {
               "version": "6.10",
               "versionCodes": null,
-              "isExperimental": true,
+              "isExperimental": false,
               "minSdk": null,
               "description": null
             }
