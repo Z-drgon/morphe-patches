@@ -24,7 +24,7 @@ A personal bundle of Morphe patches for Android — premium unlocks, ad removal,
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/s92Wg2IVAMBQTbJDv2Cnpp68iYUYuy1PUFgRP8yGMNuLE90cRyBr1Q7pkJw0KGwe0Bux=w128-h128" width="72" height="72" alt="aodNotify icon">
 <br><b>aodNotify</b>
-<br><sub>2 patches · 🧪 experimental</sub>
+<br><sub>2 patches</sub>
 </td>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/LX__Y8tKCvkvEgboZtQfDsvYiNFa6kwWSpqObipZI2MLK5rFVd5tEU8xgMNoMj1ICOf9TO7PFoFmiKGeIpf1=w128-h128" width="72" height="72" alt="Crossy Road icon">
@@ -511,4 +511,5 @@ Some patches in this bundle are ports or updates of other creators' work — cre
 Use these patches at your own risk. They modify third-party apps, and a patched app can break, crash, lose data, or stop working when the app updates. Using them may also violate an app's terms of service — if your account gets banned or suspended, that is your responsibility, not mine.
 
 These patches are provided as-is, with no warranty of any kind, and I accept no responsibility for crashes, bans, data loss, or any other damage that comes from using them. If that is not acceptable to you, do not use them.
+
 
