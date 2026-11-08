@@ -1,3 +1,9 @@
+## [1.65.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.65.0...v1.65.1) (2026-11-08)
+
+### 🐛 Bug Fixes
+
+* **googlemessages:** trim OLED black mode to core schemes after launch crash ([20455d9](https://github.com/mwbra130/Retro-Bowl-College/commit/20455d9085f82b5028eb876d5cf57c4cf979365e))
+
 ## [1.65.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.64.0...v1.65.0) (2026-11-08)
 
 ### ✨ New Features

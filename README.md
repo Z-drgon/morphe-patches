@@ -133,7 +133,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 ## Every patch, app by app
 
 <!-- PATCHES_START -->
-> **[v1.65.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.65.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;30 patches total
+> **[v1.65.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.65.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;30 patches total
 <details>
 <summary>Echo&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
@@ -348,7 +348,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 | Patch | Description | Options |
 |----------|----------------|-----------|
-| [OLED black mode](#oled-black-mode) | Turns the dark theme true black (#000000) for OLED screens: backgrounds and surfaces go pure black, raised containers (cards, dialogs, bubbles, the message input field) become near-black steps so they stay visible. Dark theme only — light mode is untouched. Needs the stock APK of the target version (messages.android_20261020_00_RC01.phone_dynamic, the universal APK — not a BUNDLE — from APKMirror: https://www.apkmirror.com/apk/google-inc/messenger-google-inc/); Morphe Manager also suggests that exact version when you don't have the file. A few settings screens on Android 12+ take surfaces from the system palette and stay dark grey. |  |
+| [OLED black mode](#oled-black-mode) | Turns the dark theme true black (#000000) for OLED screens: backgrounds and surfaces go pure black, raised containers (cards, bubbles, sheets) become near-black steps so they stay visible. Dark theme only — light mode is untouched. Needs the stock APK of the target version (messages.android_20261020_00_RC01.phone_dynamic, the universal APK — not a BUNDLE — from APKMirror: https://www.apkmirror.com/apk/google-inc/messenger-google-inc/); Morphe Manager also suggests that exact version when you don't have the file. A few settings screens on Android 12+ take surfaces from the system palette and stay dark grey. |  |
 
 </details>
 

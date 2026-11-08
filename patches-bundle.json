@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-08T18:35:17",
-  "description": "## [1.65.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.64.0...v1.65.0) (2026-11-08)\n\n### ✨ New Features\n\n* **googlemessages:** add OLED black mode patch for Google Messages ([532ac1a](https://github.com/mwbra130/Retro-Bowl-College/commit/532ac1a2c9afdb11e834b703751d242017367355))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.65.0/patches-1.65.0.mpp",
+  "created_at": "2026-11-08T20:10:40",
+  "description": "## [1.65.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.65.0...v1.65.1) (2026-11-08)\n\n### 🐛 Bug Fixes\n\n* **googlemessages:** trim OLED black mode to core schemes after launch crash ([20455d9](https://github.com/mwbra130/Retro-Bowl-College/commit/20455d9085f82b5028eb876d5cf57c4cf979365e))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.65.1/patches-1.65.1.mpp",
   "signature_download_url": "",
-  "version": "1.65.0"
+  "version": "1.65.1"
 }
