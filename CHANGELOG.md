@@ -1,3 +1,12 @@
+## [1.66.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.65.1...v1.66.0) (2026-11-08)
+
+### ✨ New Features
+
+* **aodnotify:** add aodNotify 6.10 compatibility ([94a454a](https://github.com/mwbra130/Retro-Bowl-College/commit/94a454a3c21098caa55531f94d9307065db53b72))
+* **aodnotify:** add aodNotify 6.10 fingerprints (Pro sync writer + PairIP license funnel) ([121281a](https://github.com/mwbra130/Retro-Bowl-College/commit/121281a2b57b69d82586799f3f3f8f6bb78940dc))
+* **aodnotify:** add Bypass PairIP license check patch for aodNotify 6.10 ([078e306](https://github.com/mwbra130/Retro-Bowl-College/commit/078e306d0e0cc38b8ca8a589621b6e0d52cb3210))
+* **aodnotify:** add Enable Pro patch for aodNotify 6.10 ([415ac71](https://github.com/mwbra130/Retro-Bowl-College/commit/415ac718b1633b4bd70a62c126a748ac31a3c37b))
+
 ## [1.65.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.65.0...v1.65.1) (2026-11-08)
 
 ### 🐛 Bug Fixes

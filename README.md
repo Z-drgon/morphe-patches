@@ -133,7 +133,23 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 ## Every patch, app by app
 
 <!-- PATCHES_START -->
-> **[v1.65.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.65.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;30 patches total
+> **[v1.66.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.66.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;32 patches total
+<details>
+<summary>aodNotify&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<br>
+
+**Supported versions:**
+
+| 6.10 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Bypass PairIP license check](#bypass-pairip-license-check) | Required for re-signed builds: PairIP asks Google Play to license the app at startup and sends unlicensed installs to a Play Store block page. Disables that check, its verdict handler and both block-page launchers so the patched app can open. |  |
+| [Enable Pro](#enable-pro) | Turns on the app's Pro state (no promo ads, premium light effects, custom app and contact colors, every setting) with the permanence of the one-time purchase. |  |
+
+</details>
+
 <details>
 <summary>Echo&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
