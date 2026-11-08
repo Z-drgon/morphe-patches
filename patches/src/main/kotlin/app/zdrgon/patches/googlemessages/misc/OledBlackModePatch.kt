@@ -21,11 +21,27 @@ import org.w3c.dom.Element
  * literals #1B1B1B–#37393B), the legacy GM scheme points at
  * gm_ref_palette_grey900 (#202124), the M3 library scheme at
  * m3_ref_palette_neutral6 (#141218), and res/values-night/colors.xml
- * carries app-specific literals (primary background, RCS consent and
- * survey surfaces via google_grey900, settingslib containers,
- * per-conversation-color scheme surfaces). A full jadx pass found no
- * app-level Compose color scheme hardcoding the dark greys, so a pure
- * resource patch covers the theme.
+ * carries app-specific literals (primary background, RCS consent
+ * surface, per-conversation-color scheme surfaces). An exhaustive smali
+ * scan of all 12 dex files (plus the packed-value binary scan) found no
+ * app-level Compose color scheme or hardcoded dark greys in app code,
+ * so a pure resource patch covers the theme.
+ *
+ * v2 (bundle 1.65.1): v1 (52 edits) applied cleanly in Morphe Desktop
+ * and its output verified value-by-value, but Matsen's Morphe Manager
+ * build crashed on launch. Static crash investigation found no
+ * signature/integrity self-check and a clean resource rebuild (all
+ * 12,984 resource IDs identical), so v2 is a deliberate bisection step:
+ * it keeps ONLY the app's own three dark schemes (GM3, legacy GM, M3)
+ * plus the night background literals and per-conversation scheme
+ * surfaces (33 edits), and drops every library-surface edit (Material
+ * design defaults, SettingsLib, setup-wizard/sud, survey), the shared
+ * material_grey_white_1000 color, app chrome literals (dialog, FAB,
+ * action bar) and the res/color textfield selector rewrite — the only
+ * cross-resource-type edit in v1. If v2 launches, the dropped groups
+ * come back in stages to find the culprit; the main screens (list,
+ * conversation view) still go true black in v2, dialogs/FAB/input
+ * field stay stock dark for now.
  *
  * Two rules keep this safe:
  *  - Only *_dark_* entries and night literals are repointed. The shared
@@ -47,8 +63,8 @@ import org.w3c.dom.Element
 val oledBlackModePatch = resourcePatch(
     name = "OLED black mode",
     description = "Turns the dark theme true black (#000000) for OLED screens: backgrounds and " +
-        "surfaces go pure black, raised containers (cards, dialogs, bubbles, the message " +
-        "input field) become near-black steps so they stay visible. Dark theme only — light " +
+        "surfaces go pure black, raised containers (cards, bubbles, sheets) become near-black " +
+        "steps so they stay visible. Dark theme only — light " +
         "mode is untouched. Needs the stock APK of the target version " +
         "(messages.android_20261020_00_RC01.phone_dynamic, the universal APK — not a BUNDLE — " +
         "from APKMirror: https://www.apkmirror.com/apk/google-inc/messenger-google-inc/); " +
@@ -85,9 +101,9 @@ val oledBlackModePatch = resourcePatch(
             }
         }
 
-        // Base values: the GM3, legacy GM and M3 dark schemes, the
-        // Material design-lib dark defaults and the setup-wizard (sud)
-        // dark containers. Dark entries only — palettes untouched.
+        // Base values: the app's own GM3, legacy GM and M3 dark
+        // schemes only (v2 scope, see header). Dark entries only —
+        // palettes untouched.
         setColors(
             "res/values/colors.xml",
             mapOf(
@@ -112,35 +128,19 @@ val oledBlackModePatch = resourcePatch(
                 "m3_sys_color_dark_surface_container_high" to "#FF1C1C1C",
                 "m3_sys_color_dark_surface_container_highest" to "#FF262626",
                 "m3_sys_color_dark_surface_bright" to "#FF2E2E2E",
-                "m3_sys_color_dark_surface_variant" to "#FF262626",
-                "design_dark_default_color_background" to "#FF000000",
-                "design_dark_default_color_surface" to "#FF000000",
-                "sud_system_surface_container_dark" to "#FF121212",
-                "sud_system_surface_bright_dark" to "#FF2E2E2E"
+                "m3_sys_color_dark_surface_variant" to "#FF262626"
             )
         )
 
-        // Night values: app-specific literals — main/RCS/survey
-        // backgrounds, dialogs, settings containers, the floating
-        // variant behind cards, the FAB, and every per-conversation
-        // custom-color scheme surface.
+        // Night values: the app's own background literals and every
+        // per-conversation custom-color scheme surface (v2 scope —
+        // library surfaces, dialog/FAB/action-bar chrome and the
+        // shared material_grey_white_1000 are NOT touched here).
         setColors(
             "res/values-night/colors.xml",
             mapOf(
                 "primary_background_color" to "#FF000000",
                 "rcs_consent_screen_background_color" to "#FF000000",
-                "survey_surface_color" to "#FF000000",
-                "material_grey_white_1000" to "#FF000000",
-                "action_bar_status_bar_background_color" to "#FF000000",
-                "alert_dialog_background_color" to "#FF1C1C1C",
-                "survey_alert_dialog_bg_color" to "#FF1C1C1C",
-                "survey_surface_color_elevation_2" to "#FF121212",
-                "survey_surface_color_elevation_3" to "#FF1C1C1C",
-                "settingslib_materialColorSurfaceContainer" to "#FF121212",
-                "settingslib_materialColorSurfaceContainerHigh" to "#FF1C1C1C",
-                "settingslib_materialColorSurfaceContainerHighest" to "#FF262626",
-                "settingslib_materialColorSurfaceVariant" to "#FF262626",
-                "fab_background_color" to "#FF1C1C1C",
                 "bugle_color_background_floating_variant" to "#FF262626",
                 "blue_color_scheme_surface" to "#FF000000",
                 "fuchsia_color_scheme_surface" to "#FF000000",
@@ -152,32 +152,5 @@ val oledBlackModePatch = resourcePatch(
                 "turquoise_color_scheme_surface" to "#FF000000"
             )
         )
-
-        // The message-input / shortcut-bar background is a color state
-        // list, not a plain color: default and focused point at
-        // google_grey800 and hovered is a #4A4E51 literal. The disabled
-        // state (grey at 4% alpha) is left alone.
-        document("res/color/google_dark_default_color_textfield_surface.xml").use { document ->
-            val items = document.getElementsByTagName("item")
-            var changed = 0
-            for (i in 0 until items.length) {
-                val item = items.item(i) as Element
-                if (item.getAttribute("android:state_enabled") == "false") continue
-                if (item.getAttribute("android:state_hovered") == "true") {
-                    item.setAttribute("android:color", "#FF3A3A3A")
-                } else {
-                    item.setAttribute("android:color", "#FF262626")
-                }
-                changed++
-            }
-            if (changed < 3) {
-                throw PatchException(
-                    "OLED black mode: expected to rewrite 3 states of the textfield " +
-                        "surface selector but only rewrote $changed; refusing to ship " +
-                        "a half-applied theme."
-                )
-            }
-            logger.info("OLED black mode: rewrote $changed textfield surface states.")
-        }
     }
 }
