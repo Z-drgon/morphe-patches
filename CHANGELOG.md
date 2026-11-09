@@ -1,3 +1,12 @@
+## [1.68.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.68.2...v1.68.3) (2026-11-09)
+
+### 🐛 Bug Fixes
+
+* **businessx:** mark 6.5.2 target experimental (Testing-stage app) ([28b867f](https://github.com/mwbra130/Retro-Bowl-College/commit/28b867fa6d17c6acb58fc0dcaf28a63e14b0ef84))
+* **diskwala:** mark 27.3 target experimental (Testing-stage app) ([730d381](https://github.com/mwbra130/Retro-Bowl-College/commit/730d3811a76dffb7931489d5d237d75ef10951a0))
+* **notes:** mark 2.2.2 target experimental ([4e9bf89](https://github.com/mwbra130/Retro-Bowl-College/commit/4e9bf89b2a5ee65d492d274353c6390bb853214a))
+* **pikaspot:** mark 1.4.5 target experimental (Testing-stage app) ([5ca59e6](https://github.com/mwbra130/Retro-Bowl-College/commit/5ca59e67020f02bc8e7b2be77c439ac6eb982fb8))
+
 ## [1.68.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.68.1...v1.68.2) (2026-11-09)
 
 ### 🐛 Bug Fixes

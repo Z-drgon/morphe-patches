@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.68.2",
+  "version": "1.68.3",
   "patches": [
     {
       "name": "Add settings",
@@ -151,7 +151,7 @@
             {
               "version": "1.4.5",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -281,7 +281,7 @@
             {
               "version": "6.5.2",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -815,7 +815,7 @@
               "versionCodes": {
                 "ARM64_V8A": 367
               },
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             },
@@ -850,7 +850,7 @@
               "versionCodes": {
                 "ARM64_V8A": 367
               },
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             },
@@ -935,7 +935,7 @@
             {
               "version": "1.4.5",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -987,7 +987,7 @@
             {
               "version": "6.5.2",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1578,7 +1578,7 @@
               "versionCodes": {
                 "ARM64_V8A": 367
               },
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             },
@@ -1665,7 +1665,7 @@
             {
               "version": "2.2.2",
               "versionCodes": null,
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             }
@@ -1919,7 +1919,7 @@
               "versionCodes": {
                 "ARM64_V8A": 367
               },
-              "isExperimental": false,
+              "isExperimental": true,
               "minSdk": null,
               "description": null
             },

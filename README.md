@@ -2,7 +2,7 @@
 
 Some apps I patched and other apps that were requested if you would like to request an app please drop a comment in my reddit discussion for patches: https://www.reddit.com/r/MorpheApp/s/xRx6wdTYA5
 
-**31 apps · 64 patches** · current bundle: [v1.68.2](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.68.2)
+**31 apps · 64 patches** · current bundle: [v1.68.3](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.68.3)
 
 ## Apps
 
@@ -13,7 +13,7 @@ Some apps I patched and other apps that were requested if you would like to requ
      the GRID_START / GRID_END markers on every release — new apps get their name, Play
      Store icon and experimental marker automatically, and grid names link to the
      detailed sections below (which use the apps' full Play Store names). Kept OUTSIDE the auto-generated patches
-     block below on purpose. Reflects bundle v1.68.2. -->
+     block below on purpose. Reflects bundle v1.68.3. -->
 
 <!-- GRID_START -->
 <table>
@@ -194,7 +194,7 @@ Some apps I patched and other apps that were requested if you would like to requ
 ## Patch descriptions
 
 <!-- PATCHES_START -->
-> **[v1.68.2](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.68.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;64 patches total
+> **[v1.68.3](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.68.3)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;64 patches total
 <a id="app-com-strava" name="app-com-strava"></a>
 <details>
 <summary>Strava: Run, Bike, Walk&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
