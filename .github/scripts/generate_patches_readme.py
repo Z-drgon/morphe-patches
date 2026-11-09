@@ -308,8 +308,13 @@ readme = re.sub(
 # is only fetched for a genuinely new app. A failed fetch never fails
 # the release — the cell falls back to a placeholder and a warning is
 # printed so the owner can spot it in the release commit.
-GRID_EXCLUDE_PACKAGES = {
-    "com.google.android.apps.messaging",  # Google Messages: patch does not work, owner keeps it out of the grid
+# Apps whose patches are known-broken go in the separate "Testing"
+# grid under the main one instead of the main grid (owner request).
+# Membership is decided here, in code; the grids themselves are
+# rebuilt from patches-list.json on every release, so moving an app
+# between grids is a one-line change to this set.
+TESTING_PACKAGES = {
+    "com.google.android.apps.messaging",  # Google Messages: patched build crashes on launch
 }
 
 # README-display experimental overrides (owner decision 2026-11-09):
@@ -342,13 +347,12 @@ def fetch_play_icon(pkg):
 
 
 def build_grid(readme_text):
+    """Returns (main_grid_html, testing_grid_html)."""
     known_icons = {}
     for m in re.finditer(r'<img src="([^"]+)"[^>]*>\s*<br>(?:<a[^>]*>)?<b>(.*?)</b>', readme_text):
         known_icons[m.group(2)] = m.group(1)
     apps = []
     for pkg, entry in by_pkg.items():
-        if pkg in GRID_EXCLUDE_PACKAGES:
-            continue
         name = entry["name"]
         targets = entry.get("targets", [])
         experimental = pkg in EXPERIMENTAL_README_PACKAGES or (
@@ -360,7 +364,7 @@ def build_grid(readme_text):
             icon = "https://placehold.co/128x128/png?text=" + name[0]
         apps.append((name, icon, pkg, experimental))
     apps.sort(key=lambda a: a[0].casefold())
-    cells = []
+    cells = {"main": [], "testing": []}
     for name, icon, pkg, experimental in apps:
         # The app name links down to the app's detailed section below.
         # No patch count in the grid (owner request) — counts live in
@@ -375,19 +379,32 @@ def build_grid(readme_text):
             # under the app name, per the repo owner's request.
             cell += "<br><sub>🧪 experimental</sub>\n"
         cell += "</td>"
-        cells.append(cell)
-    rows = ["<tr>\n" + "\n".join(cells[i:i + 5]) + "\n</tr>" for i in range(0, len(cells), 5)]
-    return "<table>\n" + "\n".join(rows) + "\n</table>"
+        cells["testing" if pkg in TESTING_PACKAGES else "main"].append(cell)
+
+    def table(cell_list):
+        rows = ["<tr>\n" + "\n".join(cell_list[i:i + 5]) + "\n</tr>" for i in range(0, len(cell_list), 5)]
+        return "<table>\n" + "\n".join(rows) + "\n</table>"
+
+    return table(cells["main"]), table(cells["testing"])
 
 
 if "<!-- GRID_START -->" in readme and "<!-- GRID_END -->" in readme:
-    grid = build_grid(readme)
+    grid, testing_grid = build_grid(readme)
     readme = re.sub(
         r"<!-- GRID_START -->.*?<!-- GRID_END -->",
         lambda _: f"<!-- GRID_START -->\n{grid}\n<!-- GRID_END -->",
         readme,
         flags=re.DOTALL,
     )
+    if "<!-- TESTING_START -->" in readme and "<!-- TESTING_END -->" in readme:
+        readme = re.sub(
+            r"<!-- TESTING_START -->.*?<!-- TESTING_END -->",
+            lambda _: f"<!-- TESTING_START -->\n{testing_grid}\n<!-- TESTING_END -->",
+            readme,
+            flags=re.DOTALL,
+        )
+    else:
+        sys.stderr.write("WARNING: TESTING_START / TESTING_END markers not found; Testing grid left unchanged\n")
 else:
     sys.stderr.write("WARNING: GRID_START / GRID_END markers not found; icon grid left unchanged\n")
 
