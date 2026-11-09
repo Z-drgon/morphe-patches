@@ -1,3 +1,9 @@
+## [1.67.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.67.0...v1.67.1) (2026-11-09)
+
+### 🐛 Bug Fixes
+
+* **droidcam:** fold runtime files and camera fix into Disable PairIP so only two patches are selectable ([8f567ab](https://github.com/mwbra130/Retro-Bowl-College/commit/8f567aba9668376744ca98b2011b314e07c04e6f))
+
 ## [1.67.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.66.1...v1.67.0) (2026-11-09)
 
 ### 🐛 Bug Fixes
