@@ -245,6 +245,15 @@ GRID_EXCLUDE_PACKAGES = {
     "com.google.android.apps.messaging",  # Google Messages: patch does not work, owner keeps it out of the grid
 }
 
+# README-display experimental overrides (owner decision 2026-11-09):
+# these apps get the experimental line in the grid even though their
+# patch sources ship with isExperimental off. Display only — what
+# Morphe Manager shows is driven by the patch sources, NOT this list.
+EXPERIMENTAL_README_PACKAGES = {
+    "com.pika.dynamicisland",  # Pika Spot: patched build cannot connect on device (server signer check)
+    "com.inotesapp.inotes",     # Notes: Remove ads shipped without an on-device test
+}
+
 
 def fetch_play_icon(pkg):
     """Best-effort Play Store icon URL (og:image), sized =w128-h128."""
@@ -277,7 +286,9 @@ def build_grid(readme_text):
         count = len(entry["patches"])
         sub = f"{count} patch" if count == 1 else f"{count} patches"
         targets = entry.get("targets", [])
-        experimental = bool(targets) and all(t.get("isExperimental") for t in targets)
+        experimental = pkg in EXPERIMENTAL_README_PACKAGES or (
+            bool(targets) and all(t.get("isExperimental") for t in targets)
+        )
         icon = known_icons.get(name) or fetch_play_icon(pkg)
         if icon is None:
             sys.stderr.write(f"WARNING: could not fetch Play Store icon for {name} ({pkg}); using placeholder\n")
