@@ -14,7 +14,8 @@ object Constants {
         targets = listOf(
             AppTarget(
                 version = "27.3",
-                versionCodes = mapOf(SupportedAbi.ARM64_V8A to 367)
+                versionCodes = mapOf(SupportedAbi.ARM64_V8A to 367),
+                isExperimental = true
             ),
             // Allow any future version experimentally - patches are string/opcode based and should survive
             AppTarget(
