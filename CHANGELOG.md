@@ -1,3 +1,12 @@
+## [1.68.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.67.3...v1.68.0) (2026-11-09)
+
+### ✨ New Features
+
+* **pikaspot:** add Enable Lifetime VIP patch (ingest + status pins) ([9b75466](https://github.com/mwbra130/Retro-Bowl-College/commit/9b75466ed108c0058410c73d2bf4d91bda668f7a))
+* **pikaspot:** add lifetime VIP and PairIP license fingerprints ([1865c4d](https://github.com/mwbra130/Retro-Bowl-College/commit/1865c4d2ef7afb3c11463c339d9d877e560d8983))
+* **pikaspot:** add PairIP license check bypass ([9f154cf](https://github.com/mwbra130/Retro-Bowl-College/commit/9f154cf2c3f51a55acd2a18461de66a751e0a08b))
+* **pikaspot:** add Pika Spot 1.4.5 compatibility declaration ([c3f39d9](https://github.com/mwbra130/Retro-Bowl-College/commit/c3f39d9819ab0edd2d946627d6fb6b67d9e87f6a))
+
 ## [1.67.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.67.2...v1.67.3) (2026-11-09)
 
 ### 🐛 Bug Fixes

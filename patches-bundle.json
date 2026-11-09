@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-09T03:42:15",
-  "description": "## [1.67.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.67.2...v1.67.3) (2026-11-09)\n\n### 🐛 Bug Fixes\n\n* **droidcam:** restore decrypted .data in arm64 native libs, fixing crash on Stop ([37ee498](https://github.com/mwbra130/Retro-Bowl-College/commit/37ee4984c4fa195f91807fb33ad2b19241c4b5b2))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.67.3/patches-1.67.3.mpp",
+  "created_at": "2026-11-09T16:57:33",
+  "description": "## [1.68.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.67.3...v1.68.0) (2026-11-09)\n\n### ✨ New Features\n\n* **pikaspot:** add Enable Lifetime VIP patch (ingest + status pins) ([9b75466](https://github.com/mwbra130/Retro-Bowl-College/commit/9b75466ed108c0058410c73d2bf4d91bda668f7a))\n* **pikaspot:** add lifetime VIP and PairIP license fingerprints ([1865c4d](https://github.com/mwbra130/Retro-Bowl-College/commit/1865c4d2ef7afb3c11463c339d9d877e560d8983))\n* **pikaspot:** add PairIP license check bypass ([9f154cf](https://github.com/mwbra130/Retro-Bowl-College/commit/9f154cf2c3f51a55acd2a18461de66a751e0a08b))\n* **pikaspot:** add Pika Spot 1.4.5 compatibility declaration ([c3f39d9](https://github.com/mwbra130/Retro-Bowl-College/commit/c3f39d9819ab0edd2d946627d6fb6b67d9e87f6a))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.68.0/patches-1.68.0.mpp",
   "signature_download_url": "",
-  "version": "1.67.3"
+  "version": "1.68.0"
 }
