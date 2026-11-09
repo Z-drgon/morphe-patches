@@ -73,11 +73,6 @@ Some apps I patched and other apps that were requested if you would like to requ
 <br><sub>🧪 experimental</sub>
 </td>
 <td align="center" width="20%">
-<img src="https://play-lh.googleusercontent.com/fgeKZ4Jl9iOyASIdpxVk5VMbmCOJbgZTx00FnNpGun0fxya2jZvvqCsS3btbORv6O9XyXl--tkFwB2r8XiX8=w128-h128" width="72" height="72" alt="Pika Spot icon">
-<br><a href="#app-com-pika-dynamicisland"><b>Pika Spot</b></a>
-<br><sub>🧪 experimental</sub>
-</td>
-<td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/-21ASw97RWIu-CnDVbEEtTrfVIDqpfhY4eofgk5aT98q4E8jnrMVxNqI0J7JYgRTkHjoOoWM58ScUzu30cxevQ=w128-h128" width="72" height="72" alt="Poweramp icon">
 <br><a href="#app-com-maxmpz-audioplayer"><b>Poweramp</b></a>
 </td>
@@ -85,12 +80,12 @@ Some apps I patched and other apps that were requested if you would like to requ
 <img src="https://play-lh.googleusercontent.com/DrvO8zMElYMrKfmdRtxwyH_kkvk6MJD87mBaC_38Bw1Pkq0DJB0h-SpfbK5SOAkoJQRJ2TpUU0QvW3bSdUe8=w128-h128" width="72" height="72" alt="Retro Bowl College icon">
 <br><a href="#app-com-newstargames-retrobowlcollege"><b>Retro Bowl College</b></a>
 </td>
-</tr>
-<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/ssy9sm_kmFckXCA5OT-VpT4pYOE_P0dy8oM8mTvvXaD692W14esUS6saR8qaprJcrfMrmPyYG4Dvyr4Mudp3gg=w128-h128" width="72" height="72" alt="Rocket Player icon">
 <br><a href="#app-com-jrtstudio-anothermusicplayer"><b>Rocket Player</b></a>
 </td>
+</tr>
+<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/8Y6RokzLQKhDAFcI5vYbgCd-_Hi8b6pQbrSAYB3a40ZH_NoBOz3U25qcvzOOEOkQrXzraI9DCs1NzJxpgZs2=w128-h128" width="72" height="72" alt="Roku Remote icon">
 <br><a href="#app-com-swiftsofts-rokuremote"><b>Roku Remote</b></a>
@@ -107,12 +102,12 @@ Some apps I patched and other apps that were requested if you would like to requ
 <img src="https://play-lh.googleusercontent.com/5wJZegUK2e_dXD14bp1NqX_Op20rpfnSLAYiuVJR7e32095qA8-yEDlezpbT7r1mx69VzjqWbCyVhHMm1T8O=w128-h128" width="72" height="72" alt="Tuner icon">
 <br><a href="#app-com-studiosol-afinadorlite"><b>Tuner</b></a>
 </td>
-</tr>
-<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/o2AAUlWu7gGP5WwbE7eg0aP3vqNKjna0HbfFP3LIFVAHpUpT3KfLxnGv3R8Nn6z0XUP9hsly0SBR4jniSW08Dw=w128-h128" width="72" height="72" alt="Unified Remote icon">
 <br><a href="#app-com-relmtech-remote"><b>Unified Remote</b></a>
 </td>
+</tr>
+<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/z74H5YZukP3qJGkbJGUZj39y_1rDADZI_rkRUB04ID1x9WjhpuBA_t_FMdMQ7vFm0MFwLWkMFQPInRq-kC7MXg=w128-h128" width="72" height="72" alt="Video Cutter icon">
 <br><a href="#app-com-losslessvideocutter"><b>Video Cutter</b></a>
@@ -144,17 +139,22 @@ Some apps I patched and other apps that were requested if you would like to requ
 <br><sub>🧪 experimental</sub>
 </td>
 <td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/fgeKZ4Jl9iOyASIdpxVk5VMbmCOJbgZTx00FnNpGun0fxya2jZvvqCsS3btbORv6O9XyXl--tkFwB2r8XiX8=w128-h128" width="72" height="72" alt="Pika Spot icon">
+<br><a href="#app-com-pika-dynamicisland"><b>Pika Spot</b></a>
+<br><sub>🧪 experimental</sub>
+</td>
+<td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/S-gCULXUiJ9cWJlV9mhTj-1e6nleHaBWXDAZrzlHOaVavugkYBqqMeR7Q5p_-sjLdC9xM9HI7cte-iweKHDfhw=w128-h128" width="72" height="72" alt="RainViewer icon">
 <br><a href="#app-com-lucky-apps-rainviewer"><b>RainViewer</b></a>
 <br><sub>🧪 experimental</sub>
 </td>
+</tr>
+<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/J4LN2qH2PQkZ3sFQonz-HWYkd7M38BtEO4Grzh1Xn7L2J6NUILHPkhYvPjdhMZQzrdm4BarUj547wfthyMz_vWM=w128-h128" width="72" height="72" alt="Strava icon">
 <br><a href="#app-com-strava"><b>Strava</b></a>
 <br><sub>🧪 experimental</sub>
 </td>
-</tr>
-<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/6aOhYA2V2PxxxAKVZMFBBWzMN1TttEZFuZ4tEiFQoc-WISs9YSnihT3NeFPV_jtyDci-3IoOyT3L7lMc5Qf7=w128-h128" width="72" height="72" alt="Vehico icon">
 <br><a href="#app-com-optimageeks-vehico-app"><b>Vehico</b></a>
