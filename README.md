@@ -124,6 +124,7 @@ Some apps I patched and other apps that were requested if you would like to requ
 ## Testing
 
 <sub>⚠️ Very experimental: these patches will most likely crash, glitch, or not work at all. Only use them if you understand that before installing.</sub>
+<br><sub>Apps marked "not in bundle" are stored in the morphe-quarantine repo and can't be patched from this source.</sub>
 
 <!-- TESTING_START -->
 <table>
@@ -131,6 +132,49 @@ Some apps I patched and other apps that were requested if you would like to requ
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/Ndfiaudmk4fiveYNm5Gsnso8gFcvLeskQUdwgh9yNnOghIH0LN-Hth_yAMsY2TxN1u9jleiOX6Y81Wh5Vy5M=w128-h128" width="72" height="72" alt="Google Messages icon">
 <br><a href="#app-com-google-android-apps-messaging"><b>Google Messages</b></a>
+<br><sub>🧪 experimental</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/ZcFuvOQUSbZWo5diJwpoRn4g1jNT5I8XZ_Kmz7Lox_EBUO1b0TAQ9jsFRAru4vUWTP04Er7LE3A8k0HGYO-YCQ=w128-h128" width="72" height="72" alt="BusinessX icon">
+<br><a href="https://github.com/mwbra130/morphe-quarantine"><b>BusinessX</b></a>
+<br><sub>not in bundle</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/3Q9MNHslRe9p1Zbzn-H7b0OUZkqlvxuaMoPyZ_8mzQmry8tB-FeFPXfbJ7zBxVY6B8zrphBREyZhL-8I9R4r=w128-h128" width="72" height="72" alt="DiskWala icon">
+<br><a href="https://github.com/mwbra130/morphe-quarantine"><b>DiskWala</b></a>
+<br><sub>not in bundle</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/S-gCULXUiJ9cWJlV9mhTj-1e6nleHaBWXDAZrzlHOaVavugkYBqqMeR7Q5p_-sjLdC9xM9HI7cte-iweKHDfhw=w128-h128" width="72" height="72" alt="RainViewer icon">
+<br><a href="https://github.com/mwbra130/morphe-quarantine"><b>RainViewer</b></a>
+<br><sub>not in bundle</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/J4LN2qH2PQkZ3sFQonz-HWYkd7M38BtEO4Grzh1Xn7L2J6NUILHPkhYvPjdhMZQzrdm4BarUj547wfthyMz_vWM=w128-h128" width="72" height="72" alt="Strava icon">
+<br><a href="https://github.com/mwbra130/morphe-quarantine"><b>Strava</b></a>
+<br><sub>not in bundle</sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/6aOhYA2V2PxxxAKVZMFBBWzMN1TttEZFuZ4tEiFQoc-WISs9YSnihT3NeFPV_jtyDci-3IoOyT3L7lMc5Qf7=w128-h128" width="72" height="72" alt="Vehico icon">
+<br><a href="https://github.com/mwbra130/morphe-quarantine"><b>Vehico</b></a>
+<br><sub>not in bundle</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/WJ8t0dcoBL8_6BonyM6196e1MI7xZ0t6iE61HOqRdWmEoVWaOsgzP3eFfjLfH3MUJ4muEt2kDI7IbyGC8aCsVQ=w128-h128" width="72" height="72" alt="Web Video Caster icon">
+<br><a href="https://github.com/mwbra130/morphe-quarantine"><b>Web Video Caster</b></a>
+<br><sub>not in bundle</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/ANtuOsdWIW2Z58FWqGfpt9u6Tau7HUox1gVDbtfX2-1pu1MpAyuGszSUq5KqY0iZqQi2GxOcAVdoD0ltW2bSow=w128-h128" width="72" height="72" alt="X-plore icon">
+<br><a href="https://github.com/mwbra130/morphe-quarantine"><b>X-plore</b></a>
+<br><sub>not in bundle</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/eZs5iqAZIxCcvq0I820wedBRA3UJDuJOkxVVbCPsmlvuSQ_xC_QnXfOOc8vMamG7D6yJuuqU3wTLJRBYeXByU5o=w128-h128" width="72" height="72" alt="Yin Yang Launcher icon">
+<br><a href="https://github.com/mwbra130/morphe-quarantine"><b>Yin Yang Launcher</b></a>
+<br><sub>not in bundle</sub>
 </td>
 </tr>
 </table>
