@@ -2,12 +2,12 @@
 
 A personal bundle of Morphe patches for Android — premium unlocks, ad removal, and a few quality-of-life tweaks, all in one source. Add the bundle to Morphe Manager or Morphe Desktop, pick your app, and patch it yourself.
 
-**19 apps · 26 patches** · current bundle: [v1.63.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.63.0)
+**22 apps · 31 patches** · current bundle: [v1.67.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.67.1)
 
 ## Apps at a glance
 
 <!-- App icon grid: maintained by hand and kept OUTSIDE the auto-generated patches block
-     below on purpose, so releases don't overwrite it. Reflects bundle v1.61.0. -->
+     below on purpose, so releases don't overwrite it. Reflects bundle v1.67.1. -->
 
 <table>
 <tr>
@@ -32,12 +32,17 @@ A personal bundle of Morphe patches for Android — premium unlocks, ad removal,
 <br><sub>3 patches</sub>
 </td>
 <td align="center" width="20%">
-<img src="https://play-lh.googleusercontent.com/pVUW445uF1ek7vCeJetlNWk6bb4gMBnbSUtMEbzMkNHU6dDwoyO3KiEsSvYoiFByfHfAHXtcKf8nIGrCsu4ueQ=w128-h128" width="72" height="72" alt="Echo icon">
-<br><b>Echo</b>
+<img src="https://play-lh.googleusercontent.com/CTnZKfZowST3s4ZCC-NC21uh05IwUVr4HznYUb-TepWC43fZ3qPlUCxtz5x682PGQ9VqG743zUtGBJGlo5cDcqs=w128-h128" width="72" height="72" alt="DroidCam icon">
+<br><b>DroidCam</b>
 <br><sub>2 patches</sub>
 </td>
 </tr>
 <tr>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/pVUW445uF1ek7vCeJetlNWk6bb4gMBnbSUtMEbzMkNHU6dDwoyO3KiEsSvYoiFByfHfAHXtcKf8nIGrCsu4ueQ=w128-h128" width="72" height="72" alt="Echo icon">
+<br><b>Echo</b>
+<br><sub>2 patches</sub>
+</td>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/n-VW4rcGGAZNvcAxpAA6gM64UTXU2iuPuCXBluW83Kd21zGhNgOThvhsYTo25mME4VioiXXbg3oL3S_BIk5QvYQ=w128-h128" width="72" height="72" alt="Games In One - Watch Games icon">
 <br><b>Games In One - Watch Games</b>
@@ -58,13 +63,13 @@ A personal bundle of Morphe patches for Android — premium unlocks, ad removal,
 <br><b>Hermit</b>
 <br><sub>1 patch</sub>
 </td>
+</tr>
+<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/bOSkPoR8m9Qc_TPwrID8_Db51EL9oO0rq4UzRPAHKN2Zc1mq7gCq_0tySpBp1h6PkV5h7IOr0IvA1MTBiGyQCw=w128-h128" width="72" height="72" alt="ISS Live Now icon">
 <br><b>ISS Live Now</b>
 <br><sub>1 patch</sub>
 </td>
-</tr>
-<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/juZBxj0uxtz80RMbyvPxco2O7rD7aU71VvhLsgConfsM4FmtzXTprkGXiEZQHugPU0A17AYnQ_tgF-0Nph9MIQ=w128-h128" width="72" height="72" alt="Notes icon">
 <br><b>Notes</b>
@@ -85,13 +90,13 @@ A personal bundle of Morphe patches for Android — premium unlocks, ad removal,
 <br><b>Rocket Player</b>
 <br><sub>1 patch</sub>
 </td>
+</tr>
+<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/8Y6RokzLQKhDAFcI5vYbgCd-_Hi8b6pQbrSAYB3a40ZH_NoBOz3U25qcvzOOEOkQrXzraI9DCs1NzJxpgZs2=w128-h128" width="72" height="72" alt="Roku Remote icon">
 <br><b>Roku Remote</b>
 <br><sub>1 patch</sub>
 </td>
-</tr>
-<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/OdQDxdeo_WyMUftwJbJHF4PALrfSJ4B4vpOWkXPKar1_JN3NKc9ULakQ5o3mjzcuRRTDheF36xSh9mxVRnjD=w128-h128" width="72" height="72" alt="Smart MP3 Tagger icon">
 <br><b>Smart MP3 Tagger</b>
@@ -112,6 +117,8 @@ A personal bundle of Morphe patches for Android — premium unlocks, ad removal,
 <br><b>Unified Remote</b>
 <br><sub>1 patch</sub>
 </td>
+</tr>
+<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/z74H5YZukP3qJGkbJGUZj39y_1rDADZI_rkRUB04ID1x9WjhpuBA_t_FMdMQ7vFm0MFwLWkMFQPInRq-kC7MXg=w128-h128" width="72" height="72" alt="Video Cutter icon">
 <br><b>Video Cutter</b>
