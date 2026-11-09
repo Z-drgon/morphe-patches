@@ -2,7 +2,7 @@
 
 Some apps I patched and other apps that were requested if you would like to request an app please drop a comment in my reddit discussion for patches: https://www.reddit.com/r/MorpheApp/s/xRx6wdTYA5
 
-**31 apps · 64 patches** · current bundle: [v1.68.3](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.68.3)
+**31 apps · 64 patches** · current bundle: [v1.68.2](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.68.2)
 
 ## Apps
 
@@ -13,14 +13,14 @@ Some apps I patched and other apps that were requested if you would like to requ
      the GRID_START / GRID_END markers on every release — new apps get their name, Play
      Store icon and experimental marker automatically, and grid names link to the
      detailed sections below (which use the apps' full Play Store names). Kept OUTSIDE the auto-generated patches
-     block below on purpose. Reflects bundle v1.68.3. -->
+     block below on purpose. Reflects bundle v1.68.2. -->
 
 <!-- GRID_START -->
 <table>
 <tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/O22rWPbgLS6WhWbdzPnX5CuLSbWd4dyFS0XTfHR-sQxNQkS317Jt5kK3Bbwaccm7Zp-HsCsGWhep9zSNRS4B=w128-h128" width="72" height="72" alt="1DM: Browser & Video Download icon">
-<br><a href="#app-idm-internet-download-manager"><b>1DM: Browser & Video Download</b></a>
+<br><a href="#app-idm-internet-download-manager"><b>1DM</b></a>
 </td>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/3b2xdcIvbLFtNiOP1vCbQuszwP2qWyGsa_pGC63VNQlSC4ddP3sApprJ0r4ajU5bypFYjIWaHe_pjNzvE5cKvQ=w128-h128" width="72" height="72" alt="Alarmy icon">
@@ -46,7 +46,7 @@ Some apps I patched and other apps that were requested if you would like to requ
 </td>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/n-VW4rcGGAZNvcAxpAA6gM64UTXU2iuPuCXBluW83Kd21zGhNgOThvhsYTo25mME4VioiXXbg3oL3S_BIk5QvYQ=w128-h128" width="72" height="72" alt="Games In One - Watch Games icon">
-<br><a href="#app-com-mustbefun-gamesinonewatchgames"><b>Games In One - Watch Games</b></a>
+<br><a href="#app-com-mustbefun-gamesinonewatchgames"><b>Games In One</b></a>
 </td>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/04xiToIui2lD8Co9xPb-_V3JW90vSS8ej7aEAMqzdA9uadnjkGbPFvtkQPxB4okIIkrZquPYnxE3Eg6d6Ik_XQ=w128-h128" width="72" height="72" alt="Gradient Weather icon">
@@ -194,7 +194,7 @@ Some apps I patched and other apps that were requested if you would like to requ
 ## Patch descriptions
 
 <!-- PATCHES_START -->
-> **[v1.68.3](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.68.3)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;64 patches total
+> **[v1.68.2](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.68.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;64 patches total
 <a id="app-com-strava" name="app-com-strava"></a>
 <details>
 <summary>Strava: Run, Bike, Walk&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
