@@ -73,6 +73,44 @@ def anchor(name):
     return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", name.lower())).strip("-")
 
 
+def app_anchor(pkg):
+    """Stable anchor id for an app's detailed section below the grid,
+    e.g. com.pika.dynamicisland -> app-com-pika-dynamicisland."""
+    return "app-" + anchor(pkg)
+
+
+_TITLE_CACHE = {}
+
+
+def fetch_play_title(pkg):
+    """Best-effort full app name from the Play Store page (og:title,
+    with the " - Apps on Google Play" suffix stripped). Returns None
+    on any failure — callers fall back to the patch-list name, so a
+    failed fetch never fails the release."""
+    if pkg in _TITLE_CACHE:
+        return _TITLE_CACHE[pkg]
+    title = None
+    try:
+        import html
+        import urllib.request
+        url = f"https://play.google.com/store/apps/details?id={pkg}&hl=en_US"
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        })
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            page = resp.read().decode("utf-8", "ignore")
+        m = re.search(r'property="og:title" content="([^"]+)"', page) or \
+            re.search(r'content="([^"]+)" property="og:title"', page)
+        if m:
+            t = html.unescape(m.group(1)).strip()
+            t = re.sub(r"\s*-\s*Apps on Google Play$", "", t).strip()
+            title = t or None
+    except Exception:
+        title = None
+    _TITLE_CACHE[pkg] = title
+    return title
+
+
 def patches_table(patches):
     """Render a sorted markdown table of patches with name, description, and options."""
     rows = [
@@ -152,7 +190,12 @@ def build_content(expanded=False):
     # One spoiler per app, in the order they appear in the JSON
     for pkg, entry in by_pkg.items():
         patches = list(entry["patches"].values())
-        label   = entry["name"]
+        # Detailed sections list the app's FULL Play Store name
+        # (e.g. Notes -> "Notes - iOS Style Notepad"); the grid
+        # keeps the shorter patch-list name.
+        label   = fetch_play_title(pkg) or entry["name"]
+        a = app_anchor(pkg)
+        lines.append(f'<a id="{a}" name="{a}"></a>')
         lines.append(spoiler(label, len(patches), entry["targets"], patches_table(patches), expanded))
         lines.append("")
 
@@ -276,15 +319,13 @@ def fetch_play_icon(pkg):
 
 def build_grid(readme_text):
     known_icons = {}
-    for m in re.finditer(r'<img src="([^"]+)"[^>]*>\s*<br><b>(.*?)</b>', readme_text):
+    for m in re.finditer(r'<img src="([^"]+)"[^>]*>\s*<br>(?:<a[^>]*>)?<b>(.*?)</b>', readme_text):
         known_icons[m.group(2)] = m.group(1)
     apps = []
     for pkg, entry in by_pkg.items():
         if pkg in GRID_EXCLUDE_PACKAGES:
             continue
         name = entry["name"]
-        count = len(entry["patches"])
-        sub = f"{count} patch" if count == 1 else f"{count} patches"
         targets = entry.get("targets", [])
         experimental = pkg in EXPERIMENTAL_README_PACKAGES or (
             bool(targets) and all(t.get("isExperimental") for t in targets)
@@ -293,20 +334,23 @@ def build_grid(readme_text):
         if icon is None:
             sys.stderr.write(f"WARNING: could not fetch Play Store icon for {name} ({pkg}); using placeholder\n")
             icon = "https://placehold.co/128x128/png?text=" + name[0]
-        apps.append((name, icon, sub, experimental))
+        apps.append((name, icon, pkg, experimental))
     apps.sort(key=lambda a: a[0].casefold())
     cells = []
-    for name, icon, sub, experimental in apps:
+    for name, icon, pkg, experimental in apps:
+        # The app name links down to the app's detailed section below.
+        # No patch count in the grid (owner request) — counts live in
+        # the detailed sections.
         cell = (
             f'<td align="center" width="20%">\n'
             f'<img src="{icon}" width="72" height="72" alt="{name} icon">\n'
-            f"<br><b>{name}</b>\n"
+            f'<br><a href="#{app_anchor(pkg)}"><b>{name}</b></a>\n'
         )
         if experimental:
             # "experimental" gets its own small-text line directly
             # under the app name, per the repo owner's request.
             cell += "<br><sub>🧪 experimental</sub>\n"
-        cell += f"<br><sub>{sub}</sub>\n</td>"
+        cell += "</td>"
         cells.append(cell)
     rows = ["<tr>\n" + "\n".join(cells[i:i + 5]) + "\n</tr>" for i in range(0, len(cells), 5)]
     return "<table>\n" + "\n".join(rows) + "\n</table>"
