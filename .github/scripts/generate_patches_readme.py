@@ -315,25 +315,17 @@ readme = re.sub(
 # between grids is a one-line change to this set.
 TESTING_PACKAGES = {
     "com.google.android.apps.messaging",  # Google Messages: patched build crashes on launch
+    # Imported from the quarantine repo 2026-11-09 (commit 3b778c876);
+    # they ship in the bundle but stay in the Testing stage.
+    "com.shrey_businessx.android",  # BusinessX
+    "com.diskwalaapp",              # DiskWala
+    "com.lucky_apps.RainViewer",    # RainViewer
+    "com.strava",                   # Strava
+    "com.optimageeks.vehico_app",   # Vehico
+    "com.instantbits.cast.webvideo",  # Web Video Caster
+    "com.lonelycatgames.Xplore",    # X-plore
+    "com.yinyang.launcher",         # Yin Yang Launcher
 }
-
-# Apps whose patches live in the mwbra130/morphe-quarantine repo
-# (storage only — NOT in this bundle and NOT patchable from this
-# source). They are listed in the Testing grid for documentation,
-# marked "not in bundle", with their name linking to that repo.
-# (package, display name) — names/packages taken from each set's
-# own Constants.kt in the quarantine repo.
-QUARANTINE_TESTING_APPS = [
-    ("com.shrey_businessx.android", "BusinessX"),
-    ("com.diskwalaapp", "DiskWala"),
-    ("com.lucky_apps.RainViewer", "RainViewer"),
-    ("com.strava", "Strava"),
-    ("com.optimageeks.vehico_app", "Vehico"),
-    ("com.instantbits.cast.webvideo", "Web Video Caster"),
-    ("com.lonelycatgames.Xplore", "X-plore"),
-    ("com.yinyang.launcher", "Yin Yang Launcher"),
-]
-QUARANTINE_REPO_URL = "https://github.com/mwbra130/morphe-quarantine"
 
 # README-display experimental overrides (owner decision 2026-11-09):
 # these apps get the experimental line in the grid even though their
@@ -400,19 +392,6 @@ def build_grid(readme_text):
             cell += "<br><sub>🧪 experimental</sub>\n"
         cell += "</td>"
         cells["testing" if pkg in TESTING_PACKAGES else "main"].append(cell)
-
-    for qpkg, qname in sorted(QUARANTINE_TESTING_APPS, key=lambda x: x[1].casefold()):
-        icon = known_icons.get(qname) or fetch_play_icon(qpkg)
-        if icon is None:
-            sys.stderr.write(f"WARNING: could not fetch Play Store icon for {qname} ({qpkg}); using placeholder\n")
-            icon = "https://placehold.co/128x128/png?text=" + qname[0]
-        cells["testing"].append(
-            f'<td align="center" width="20%">\n'
-            f'<img src="{icon}" width="72" height="72" alt="{qname} icon">\n'
-            f'<br><a href="{QUARANTINE_REPO_URL}"><b>{qname}</b></a>\n'
-            f"<br><sub>not in bundle</sub>\n"
-            f"</td>"
-        )
 
     def table(cell_list):
         rows = ["<tr>\n" + "\n".join(cell_list[i:i + 5]) + "\n</tr>" for i in range(0, len(cell_list), 5)]
