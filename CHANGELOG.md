@@ -1,3 +1,9 @@
+## [1.67.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.67.1...v1.67.2) (2026-11-09)
+
+### 🐛 Bug Fixes
+
+* **droidcam:** restore decrypted .data in native libs, fixing crash on Stop ([a155c60](https://github.com/mwbra130/Retro-Bowl-College/commit/a155c6039d212f64d2fbabf8fb35cbd11bd7641b))
+
 ## [1.67.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.67.0...v1.67.1) (2026-11-09)
 
 ### 🐛 Bug Fixes
