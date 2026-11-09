@@ -208,6 +208,23 @@ generated  = build_content(expanded=expanded)
 readme = readme.replace("https://morphe.software/add-source?github=xyz-user/xyz-patches", f"https://morphe.software/add-source?github={repo_full}")
 readme = readme.replace("https://github.com/xyz-user/xyz-patches", f"https://github.com/{repo_full}")
 
+# Stamp the hand-maintained "current bundle" lines with this release's
+# version so they never lag a release behind. The version comes from
+# patches-list.json (.version is set by the jq step in .releaserc's
+# prepareCmd just before this script runs). Patterns tolerate an
+# optional prerelease suffix (dev branch versions like 1.68.0-dev.1).
+_VER = r"v\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?"
+readme = re.sub(
+    rf"(current bundle: \[){_VER}(\]\([^)]*/tag/){_VER}(\))",
+    rf"\g<1>v{ver}\g<2>v{ver}\g<3>",
+    readme,
+)
+readme = re.sub(
+    rf"(Reflects bundle ){_VER}(\.)",
+    rf"\g<1>v{ver}\g<2>",
+    readme,
+)
+
 new_readme = re.sub(
     rf"{START_PATTERN}.*?{re.escape(END_MARKER)}",
     f"{actual_start}\n{generated}\n{END_MARKER}",
