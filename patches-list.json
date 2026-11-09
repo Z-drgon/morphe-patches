@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.66.1",
+  "version": "1.67.0",
   "patches": [
     {
       "name": "Bypass PairIP license check",
@@ -205,7 +205,7 @@
     },
     {
       "name": "Disable PairIP protection",
-      "description": "Lets the patched app run: replaces PairIP's VM startup with harvested vault/handle data and removes the signature check and license dialog. Requires 'Disable PairIP protection (runtime files)'. DroidCam 9.0 only.",
+      "description": "Lets the patched app run: replaces PairIP's VM startup with harvested vault/handle data and removes the signature check and license dialog. Requires 'Disable PairIP protection (runtime files)'. DroidCam 10.0 only.",
       "default": true,
       "dependencies": [
         "ResourcePatch"
@@ -220,7 +220,7 @@
           "signatures": null,
           "targets": [
             {
-              "version": "9.0",
+              "version": "10.0",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
@@ -233,7 +233,7 @@
     },
     {
       "name": "Disable PairIP protection (runtime files)",
-      "description": "Swaps the VM-encrypted native libraries (libmjpg, libmdns) for decrypted builds that 'Disable PairIP protection' needs. Enable both together. DroidCam 9.0 only.",
+      "description": "Swaps the VM-encrypted native libraries (libmjpg, libmdns) for decrypted builds that 'Disable PairIP protection' needs. Enable both together. DroidCam 10.0 only.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -246,7 +246,7 @@
           "signatures": null,
           "targets": [
             {
-              "version": "9.0",
+              "version": "10.0",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
@@ -551,6 +551,34 @@
       "options": []
     },
     {
+      "name": "Fix camera streaming",
+      "description": "Fixes the black preview / no video in patched builds: the service is handed the original app's signature data, so the PC client's video requests are accepted exactly as with the stock app. Requires 'Disable PairIP protection'. DroidCam 10.0 only.",
+      "default": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.dev47apps.obsdroidcam",
+          "name": "DroidCam",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#03A9F4",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "10.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Free store",
       "description": "The in-game store is free. Just tap \"Buy\" and the item is yours — no payment needed. For an ad-free game, just buy the ad-block item from the store.",
       "default": true,
@@ -832,7 +860,7 @@
     },
     {
       "name": "Unlock Pro",
-      "description": "Unlocks DroidCam Pro (HD/4K, no watermark, all options): the license verdict is forced to Pro and renews itself at every silent re-check. Requires 'Disable PairIP protection'. DroidCam 9.0 only.",
+      "description": "Unlocks DroidCam Pro (HD/4K, no watermark, all options): the license verdict is forced to Pro and renews itself at every silent re-check. Requires 'Disable PairIP protection'. DroidCam 10.0 only.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -845,7 +873,7 @@
           "signatures": null,
           "targets": [
             {
-              "version": "9.0",
+              "version": "10.0",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
