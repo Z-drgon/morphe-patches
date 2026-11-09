@@ -357,6 +357,18 @@ def fetch_play_icon(pkg):
         return None
 
 
+def short_grid_name(name):
+    # Grid boxes show the SHORT name: '1DM: Browser & Video Download' -> '1DM',
+    # 'Games In One - Watch Games' -> 'Games In One'. The full name stays in
+    # the detailed Patch descriptions section below.
+    for sep in (": ", " - "):
+        if sep in name:
+            head = name.split(sep, 1)[0].strip()
+            if len(head) >= 2:
+                return head
+    return name
+
+
 def build_grid(readme_text):
     """Returns (main_grid_html, testing_grid_html)."""
     known_icons = {}
@@ -382,10 +394,11 @@ def build_grid(readme_text):
         # The app name links down to the app's detailed section below.
         # No patch count in the grid (owner request) — counts live in
         # the detailed sections.
+        display = short_grid_name(name)
         cell = (
             f'<td align="center" width="20%">\n'
             f'<img src="{icon}" width="72" height="72" alt="{name} icon">\n'
-            f'<br><a href="#{app_anchor(pkg)}"><b>{name}</b></a>\n'
+            f'<br><a href="#{app_anchor(pkg)}"><b>{display}</b></a>\n'
         )
         if experimental:
             # "experimental" gets its own small-text line directly
