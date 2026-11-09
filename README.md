@@ -2,12 +2,12 @@
 
 A personal bundle of Morphe patches for Android — premium unlocks, ad removal, and a few quality-of-life tweaks, all in one source. Add the bundle to Morphe Manager or Morphe Desktop, pick your app, and patch it yourself.
 
-**22 apps · 31 patches** · current bundle: [v1.67.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.67.1)
+**22 apps · 31 patches** · current bundle: [v1.67.3](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.67.3)
 
 ## Apps at a glance
 
 <!-- App icon grid: maintained by hand and kept OUTSIDE the auto-generated patches block
-     below on purpose, so releases don't overwrite it. Reflects bundle v1.67.1. -->
+     below on purpose, so releases don't overwrite it. Reflects bundle v1.67.3. -->
 
 <table>
 <tr>
