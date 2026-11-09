@@ -59,7 +59,8 @@ A personal bundle of Morphe patches for Android — premium unlocks, ad removal,
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/SrSr_L4l99jgmGMy79N0_mEhpdn-fBqpg1hxobrs_daqRyZU-IUaiz3_07Bx-c5fB8JtHE0R5HpB2S8V3XAfJTs=w128-h128" width="72" height="72" alt="Happy Color icon">
 <br><b>Happy Color</b>
-<br><sub>1 patch · 🧪 experimental</sub>
+<br><sub>🧪 experimental</sub>
+<br><sub>1 patch</sub>
 </td>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/SkxvvpzgHvzG3ODTIf3EZA5kbAvFX6ahey_-wQppGxG4X6jxXBHY2LeBQShRLi7RktS02Tl6HlqON22dH62TZQ=w128-h128" width="72" height="72" alt="Hermit icon">
