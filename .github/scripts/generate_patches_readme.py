@@ -332,10 +332,10 @@ TESTING_PACKAGES = {
 # these apps get the experimental line in the grid even though their
 # patch sources ship with isExperimental off. Display only — what
 # Morphe Manager shows is driven by the patch sources, NOT this list.
-EXPERIMENTAL_README_PACKAGES = {
-    "com.pika.dynamicisland",  # Pika Spot: patched build cannot connect on device (server signer check)
-    "com.inotesapp.inotes",     # Notes: Remove ads shipped without an on-device test
-}
+EXPERIMENTAL_README_PACKAGES = set()
+# (Was {com.pika.dynamicisland, com.inotesapp.inotes} when those two were
+# README-flagged only; since v1.68.3 their isExperimental lives in the patch
+# sources themselves, so no display override is needed.)
 
 
 def fetch_play_icon(pkg):
