@@ -26,6 +26,10 @@ private const val VAULT_INIT =
  *    longer calls VMRunner.setContext / SignatureCheck.verifyIntegrity.
  * 3. The license-check content provider is stubbed to a no-op, so the
  *    PairIP license dialog never appears.
+ * 4. LicenseClient.checkLicense is emptied. DroidCam 10.0's
+ *    Application calls it directly from attachBaseContext — a second
+ *    trigger 9.0 did not have (found in the step-8 emulator test:
+ *    the Play license dialog appeared and exiting it closed the app).
  *
  * Requires "Disable PairIP protection (runtime files)" as well: that
  * patch adds the runtime-only lifecycle classes the handles point to
@@ -39,7 +43,7 @@ val disablePairIpPatch = bytecodePatch(
     name = "Disable PairIP protection",
     description = "Lets the patched app run: replaces PairIP's VM startup with harvested " +
         "vault/handle data and removes the signature check and license dialog. " +
-        "Requires 'Disable PairIP protection (runtime files)'. DroidCam 9.0 only.",
+        "Requires 'Disable PairIP protection (runtime files)'. DroidCam 10.0 only.",
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_DROIDCAM)
@@ -106,6 +110,15 @@ val disablePairIpPatch = bytecodePatch(
             """
                 const/4 v0, 0x1
                 return v0
+            """,
+        )
+
+        // 4. License check entry point: empty it, so the direct call
+        //    from Application.attachBaseContext does nothing.
+        LicenseCheckFingerprint.method.addInstructions(
+            0,
+            """
+                return-void
             """,
         )
     }

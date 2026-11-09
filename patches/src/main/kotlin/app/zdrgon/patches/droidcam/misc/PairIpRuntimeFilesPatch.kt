@@ -44,7 +44,7 @@ val pairIpRuntimeFilesPatch = resourcePatch(
     name = "Disable PairIP protection (runtime files)",
     description = "Swaps the VM-encrypted native libraries (libmjpg, libmdns) for " +
         "decrypted builds that 'Disable PairIP protection' needs. " +
-        "Enable both together. DroidCam 9.0 only.",
+        "Enable both together. DroidCam 10.0 only.",
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_DROIDCAM)

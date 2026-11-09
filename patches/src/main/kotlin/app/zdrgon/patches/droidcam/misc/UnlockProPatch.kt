@@ -29,7 +29,7 @@ val unlockProPatch = bytecodePatch(
     name = "Unlock Pro",
     description = "Unlocks DroidCam Pro (HD/4K, no watermark, all options): the license " +
         "verdict is forced to Pro and renews itself at every silent re-check. " +
-        "Requires 'Disable PairIP protection'. DroidCam 9.0 only.",
+        "Requires 'Disable PairIP protection'. DroidCam 10.0 only.",
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_DROIDCAM)
