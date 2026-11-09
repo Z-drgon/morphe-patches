@@ -325,6 +325,7 @@ TESTING_PACKAGES = {
     "com.instantbits.cast.webvideo",  # Web Video Caster
     "com.lonelycatgames.Xplore",    # X-plore
     "com.yinyang.launcher",         # Yin Yang Launcher
+    "com.pika.dynamicisland",       # Pika Spot: walled on-device (server rejects re-signed builds)
 }
 
 # README-display experimental overrides (owner decision 2026-11-09):
