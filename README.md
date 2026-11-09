@@ -138,7 +138,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 > **[v1.68.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.68.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;33 patches total
 <a id="app-com-jamworks-alwaysondisplay" name="app-com-jamworks-alwaysondisplay"></a>
 <details>
-<summary>Notification light for Samsung&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<summary>aodNotify&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
 
 **Supported versions:**
@@ -189,7 +189,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 
 <a id="app-tageditor-automatictageditor-audiotagging-audioedit-mp3edit" name="app-tageditor-automatictageditor-audiotagging-audioedit-mp3edit"></a>
 <details>
-<summary>Smart MP3 Tag Editor&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<summary>Smart MP3 Tagger&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
 
 **Supported versions:**
