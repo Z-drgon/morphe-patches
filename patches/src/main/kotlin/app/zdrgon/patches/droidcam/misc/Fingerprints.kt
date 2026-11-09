@@ -69,3 +69,24 @@ object VerdictParserFingerprint : Fingerprint(
     parameters = listOf("Ljava/lang/String;"),
     strings = listOf(":", "ok"),
 )
+
+/**
+ * DroidcamService's Load method (jadx alias m5619xb44d5ad4). At service
+ * start MainActivity hands it the app's signing certificate
+ * (signatures[0].toByteArray()) and its hashCode; Load seeds the Lk
+ * crypto helper with the bytes and passes the hash to the server,
+ * which derives the video client's expected nonce as hashCode & 6138.
+ *
+ * The method name is PairIP-obfuscated, so this matches on the
+ * (real-named) defining class, the signature, and two literal strings
+ * from the body. Verified against DroidCam 9.0 by full jadx read of
+ * DroidcamService plus Find Usage on the method (both call sites are
+ * in MainActivity's service-state sync, passing
+ * signatures[0].toByteArray() / signatures[0].hashCode()).
+ */
+object ServiceLoadFingerprint : Fingerprint(
+    definingClass = "Lcom/dev47apps/obsdroidcam/DroidcamService;",
+    returnType = "V",
+    parameters = listOf("[B", "I"),
+    strings = listOf("update_time", "DND access missing, turning off 'Mute Phone' option"),
+)

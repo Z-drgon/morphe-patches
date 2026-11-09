@@ -39,7 +39,7 @@ val disablePairIpPatch = bytecodePatch(
     name = "Disable PairIP protection",
     description = "Lets the patched app run: replaces PairIP's VM startup with harvested " +
         "vault/handle data and removes the signature check and license dialog. " +
-        "Requires 'Disable PairIP protection (runtime files)'. DroidCam 9.0 only.",
+        "Requires 'Disable PairIP protection (runtime files)'. DroidCam 10.0 only.",
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_DROIDCAM)
