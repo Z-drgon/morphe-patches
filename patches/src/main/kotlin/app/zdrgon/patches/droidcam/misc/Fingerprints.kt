@@ -51,6 +51,26 @@ object LicenseProviderOnCreateFingerprint : Fingerprint(
 )
 
 /**
+ * PairIP's static license-check entry point. DroidCam 10.0's
+ * Application.attachBaseContext calls LicenseClient.checkLicense
+ * directly (in 9.0 the check only fired through the content provider
+ * above). checkLicense constructs a LicenseClient and calls
+ * initializeLicenseCheck(), which is what puts the "Something went
+ * wrong / Check that Google Play is enabled" dialog on screen; the
+ * app exits when the dialog is dismissed.
+ *
+ * Verified against DroidCam 10.0 (vc83) by jadx read of
+ * com.pairip.licensecheck.LicenseClient:
+ * public static void checkLicense(Context).
+ */
+object LicenseCheckFingerprint : Fingerprint(
+    definingClass = "Lcom/pairip/licensecheck/LicenseClient;",
+    name = "checkLicense",
+    returnType = "V",
+    parameters = listOf("Landroid/content/Context;"),
+)
+
+/**
  * The license-verdict parser (jadx alias m10499), declared in
  * MainActivity's obfuscated superclass. It parses the verification
  * server's reply, which must have the form ok:<int>:<nonce>:<digest>
