@@ -11,7 +11,7 @@ object Constants {
         apkFileType = ApkFileType.XAPK,
         appIconColor = 0x0288D1,
         targets = listOf(
-            AppTarget(version = "6.5.2")
+            AppTarget(version = "6.5.2", isExperimental = true)
         )
     )
 }
