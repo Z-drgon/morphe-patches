@@ -1,3 +1,9 @@
+## [1.68.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.68.0...v1.68.1) (2026-11-09)
+
+### 🐛 Bug Fixes
+
+* **pikaspot:** use L-suffixed wide literal in token ingest pin ([9c46ec0](https://github.com/mwbra130/Retro-Bowl-College/commit/9c46ec0e694476b550c70550ab783d89a38a7a2b))
+
 ## [1.68.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.67.3...v1.68.0) (2026-11-09)
 
 ### ✨ New Features
