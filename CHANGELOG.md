@@ -1,3 +1,13 @@
+## [1.67.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.66.1...v1.67.0) (2026-11-09)
+
+### 🐛 Bug Fixes
+
+* **droidcam:** silence PairIP license check entry point on 10.0 ([0b1eec5](https://github.com/mwbra130/Retro-Bowl-College/commit/0b1eec5e4a4c21311e31c865f26fa73bb4ba57c9))
+
+### ✨ New Features
+
+* **droidcam:** port PairIP bypass and Pro unlock to DroidCam 10.0 ([93b4261](https://github.com/mwbra130/Retro-Bowl-College/commit/93b426103e01a763c933ee7faf7e4d8fcab87b52))
+
 ## [1.66.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.66.0...v1.66.1) (2026-11-08)
 
 ### 🐛 Bug Fixes

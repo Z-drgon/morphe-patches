@@ -137,7 +137,7 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 ## Every patch, app by app
 
 <!-- PATCHES_START -->
-> **[v1.66.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.66.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;32 patches total
+> **[v1.67.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.67.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;33 patches total
 <details>
 <summary>aodNotify&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
@@ -219,19 +219,20 @@ Apps marked 🧪 are experimental — enable **Experimental patches** in Morphe 
 </details>
 
 <details>
-<summary>DroidCam&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
+<summary>DroidCam&nbsp;&nbsp;•&nbsp;&nbsp;4 patches</summary>
 <br>
 
 **Supported versions:**
 
-| 9.0 |
+| 10.0 |
 | :---: |
 
 | Patch | Description | Options |
 |----------|----------------|-----------|
-| [Disable PairIP protection](#disable-pairip-protection) | Lets the patched app run: replaces PairIP's VM startup with harvested vault/handle data and removes the signature check and license dialog. Requires 'Disable PairIP protection (runtime files)'. DroidCam 9.0 only. |  |
-| [Disable PairIP protection (runtime files)](#disable-pairip-protection-runtime-files) | Swaps the VM-encrypted native libraries (libmjpg, libmdns) for decrypted builds that 'Disable PairIP protection' needs. Enable both together. DroidCam 9.0 only. |  |
-| [Unlock Pro](#unlock-pro) | Unlocks DroidCam Pro (HD/4K, no watermark, all options): the license verdict is forced to Pro and renews itself at every silent re-check. Requires 'Disable PairIP protection'. DroidCam 9.0 only. |  |
+| [Disable PairIP protection](#disable-pairip-protection) | Lets the patched app run: replaces PairIP's VM startup with harvested vault/handle data and removes the signature check and license dialog. Requires 'Disable PairIP protection (runtime files)'. DroidCam 10.0 only. |  |
+| [Disable PairIP protection (runtime files)](#disable-pairip-protection-runtime-files) | Swaps the VM-encrypted native libraries (libmjpg, libmdns) for decrypted builds that 'Disable PairIP protection' needs. Enable both together. DroidCam 10.0 only. |  |
+| [Fix camera streaming](#fix-camera-streaming) | Fixes the black preview / no video in patched builds: the service is handed the original app's signature data, so the PC client's video requests are accepted exactly as with the stock app. Requires 'Disable PairIP protection'. DroidCam 10.0 only. |  |
+| [Unlock Pro](#unlock-pro) | Unlocks DroidCam Pro (HD/4K, no watermark, all options): the license verdict is forced to Pro and renews itself at every silent re-check. Requires 'Disable PairIP protection'. DroidCam 10.0 only. |  |
 
 </details>
 
