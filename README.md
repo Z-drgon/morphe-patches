@@ -2,7 +2,7 @@
 
 Some apps I patched and other apps that were requested if you would like to request an app please drop a comment in my reddit discussion for patches: https://www.reddit.com/r/MorpheApp/s/xRx6wdTYA5
 
-**23 apps · 33 patches** · current bundle: [v1.68.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.68.1)
+**31 apps · 64 patches** · current bundle: [v1.68.2](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.68.2)
 
 ## Apps
 
@@ -13,7 +13,7 @@ Some apps I patched and other apps that were requested if you would like to requ
      the GRID_START / GRID_END markers on every release — new apps get their name, Play
      Store icon and experimental marker automatically, and grid names link to the
      detailed sections below (which use the apps' full Play Store names). Kept OUTSIDE the auto-generated patches
-     block below on purpose. Reflects bundle v1.68.1. -->
+     block below on purpose. Reflects bundle v1.68.2. -->
 
 <!-- GRID_START -->
 <table>
@@ -31,15 +31,24 @@ Some apps I patched and other apps that were requested if you would like to requ
 <br><a href="#app-com-jamworks-alwaysondisplay"><b>aodNotify</b></a>
 </td>
 <td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/ZcFuvOQUSbZWo5diJwpoRn4g1jNT5I8XZ_Kmz7Lox_EBUO1b0TAQ9jsFRAru4vUWTP04Er7LE3A8k0HGYO-YCQ=w128-h128" width="72" height="72" alt="BusinessX icon">
+<br><a href="#app-com-shrey-businessx-android"><b>BusinessX</b></a>
+</td>
+<td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/LX__Y8tKCvkvEgboZtQfDsvYiNFa6kwWSpqObipZI2MLK5rFVd5tEU8xgMNoMj1ICOf9TO7PFoFmiKGeIpf1=w128-h128" width="72" height="72" alt="Crossy Road icon">
 <br><a href="#app-com-yodo1-crossyroad"><b>Crossy Road</b></a>
+</td>
+</tr>
+<tr>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/3Q9MNHslRe9p1Zbzn-H7b0OUZkqlvxuaMoPyZ_8mzQmry8tB-FeFPXfbJ7zBxVY6B8zrphBREyZhL-8I9R4r=w128-h128" width="72" height="72" alt="DiskWala icon">
+<br><a href="#app-com-diskwalaapp"><b>DiskWala</b></a>
+<br><sub>🧪 experimental</sub>
 </td>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/CTnZKfZowST3s4ZCC-NC21uh05IwUVr4HznYUb-TepWC43fZ3qPlUCxtz5x682PGQ9VqG743zUtGBJGlo5cDcqs=w128-h128" width="72" height="72" alt="DroidCam icon">
 <br><a href="#app-com-dev47apps-obsdroidcam"><b>DroidCam</b></a>
 </td>
-</tr>
-<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/pVUW445uF1ek7vCeJetlNWk6bb4gMBnbSUtMEbzMkNHU6dDwoyO3KiEsSvYoiFByfHfAHXtcKf8nIGrCsu4ueQ=w128-h128" width="72" height="72" alt="Echo icon">
 <br><a href="#app-com-hapibits-soundlift"><b>Echo</b></a>
@@ -52,6 +61,8 @@ Some apps I patched and other apps that were requested if you would like to requ
 <img src="https://play-lh.googleusercontent.com/04xiToIui2lD8Co9xPb-_V3JW90vSS8ej7aEAMqzdA9uadnjkGbPFvtkQPxB4okIIkrZquPYnxE3Eg6d6Ik_XQ=w128-h128" width="72" height="72" alt="Gradient Weather icon">
 <br><a href="#app-com-subtlesignals-gradientweather"><b>Gradient Weather</b></a>
 </td>
+</tr>
+<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/SrSr_L4l99jgmGMy79N0_mEhpdn-fBqpg1hxobrs_daqRyZU-IUaiz3_07Bx-c5fB8JtHE0R5HpB2S8V3XAfJTs=w128-h128" width="72" height="72" alt="Happy Color icon">
 <br><a href="#app-com-pixel-art-coloring-color-number"><b>Happy Color</b></a>
@@ -61,8 +72,6 @@ Some apps I patched and other apps that were requested if you would like to requ
 <img src="https://play-lh.googleusercontent.com/SkxvvpzgHvzG3ODTIf3EZA5kbAvFX6ahey_-wQppGxG4X6jxXBHY2LeBQShRLi7RktS02Tl6HlqON22dH62TZQ=w128-h128" width="72" height="72" alt="Hermit icon">
 <br><a href="#app-com-chimbori-hermitcrab"><b>Hermit</b></a>
 </td>
-</tr>
-<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/bOSkPoR8m9Qc_TPwrID8_Db51EL9oO0rq4UzRPAHKN2Zc1mq7gCq_0tySpBp1h6PkV5h7IOr0IvA1MTBiGyQCw=w128-h128" width="72" height="72" alt="ISS Live Now icon">
 <br><a href="#app-com-nicedayapps-iss-free"><b>ISS Live Now</b></a>
@@ -77,16 +86,21 @@ Some apps I patched and other apps that were requested if you would like to requ
 <br><a href="#app-com-pika-dynamicisland"><b>Pika Spot</b></a>
 <br><sub>🧪 experimental</sub>
 </td>
+</tr>
+<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/-21ASw97RWIu-CnDVbEEtTrfVIDqpfhY4eofgk5aT98q4E8jnrMVxNqI0J7JYgRTkHjoOoWM58ScUzu30cxevQ=w128-h128" width="72" height="72" alt="Poweramp icon">
 <br><a href="#app-com-maxmpz-audioplayer"><b>Poweramp</b></a>
 </td>
 <td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/S-gCULXUiJ9cWJlV9mhTj-1e6nleHaBWXDAZrzlHOaVavugkYBqqMeR7Q5p_-sjLdC9xM9HI7cte-iweKHDfhw=w128-h128" width="72" height="72" alt="RainViewer icon">
+<br><a href="#app-com-lucky-apps-rainviewer"><b>RainViewer</b></a>
+<br><sub>🧪 experimental</sub>
+</td>
+<td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/DrvO8zMElYMrKfmdRtxwyH_kkvk6MJD87mBaC_38Bw1Pkq0DJB0h-SpfbK5SOAkoJQRJ2TpUU0QvW3bSdUe8=w128-h128" width="72" height="72" alt="Retro Bowl College icon">
 <br><a href="#app-com-newstargames-retrobowlcollege"><b>Retro Bowl College</b></a>
 </td>
-</tr>
-<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/ssy9sm_kmFckXCA5OT-VpT4pYOE_P0dy8oM8mTvvXaD692W14esUS6saR8qaprJcrfMrmPyYG4Dvyr4Mudp3gg=w128-h128" width="72" height="72" alt="Rocket Player icon">
 <br><a href="#app-com-jrtstudio-anothermusicplayer"><b>Rocket Player</b></a>
@@ -95,6 +109,8 @@ Some apps I patched and other apps that were requested if you would like to requ
 <img src="https://play-lh.googleusercontent.com/8Y6RokzLQKhDAFcI5vYbgCd-_Hi8b6pQbrSAYB3a40ZH_NoBOz3U25qcvzOOEOkQrXzraI9DCs1NzJxpgZs2=w128-h128" width="72" height="72" alt="Roku Remote icon">
 <br><a href="#app-com-swiftsofts-rokuremote"><b>Roku Remote</b></a>
 </td>
+</tr>
+<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/OdQDxdeo_WyMUftwJbJHF4PALrfSJ4B4vpOWkXPKar1_JN3NKc9ULakQ5o3mjzcuRRTDheF36xSh9mxVRnjD=w128-h128" width="72" height="72" alt="Smart MP3 Tagger icon">
 <br><a href="#app-tageditor-automatictageditor-audiotagging-audioedit-mp3edit"><b>Smart MP3 Tagger</b></a>
@@ -104,18 +120,43 @@ Some apps I patched and other apps that were requested if you would like to requ
 <br><a href="#app-com-rkgames-basisgame"><b>Smashy Road 2</b></a>
 </td>
 <td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/J4LN2qH2PQkZ3sFQonz-HWYkd7M38BtEO4Grzh1Xn7L2J6NUILHPkhYvPjdhMZQzrdm4BarUj547wfthyMz_vWM=w128-h128" width="72" height="72" alt="Strava icon">
+<br><a href="#app-com-strava"><b>Strava</b></a>
+<br><sub>🧪 experimental</sub>
+</td>
+<td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/5wJZegUK2e_dXD14bp1NqX_Op20rpfnSLAYiuVJR7e32095qA8-yEDlezpbT7r1mx69VzjqWbCyVhHMm1T8O=w128-h128" width="72" height="72" alt="Tuner icon">
 <br><a href="#app-com-studiosol-afinadorlite"><b>Tuner</b></a>
 </td>
-</tr>
-<tr>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/o2AAUlWu7gGP5WwbE7eg0aP3vqNKjna0HbfFP3LIFVAHpUpT3KfLxnGv3R8Nn6z0XUP9hsly0SBR4jniSW08Dw=w128-h128" width="72" height="72" alt="Unified Remote icon">
 <br><a href="#app-com-relmtech-remote"><b>Unified Remote</b></a>
 </td>
+</tr>
+<tr>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/6aOhYA2V2PxxxAKVZMFBBWzMN1TttEZFuZ4tEiFQoc-WISs9YSnihT3NeFPV_jtyDci-3IoOyT3L7lMc5Qf7=w128-h128" width="72" height="72" alt="Vehico icon">
+<br><a href="#app-com-optimageeks-vehico-app"><b>Vehico</b></a>
+<br><sub>🧪 experimental</sub>
+</td>
 <td align="center" width="20%">
 <img src="https://play-lh.googleusercontent.com/z74H5YZukP3qJGkbJGUZj39y_1rDADZI_rkRUB04ID1x9WjhpuBA_t_FMdMQ7vFm0MFwLWkMFQPInRq-kC7MXg=w128-h128" width="72" height="72" alt="Video Cutter icon">
 <br><a href="#app-com-losslessvideocutter"><b>Video Cutter</b></a>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/WJ8t0dcoBL8_6BonyM6196e1MI7xZ0t6iE61HOqRdWmEoVWaOsgzP3eFfjLfH3MUJ4muEt2kDI7IbyGC8aCsVQ=w128-h128" width="72" height="72" alt="Web Video Caster icon">
+<br><a href="#app-com-instantbits-cast-webvideo"><b>Web Video Caster</b></a>
+<br><sub>🧪 experimental</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/ANtuOsdWIW2Z58FWqGfpt9u6Tau7HUox1gVDbtfX2-1pu1MpAyuGszSUq5KqY0iZqQi2GxOcAVdoD0ltW2bSow=w128-h128" width="72" height="72" alt="X-plore icon">
+<br><a href="#app-com-lonelycatgames-xplore"><b>X-plore</b></a>
+<br><sub>🧪 experimental</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://play-lh.googleusercontent.com/eZs5iqAZIxCcvq0I820wedBRA3UJDuJOkxVVbCPsmlvuSQ_xC_QnXfOOc8vMamG7D6yJuuqU3wTLJRBYeXByU5o=w128-h128" width="72" height="72" alt="Yin Yang Launcher icon">
+<br><a href="#app-com-yinyang-launcher"><b>Yin Yang Launcher</b></a>
+<br><sub>🧪 experimental</sub>
 </td>
 </tr>
 </table>
@@ -195,7 +236,73 @@ Some apps I patched and other apps that were requested if you would like to requ
 ## Patch descriptions
 
 <!-- PATCHES_START -->
-> **[v1.68.1](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.68.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;33 patches total
+> **[v1.68.2](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.68.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;64 patches total
+<a id="app-com-strava" name="app-com-strava"></a>
+<details>
+<summary>Strava: Run, Bike, Walk&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
+<br>
+
+**Supported versions:**
+
+| 486.9 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Add settings](#add-settings) | Long-press the Home tab in Strava's bottom bar to open 'Morphe patch settings'. Lets you toggle feed cleanup, route trim, bottom bar tabs and the launcher name/icon at runtime, without re-patching. |  |
+| [Custom app name and icon](#custom-app-name-and-icon) | Changes the app's displayed name and launcher icon. The icon choices are Strava's own built-in alternate icons, plus an accent-colored one. Name and icon can later be switched at runtime from the patch settings screen. | • App name<br>• App icon |
+| [Custom theme colors](#custom-theme-colors) | Replaces Strava's brand orange (#FC5200) accent color in the app's native screens with a color of your choice. | • Accent color |
+| [Enable password login](#enable-password-login) | Shows the email and password login option instead of forcing the one-time email code flow. Your password is still checked by Strava's servers exactly as in the official app. |  |
+| [Hide feed elements](#hide-feed-elements) | Hides who-to-follow suggestions, suggested challenges and other clutter cards from the activity feed. Requires the 'Hide subscription promotions' patch, which provides the shared feed filtering. | • Who to Follow<br>• Suggested Challenges<br>• Join Challenge<br>• Joined a club<br>• Activity lookback<br>• Local events |
+| [Hide subscription promotions](#hide-subscription-promotions) | Hides subscription upsell modules and promotional cards from the feed and other modular screens. UI cleanup only: does not unlock any paid features. | • Upselling<br>• Promotions |
+| [Local route privacy trim](#local-route-privacy-trim) | Trims extra route distance from both ends of the activity map on this device only, on top of Strava's own privacy filtering. Display-only: recorded and uploaded data are unchanged, and other people still see the activity exactly as your Strava privacy settings dictate. | • Meters to trim |
+
+</details>
+
+<a id="app-com-diskwalaapp" name="app-com-diskwalaapp"></a>
+<details>
+<summary>DiskWala&nbsp;&nbsp;•&nbsp;&nbsp;9 patches</summary>
+<br>
+
+**Supported versions:**
+
+| 27.3 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Bypass PairIP application checks](#bypass-pairip-application-checks) | Required for re-signed builds: PairIP's Application class runs the signature and license checks at startup. This rewrites that one method so it only registers the app context and never calls either check, instead of relying on the checks themselves being stubbed. |  |
+| [Bypass PairIP license check](#bypass-pairip-license-check) | Required for re-signed builds: PairIP asks Google Play to license the app at startup and sends non-Play installs to a Play Store block page. Disables that check, its verdict handler, both block-page launchers, the delayed shutdown, and the block activity itself so the patched app can open. |  |
+| [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from Google Play everywhere it is read. Pre-selected companion for the DiskWala patch set — keep it on. | • Spoofed package installer name |
+| [Disable PairIP license activity](#disable-pairip-license-activity) | Required for re-signed builds: removes PairIP's LicenseActivity from the manifest entirely, so the Play Store block page and license error dialog can never be shown, whatever tries to open them. |  |
+| [Disable ads](#disable-ads) | Stubs AppLovin, AdMob, InMobi and other ad SDKs at the bytecode level to prevent ads from loading without breaking the app. |  |
+| [Disable forced update](#disable-forced-update) | Bypasses PairIP license check ('Download from Play Store'), Play Integrity, and signature verification to allow modified and sideloaded app usage. |  |
+| [Enable Premium](#enable-premium) | Turns on Premium (no ads, real file names, HD downloads, faster streaming) as if subscribed. Keep the pre-selected PairIP bypass patches on — a re-signed build cannot pass PairIP's startup license check without them. |  |
+| [Patch native libraries](#patch-native-libraries) | Neutralizes PairIP traps in native .so libraries and patches Hermes bundle. Also applies the standalone-install manifest fixes (real Application class, original component factory, native library extraction) and removes the stock baseline profiles. |  |
+| [Unlock premium](#unlock-premium) | Makes RevenueCat entitlements appear active so ads-free and premium features are unlocked. |  |
+
+</details>
+
+<a id="app-com-instantbits-cast-webvideo" name="app-com-instantbits-cast-webvideo"></a>
+<details>
+<summary>Web Video Caster&nbsp;&nbsp;•&nbsp;&nbsp;5 patches</summary>
+<br>
+
+**Supported versions:**
+
+| 6.1.0 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Bypass PairIP application checks](#bypass-pairip-application-checks) | Required for re-signed builds: PairIP's Application class runs the signature and license checks at startup. This rewrites that one method so it only registers the app context and never calls either check, instead of relying on the checks themselves being stubbed. |  |
+| [Bypass PairIP license check](#bypass-pairip-license-check) | Required for re-signed builds: PairIP asks Google Play to license the app at startup and sends non-Play installs to a Play Store block page. Disables that check, its verdict handler, both block-page launchers, the delayed shutdown, and the block activity itself so the patched app can open. |  |
+| [Bypass PairIP signature check](#bypass-pairip-signature-check) | Required for re-signed builds: PairIP checks the APK signature at startup and crashes the app on launch when it is not the developer's. Disables that one check so the patched app can start. |  |
+| [Disable PairIP license activity](#disable-pairip-license-activity) | Required for re-signed builds: removes PairIP's LicenseActivity from the manifest entirely, so the Play Store block page and license error dialog can never be shown, whatever tries to open them. |  |
+| [Unlock premium](#unlock-premium) | Unlocks Web Video Caster Premium (ad removal, ad block, bookmarks, queue and the other premium features). No real purchase is made. |  |
+
+</details>
+
 <a id="app-com-jamworks-alwaysondisplay" name="app-com-jamworks-alwaysondisplay"></a>
 <details>
 <summary>aodNotify&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
@@ -227,6 +334,58 @@ Some apps I patched and other apps that were requested if you would like to requ
 |----------|----------------|-----------|
 | [Bypass PairIP license check](#bypass-pairip-license-check) | Required for re-signed builds: PairIP asks Google Play to license the app at startup and sends unlicensed installs to a Play Store block page. Disables that check, its verdict handler and both block-page launchers so the patched app can open. |  |
 | [Enable Lifetime VIP](#enable-lifetime-vip) | Turns on the lifetime Life Member (SVIP) state: no ads and every animated theme applies for free, with no expiry — the VIP screen reads Level: SVIP and Status: life member. Needs the stock Pika! Spot 1.4.5 XAPK. |  |
+
+</details>
+
+<a id="app-com-lonelycatgames-xplore" name="app-com-lonelycatgames-xplore"></a>
+<details>
+<summary>X-plore File Manager&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<br>
+
+**Supported versions:**
+
+| 4.52.02 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Bypass PairIP signature check](#bypass-pairip-signature-check) | Required for re-signed builds: PairIP verifies the app's signing certificate at startup and kills the app if it isn't the Play signature. This disables that one check so the patched app can open. |  |
+| [Enable Premium](#enable-premium) | Unlocks all premium features and removes ads by enabling the app's top donation tier state (the Dinner tier) — no purchase is made. |  |
+
+</details>
+
+<a id="app-com-lucky-apps-rainviewer" name="app-com-lucky-apps-rainviewer"></a>
+<details>
+<summary>RainViewer: Live Weather Radar&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
+<br>
+
+**Supported versions:**
+
+| 8.4.1 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Bypass integrity check](#bypass-integrity-check) | Stops the Play Integrity (Raindrop) verdict from blocking the app. If the app already shows App Blocked, reinstall it fresh after patching. |  |
+| [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from an app store. | • Spoofed package installer name |
+| [Enable Premium](#enable-premium) | Unlocks RainViewer Pro. Use with Change installer source. |  |
+
+</details>
+
+<a id="app-com-shrey-businessx-android" name="app-com-shrey-businessx-android"></a>
+<details>
+<summary>BusinessX&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<br>
+
+**Supported versions:**
+
+| 6.5.2 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from Google Play. Required for BusinessX: its PairIP local installer check is live, so a re-signed build fails the license check without it — keep it on. | • Spoofed package installer name |
+| [Enable Premium](#enable-premium) | Grants Premium's on-device features: inventory & sales export (PDF/Excel/CSV), full sales history and trends, shop sharing, no ads, and Google Drive backup. BusinessX Cloud backup/sync are authorized on the developer's server and may still require a real subscription. |  |
 
 </details>
 
@@ -278,6 +437,23 @@ Some apps I patched and other apps that were requested if you would like to requ
 |----------|----------------|-----------|
 | [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from Google Play. Required for Video Cutter: its PairIP local installer check is live, so a re-signed build fails the license check without it — keep it on. | • Spoofed package installer name |
 | [Remove ads](#remove-ads) | Removes all ads, as if the Remove Ads purchase were bought. Also enable the Change installer source patch (pre-selected). |  |
+
+</details>
+
+<a id="app-com-yinyang-launcher" name="app-com-yinyang-launcher"></a>
+<details>
+<summary>Yin Yang Minimalist Launcher&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<br>
+
+**Supported versions:**
+
+| 5.13.1 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Change installer source](#change-installer-source) | Spoofs the installer source so the app appears to be installed from Google Play. Required for Yin Yang Launcher: its PairIP local installer check is live, so a re-signed build fails the license check without it — keep it on. | • Spoofed package installer name |
+| [Enable Premium](#enable-premium) | Unlocks Yin Yang Pro for free, as if the Lifetime purchase were bought: all clocks, fonts, live wallpapers and icons. Also enable the Change installer source patch (pre-selected) — it is required for the patched app to pass the license check. |  |
 
 </details>
 
@@ -506,6 +682,22 @@ Some apps I patched and other apps that were requested if you would like to requ
 | Patch | Description | Options |
 |----------|----------------|-----------|
 | [Remove ads](#remove-ads) | Stops interstitial ad breaks and native ads in the notes list from loading (Google Mobile Ads). Rewarded ads that unlock features when watched are left working. Does not unlock premium. |  |
+
+</details>
+
+<a id="app-com-optimageeks-vehico-app" name="app-com-optimageeks-vehico-app"></a>
+<details>
+<summary>Vehico - Vehicle management&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
+
+**Supported versions:**
+
+| 1.2.31 |
+| :---: |
+
+| Patch | Description | Options |
+|----------|----------------|-----------|
+| [Remove ads](#remove-ads) | Stops banner and interstitial ads from loading (Google Mobile Ads). |  |
 
 </details>
 

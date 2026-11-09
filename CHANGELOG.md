@@ -1,3 +1,9 @@
+## [1.68.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.68.1...v1.68.2) (2026-11-09)
+
+### 🐛 Bug Fixes
+
+* **googlemessages:** mark OLED black mode target experimental (Testing-stage app, not stable) ([efd60c0](https://github.com/mwbra130/Retro-Bowl-College/commit/efd60c058eade9796ab0a35379ca9cef9e28222e))
+
 ## [1.68.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.68.0...v1.68.1) (2026-11-09)
 
 ### 🐛 Bug Fixes
