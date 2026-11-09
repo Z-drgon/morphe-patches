@@ -111,6 +111,30 @@ def fetch_play_title(pkg):
     return title
 
 
+def better_app_name(pkg, known_name):
+    """Pick the better display name for the detailed section.
+
+    The full Play Store title wins only when it is an expansion of
+    the name the patch list knows the app by — i.e. every word of
+    the known name appears in the title (Notes -> "Notes - iOS
+    Style Notepad"). When the Play title is a different name
+    altogether (aodNotify's title is "Notification light for
+    Samsung"), the known name wins: it is the name people actually
+    recognize and search for. Falls back to the known name when the
+    Play page cannot be fetched."""
+    title = fetch_play_title(pkg)
+    if not title:
+        return known_name
+
+    def words(s):
+        return set(re.findall(r"[a-z0-9]+", s.lower()))
+
+    known_words = words(known_name)
+    if known_words and known_words <= words(title):
+        return title
+    return known_name
+
+
 def patches_table(patches):
     """Render a sorted markdown table of patches with name, description, and options."""
     rows = [
@@ -193,7 +217,7 @@ def build_content(expanded=False):
         # Detailed sections list the app's FULL Play Store name
         # (e.g. Notes -> "Notes - iOS Style Notepad"); the grid
         # keeps the shorter patch-list name.
-        label   = fetch_play_title(pkg) or entry["name"]
+        label   = better_app_name(pkg, entry["name"])
         a = app_anchor(pkg)
         lines.append(f'<a id="{a}" name="{a}"></a>')
         lines.append(spoiler(label, len(patches), entry["targets"], patches_table(patches), expanded))
