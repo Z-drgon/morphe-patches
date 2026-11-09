@@ -277,22 +277,26 @@ def build_grid(readme_text):
         count = len(entry["patches"])
         sub = f"{count} patch" if count == 1 else f"{count} patches"
         targets = entry.get("targets", [])
-        if targets and all(t.get("isExperimental") for t in targets):
-            sub += " · 🧪 experimental"
+        experimental = bool(targets) and all(t.get("isExperimental") for t in targets)
         icon = known_icons.get(name) or fetch_play_icon(pkg)
         if icon is None:
             sys.stderr.write(f"WARNING: could not fetch Play Store icon for {name} ({pkg}); using placeholder\n")
             icon = "https://placehold.co/128x128/png?text=" + name[0]
-        apps.append((name, icon, sub))
+        apps.append((name, icon, sub, experimental))
     apps.sort(key=lambda a: a[0].casefold())
-    cells = [
-        f'<td align="center" width="20%">\n'
-        f'<img src="{icon}" width="72" height="72" alt="{name} icon">\n'
-        f"<br><b>{name}</b>\n"
-        f"<br><sub>{sub}</sub>\n"
-        f"</td>"
-        for name, icon, sub in apps
-    ]
+    cells = []
+    for name, icon, sub, experimental in apps:
+        cell = (
+            f'<td align="center" width="20%">\n'
+            f'<img src="{icon}" width="72" height="72" alt="{name} icon">\n'
+            f"<br><b>{name}</b>\n"
+        )
+        if experimental:
+            # "experimental" gets its own small-text line directly
+            # under the app name, per the repo owner's request.
+            cell += "<br><sub>🧪 experimental</sub>\n"
+        cell += f"<br><sub>{sub}</sub>\n</td>"
+        cells.append(cell)
     rows = ["<tr>\n" + "\n".join(cells[i:i + 5]) + "\n</tr>" for i in range(0, len(cells), 5)]
     return "<table>\n" + "\n".join(rows) + "\n</table>"
 
