@@ -82,7 +82,7 @@ val enableLifetimeVipPatch = bytecodePatch(
                 check-cast v0, Ls0/c1;
                 const/4 v1, 0x3
                 invoke-virtual {v0, v1}, Ls0/c1;->h(I)V
-                const-wide v2, 0x2dec1f42c00
+                const-wide v2, 0x2dec1f42c00L
                 invoke-static {v2, v3}, Lqf/a;->k(J)V
                 return-void
             """.trimIndent()
