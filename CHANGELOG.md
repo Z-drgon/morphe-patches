@@ -1,3 +1,9 @@
+## [1.69.2](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.69.1...v1.69.2) (2026-11-11)
+
+### 🐛 Bug Fixes
+
+* **pikaspot:** random in advertise token is 0..1000, not full-range ([17fe126](https://github.com/mwbra130/Retro-Bowl-College/commit/17fe126d98c765e4c80ef019c53efc0717a120a0))
+
 ## [1.69.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.69.0...v1.69.1) (2026-11-11)
 
 ### 🐛 Bug Fixes
