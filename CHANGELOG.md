@@ -1,3 +1,9 @@
+## [1.69.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.69.0...v1.69.1) (2026-11-11)
+
+### 🐛 Bug Fixes
+
+* **pikaspot:** emit cert SHA1 as colon-separated uppercase fingerprint ([8c83787](https://github.com/mwbra130/Retro-Bowl-College/commit/8c837871ec323ee8c3ce89261bad9ce80739e267))
+
 ## [1.69.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.68.3...v1.69.0) (2026-11-11)
 
 ### 🐛 Bug Fixes

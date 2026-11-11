@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-11T16:47:50",
-  "description": "## [1.69.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.68.3...v1.69.0) (2026-11-11)\n\n### 🐛 Bug Fixes\n\n* **pikaspot:** replace Fingerprints.kt with the Pika Spot one ([1dcac7d](https://github.com/mwbra130/Retro-Bowl-College/commit/1dcac7d5ac6a6adcb512c5d06c1704503ffbf8de))\n\n### ✨ New Features\n\n* **pikaspot:** spoof app signature for server device login ([8e0d095](https://github.com/mwbra130/Retro-Bowl-College/commit/8e0d095e7d56b446851e86d1127678348516381f))",
-  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.69.0/patches-1.69.0.mpp",
+  "created_at": "2026-11-11T16:54:52",
+  "description": "## [1.69.1](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.69.0...v1.69.1) (2026-11-11)\n\n### 🐛 Bug Fixes\n\n* **pikaspot:** emit cert SHA1 as colon-separated uppercase fingerprint ([8c83787](https://github.com/mwbra130/Retro-Bowl-College/commit/8c837871ec323ee8c3ce89261bad9ce80739e267))",
+  "download_url": "https://github.com/mwbra130/Retro-Bowl-College/releases/download/v1.69.1/patches-1.69.1.mpp",
   "signature_download_url": "",
-  "version": "1.69.0"
+  "version": "1.69.1"
 }
