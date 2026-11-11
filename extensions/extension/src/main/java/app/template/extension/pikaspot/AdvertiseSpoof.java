@@ -23,7 +23,12 @@ import javax.crypto.spec.SecretKeySpec;
  *   ts + "#" + Base64(AES-128-CBC/PKCS7(part1)) + "#" + SHA1(cert)
  *
  *   ts    = current time in MICROseconds (system_clock::now / 1000)
- *   part1 = androidId + ":" + ts + ":" + randomInt32
+ *   part1 = androidId + ":" + ts + ":" + random, where random is
+ *           uniform_int_distribution<int>(0, 1000) — a SMALL number,
+ *           not a full-range int (the distribution's param block in
+ *           .rodata is literally {0, 1000}). The v1.69.0/v1.69.1
+ *           builds used a full-range Random.nextInt() here and were
+ *           still rejected at the 30% stop.
  *   key   = first 16 chars of (ts + androidId)
  *   IV    = the literal "A-16-Byte-String"
  *   cert  = the APK signing certificate's DER bytes, read by the
@@ -69,7 +74,7 @@ public final class AdvertiseSpoof {
     public static String getSignature(Context context, String androidId) {
         try {
             long ts = System.currentTimeMillis() * 1000L;
-            int rand = new Random().nextInt();
+            int rand = new Random().nextInt(1001);
             String part1 = androidId + ":" + ts + ":" + rand;
             String key = (ts + androidId).substring(0, 16);
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
