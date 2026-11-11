@@ -27,7 +27,15 @@ import javax.crypto.spec.SecretKeySpec;
  *   key   = first 16 chars of (ts + androidId)
  *   IV    = the literal "A-16-Byte-String"
  *   cert  = the APK signing certificate's DER bytes, read by the
- *           native code through PackageManager signatures[0]
+ *           native code through PackageManager signatures[0], and
+ *           formatted by hashByteArray as an UPPERCASE hex string
+ *           with ":" between byte pairs (the classic certificate
+ *           fingerprint format, e.g. "28:4E:FD:...:88") — NOT plain
+ *           lowercase hex. The v1.69.0 build shipped the plain form
+ *           and was still rejected at the 30% loading stop; the
+ *           colon format is what the native code actually emits
+ *           (the case-flip and separator insertion live in
+ *           hashByteArray's output loop).
  *
  * The server validates the trailing SHA1 against the stock signing
  * certificate. A re-signed build computes it over its own signer
@@ -47,9 +55,10 @@ import javax.crypto.spec.SecretKeySpec;
  * Version-specific: do not reuse for other versions.
  */
 public final class AdvertiseSpoof {
-    /** SHA1 of the stock signing certificate (DER), lowercase hex. */
+    /** SHA1 of the stock signing certificate (DER), in the native
+     *  hashByteArray format: uppercase hex, ":" between byte pairs. */
     private static final String OFFICIAL_CERT_SHA1 =
-        "284efdadf1115656817a5b2cfdaddf696f203088";
+        "28:4E:FD:AD:F1:11:56:56:81:7A:5B:2C:FD:AD:DF:69:6F:20:30:88";
     private static final byte[] AES_IV =
         "A-16-Byte-String".getBytes(StandardCharsets.UTF_8);
 
