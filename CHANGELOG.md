@@ -1,3 +1,13 @@
+## [1.69.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.68.3...v1.69.0) (2026-11-11)
+
+### 🐛 Bug Fixes
+
+* **pikaspot:** replace Fingerprints.kt with the Pika Spot one ([1dcac7d](https://github.com/mwbra130/Retro-Bowl-College/commit/1dcac7d5ac6a6adcb512c5d06c1704503ffbf8de))
+
+### ✨ New Features
+
+* **pikaspot:** spoof app signature for server device login ([8e0d095](https://github.com/mwbra130/Retro-Bowl-College/commit/8e0d095e7d56b446851e86d1127678348516381f))
+
 ## [1.68.3](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.68.2...v1.68.3) (2026-11-09)
 
 ### 🐛 Bug Fixes
