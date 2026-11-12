@@ -772,6 +772,7 @@ Some patches in this bundle are ports or updates of other creators' work — cre
 - **Poweramp** — [arandomhooman](https://github.com/arandomhooman/hoomans-morphe-patches): the Poweramp "Unlock Premium" patch is a port of his patch for Poweramp build-1025, retargeted to build-1031.
 - **Gradient Weather** — [morningentree (Entree3k)](https://github.com/Entree3k/Morning-Entree-Patches): the Gradient Weather "Enable Premium" patch was authored from his Morning Entree Patches template.
 - **Crossy Road** — [byehi98](https://github.com/byehi98/okish-morphe-patches): the Crossy Road "Free store" patch is a port of his okish-morphe-patches version (his targeted Crossy Road 7.13.0; updated here for 7.14.0).
+- **Subway Surfers** — [legendsciber](https://github.com/legendsciber/morphe-patches): the "Unlimited coins and keys" patch is a port of his Currency Hack (his targeted Subway Surfers 3.70.0; re-anchored here and extended to 3.71.0 after he removed it upstream).
 
 ## Disclaimer
 
