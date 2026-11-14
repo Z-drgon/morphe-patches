@@ -2,7 +2,7 @@
 
 Some apps I patched and other apps that were requested if you would like to request an app please drop a comment in my reddit discussion for patches: https://www.reddit.com/r/MorpheApp/s/xRx6wdTYA5
 
-**33 apps · 67 patches** · current bundle: [v1.71.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.71.0)
+**33 apps · 68 patches** · current bundle: [v1.72.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.72.0)
 
 ## Apps
 
@@ -203,7 +203,7 @@ Some apps I patched and other apps that were requested if you would like to requ
 ## Patch descriptions
 
 <!-- PATCHES_START -->
-> **[v1.71.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.71.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;67 patches total
+> **[v1.72.0](https://github.com/mwbra130/Retro-Bowl-College/releases/tag/v1.72.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;68 patches total
 <a id="app-com-strava" name="app-com-strava"></a>
 <details>
 <summary>Strava: Run, Bike, Walk&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
@@ -671,7 +671,7 @@ Some apps I patched and other apps that were requested if you would like to requ
 
 <a id="app-com-google-android-apps-youtube-music" name="app-com-google-android-apps-youtube-music"></a>
 <details>
-<summary>YouTube Music (Wear OS)&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<summary>YouTube Music (Wear OS)&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
 
 **Supported versions:**
@@ -682,6 +682,7 @@ Some apps I patched and other apps that were requested if you would like to requ
 | Patch | Description | Options |
 |----------|----------------|-----------|
 | [Remove background playback restrictions](#remove-background-playback-restrictions) | Removes restrictions on background playback in the Wear OS app. Experimental: fingerprint verified against 9.45.41-WEAR_RELEASE, not yet tested on a watch. |  |
+| [GmsCore support](#gmscore-support) | Routes the app's Google services calls to MicroG (app.revanced.android.gms) instead of real Google Play services, so a re-signed build can sign in. Requires MicroG-RE with a signed-in account on the watch, and the stock app uninstalled first (the package name is not changed). Experimental: verified against 9.45.41-WEAR_RELEASE by dex scan, not yet tested on a watch. |  |
 
 </details>
 
