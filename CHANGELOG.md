@@ -1,3 +1,9 @@
+## [1.73.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.72.0...v1.73.0) (2026-11-14)
+
+### ✨ New Features
+
+* **ytmusicwear:** add Disable network telemetry patch (Cronet EnableTelemetry off) ([fa15635](https://github.com/mwbra130/Retro-Bowl-College/commit/fa156351bddf61467eeccdd9840886d6f1f709c5))
+
 ## [1.72.0](https://github.com/mwbra130/Retro-Bowl-College/compare/v1.71.0...v1.72.0) (2026-11-14)
 
 ### ✨ New Features

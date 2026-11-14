@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.72.0",
+  "version": "1.73.0",
   "patches": [
     {
       "name": "Add settings",
@@ -856,6 +856,32 @@
             },
             {
               "version": null,
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Disable network telemetry",
+      "description": "Turns off the Cronet networking library's telemetry in the Wear OS app (its manifest switch ships set to true). Does not affect playback, downloads, or sign-in.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.google.android.apps.youtube.music",
+          "name": "YouTube Music (Wear OS)",
+          "description": null,
+          "apkFileType": null,
+          "appIconColor": "#FF0000",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "9.45.41-WEAR_RELEASE",
               "versionCodes": null,
               "isExperimental": true,
               "minSdk": null,
